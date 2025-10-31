@@ -17,8 +17,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  # Don't redirect function calls
-  conditions = {Role = ["*"]}
   force = false
 
 # Headers for better security and performance
@@ -47,14 +45,6 @@
   [headers.values]
     # Cache JavaScript for 1 day
     Cache-Control = "public, max-age=86400"
-
-# Authentication function configuration
-[functions]
-  # Node.js version for functions
-  node_bundler = "esbuild"
-  
-  # Timeout for functions (10 seconds)
-  timeout = 10
 
 # Environment variables needed (set these in Netlify UI):
 # - SUPABASE_URL
