@@ -1,0 +1,146 @@
+{
+    "name": "Pediatrics",
+    "icon": "👶",
+    "compensation": {
+        "median": "$264,322",
+        "range": "$222,847 - $321,836",
+        "percentile25": "$222,847",
+        "percentile50": "$264,322",
+        "percentile75": "$321,836"
+    },
+    "painPoints": [
+        {
+            "category": "Financial & Compensation Challenges",
+            "points": [
+                "Lowest compensation in medicine despite same training as other specialties",
+                "Medicaid payer mix (40%+ of patients) with reimbursement well below Medicare rates",
+                "87% feel unfairly compensated relative to work complexity",
+                "Student loan burden ($200-300k) with limited earning potential",
+                "Real income decreased 6.7% since 2017 after adjusting for inflation",
+                "Gender pay gap - women earn 93% of male counterparts despite being 63% of workforce"
+            ]
+        },
+        {
+            "category": "Emotional & Burnout Challenges",
+            "points": [
+                "42-55% burnout rate (4th highest among all specialties)",
+                "Dual patient relationships - managing both child and anxious parents",
+                "Compassion fatigue from caring for sick children and stressed families",
+                "48% report not feeling valued by their organization",
+                "Rising childhood mental health crisis without adequate resources",
+                "Medical mistrust and vaccine hesitancy creating difficult parent conversations"
+            ]
+        },
+        {
+            "category": "Administrative Burden & Work-Life Balance",
+            "points": [
+                "Excessive bureaucratic tasks and EHR documentation",
+                "Working from home to complete charting and admin work regularly",
+                "Work interfering with personal/family responsibilities",
+                "Gender disparities - women handle more household duties while working",
+                "Only 43% report appropriate work-life balance",
+                "Average 43 hours per week with 36 hours in direct patient care"
+            ]
+        },
+        {
+            "category": "Workforce & Practice Pressures",
+            "points": [
+                "Severe workforce shortage - 30% of residency positions unfilled in 2024",
+                "Fewer medical students choosing pediatrics than in 30 years",
+                "High patient volumes needed to maintain productivity targets",
+                "Insufficient time per patient for quality care",
+                "Inadequate staffing and support resources",
+                "Concerns about Medicaid cuts affecting patient access to care"
+            ]
+        }
+    ],
+    "motivations": [
+        "Better work-life balance and predictable schedule",
+        "Higher compensation to address student loans and financial security",
+        "Part-time opportunities (25-33% of pediatricians work part-time)",
+        "Better payer mix with less Medicaid dependence",
+        "Escape from excessive administrative burden",
+        "More time per patient for quality care",
+        "Reduced work hours or flexible scheduling",
+        "Location change for family or lifestyle reasons",
+        "Academic vs. community practice change",
+        "Subspecialty opportunities for career focus",
+        "Better organizational support and feeling valued",
+        "Hospitalist model with shift-based work"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your current practice setting and patient population",
+            "What's driving you to explore new opportunities at this stage of your career?",
+            "Help me understand what you're hoping to find in your next position",
+            "Walk me through a typical day - clinic hours, patient volume, administrative time"
+        ],
+        "painDiscovery": [
+            "You mentioned [challenge] - help me understand how that's affecting you daily",
+            "Tell me more about what led you to start looking for something different",
+            "Describe your current work-life balance and where the biggest frustrations are",
+            "How has your current compensation affected your ability to meet financial goals?",
+            "Share with me your experience managing both the children and their parents",
+            "Help me understand your administrative burden - hours in EHR, after-hours work"
+        ],
+        "clinical": [
+            "Describe your patient population - age range, acuity, typical conditions",
+            "Help me understand your current patient volume - how many do you see daily?",
+            "Tell me about your payer mix - percentage Medicaid, commercial insurance, self-pay",
+            "Walk me through your practice setting - outpatient only, hospital privileges, combination?",
+            "Share your experience with newborn care, well-child visits, acute illness management",
+            "What's your comfort level with behavioral health issues and managing complex cases?",
+            "Tell me about your after-hours coverage and call requirements"
+        ],
+        "motivation": [
+            "When you think about your ideal practice, what does it look like?",
+            "What would need to be true about a position for you to feel excited about it?",
+            "Help me understand your priorities in making this career move",
+            "Tell me about your long-term career goals - where do you see yourself in 5 years?",
+            "What aspects of pediatrics do you find most rewarding?"
+        ],
+        "compensation": [
+            "Help me understand your current compensation structure - base, bonuses, benefits",
+            "When you think about your next position, what compensation package would make a move worthwhile?",
+            "Tell me about your financial goals and what's driving those expectations",
+            "How important is work-life balance versus compensation in your decision-making?",
+            "Share your thoughts on part-time versus full-time work"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "Compensation too low compared to debt", 
+            "response": "Help me understand your financial priorities and what complete compensation package would address your needs - base, loan repayment, benefits, retirement?" 
+        },
+        { 
+            "challenge": "Too much Medicaid - want better payer mix", 
+            "response": "What payer mix would feel sustainable for you? Help me understand what percentage Medicaid would work with the right support and compensation structure" 
+        },
+        { 
+            "challenge": "Work-life balance impossible with current demands", 
+            "response": "Describe your ideal work schedule - days per week, hours per day, patient volume, after-hours expectations" 
+        },
+        { 
+            "challenge": "Want part-time but concerned about compensation", 
+            "response": "Walk me through what part-time means to you - hours, days, patient volume - and what compensation would make that work financially" 
+        },
+        { 
+            "challenge": "Dealing with vaccine hesitancy is exhausting", 
+            "response": "Tell me about the organizational support and resources that would help you navigate these difficult conversations more effectively" 
+        },
+        { 
+            "challenge": "Administrative burden overwhelming", 
+            "response": "What level of administrative support - scribes, MA support, protected time - would make the EHR and paperwork manageable?" 
+        },
+        { 
+            "challenge": "Want to subspecialize to escape general peds challenges", 
+            "response": "Help me understand what specifically about general pediatrics isn't working and what subspecialty focus interests you" 
+        }
+    ],
+    "challengingOpportunities": [
+        "You mentioned wanting [specific location/setting]. Help me understand what NEED that solves - there might be other ways to meet that same need with better compensation or work-life balance",
+        "I hear you prefer avoiding [Medicaid-heavy or high-volume setting]. If I could address your underlying concern about compensation and support in a different way, would you be open to exploring it?",
+        "Many pediatricians find that what they thought they wanted differs from what actually makes them happy. What's truly non-negotiable - compensation, schedule, payer mix, or something else?",
+        "You mentioned compensation is the priority. If I could show you a position addressing work-life balance so dramatically you'd avoid burnout, how would that factor into your decision?"
+    ]
+}

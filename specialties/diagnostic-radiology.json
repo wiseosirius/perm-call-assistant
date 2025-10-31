@@ -1,0 +1,176 @@
+{
+    "name": "Diagnostic Radiology",
+    "icon": "🔬",
+    "compensation": {
+        "median": "$603,897",
+        "range": "$438,023 - $879,861",
+        "percentile25": "$509,685",
+        "percentile50": "$603,897",
+        "percentile75": "$733,897",
+        "workRVUs": "11,399 (median)",
+        "compensationPerRVU": "$55.11 (median)"
+    },
+    "painPoints": [
+        {
+            "category": "Workload & Productivity Crisis",
+            "points": [
+                "80% increase in workload from 2009-2020 for diagnostic radiologists",
+                "Severe radiologist shortage (14,000 active for entire US = 1:57,000 ratio)",
+                "Overwhelming RVU productivity pressure and quotas",
+                "Increasing imaging volume without proportional staffing increases",
+                "No time for mentorship or meaningful collegial interaction",
+                "Pressure to read more studies faster with same or fewer resources"
+            ]
+        },
+        {
+            "category": "Burnout & Moral Injury Epidemic",
+            "points": [
+                "44-65% burnout rate (male 44%, female 65%, some studies show 80%+)",
+                "98% of radiologists experience moral distress",
+                "Perception of providing substandard care due to excessive demands",
+                "Emotional exhaustion from relentless pace",
+                "Depersonalization and loss of purpose/enjoyment",
+                "Concerns about diagnostic errors from fatigue and stress"
+            ]
+        },
+        {
+            "category": "Administrative & EHR Overload",
+            "points": [
+                "2 hours on EHR/desk work for every 1 hour of actual image interpretation",
+                "18+ hours per week on paperwork and administrative tasks",
+                "Poor EHR interoperability making it difficult to access outside records",
+                "Excessive inbox management with detailed portal responses required",
+                "Prior authorization consuming significant time for imaging orders",
+                "Government regulations and compliance burden (22% cite as burnout factor)"
+            ]
+        },
+        {
+            "category": "Work Hours & Call Burden",
+            "points": [
+                "62% cite too many hours as primary burnout factor",
+                "Interventional radiologists working >80 hrs/week see 7x burnout increase",
+                "Unpredictable emergency call requirements",
+                "After-hours reading and night coverage demands",
+                "No protected time off (constantly clearing worklists)",
+                "Weekend and holiday coverage needs"
+            ]
+        },
+        {
+            "category": "Loss of Autonomy & Control",
+            "points": [
+                "41% cite lack of control/autonomy as major burnout factor",
+                "Corporate and private equity consolidation reducing independence",
+                "Administrators making clinical decisions without understanding radiology",
+                "Limited say in work processes, scheduling, and practice management",
+                "Erosion of traditional private practice model",
+                "Shift from practice ownership to employment status"
+            ]
+        },
+        {
+            "category": "Physical Environment & Social Isolation",
+            "points": [
+                "Sedentary work in dark reading rooms for extended periods",
+                "Chronic musculoskeletal pain (low back pain, tenosynovitis)",
+                "Ergonomic challenges at workstations",
+                "Social isolation from PACS replacing face-to-face interactions",
+                "Reduced sense of belonging to healthcare team",
+                "Minimal direct patient contact affecting professional fulfillment"
+            ]
+        }
+    ],
+    "motivations": [
+        "Better work-life balance with predictable, defined schedule",
+        "Escape from excessive RVU/productivity pressure",
+        "Teleradiology flexibility (remote work, location independence, control over schedule)",
+        "Reduced administrative burden and better EHR systems",
+        "Partnership opportunities in private practice with autonomy",
+        "Subspecialty focus rather than high-volume general radiology",
+        "Better technology access (AI tools, optimized PACS, ergonomic workstations)",
+        "Geographic relocation for lifestyle or family reasons",
+        "Higher compensation or better total package",
+        "Escape from social isolation to more collegial environment",
+        "Academic affiliation for teaching and research",
+        "Reduced or eliminated call requirements",
+        "Shift-based work (7 on/7 off, predictable hours)",
+        "Part-time or flexible scheduling options",
+        "Better mentorship and continuing education support",
+        "Escape from corporate medicine to physician-led practice"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your current practice structure - private, hospital-employed, academic, or teleradiology?",
+            "Walk me through a typical day - what modalities are you reading and what's your volume like?",
+            "What's driving you to explore new opportunities at this point in your career?",
+            "Help me understand your current mix of general versus subspecialty work"
+        ],
+        "painDiscovery": [
+            "You mentioned [challenge] - help me understand how that's affecting your daily work and satisfaction",
+            "Tell me more about what led you to start looking - what was the tipping point?",
+            "Describe your current workload - daily study volume and how it feels sustainability-wise",
+            "Walk me through your administrative burden - time in EHR, prior auths, inbox management",
+            "Help me understand your work-life balance right now and what needs to change",
+            "Share with me your experience with burnout or fatigue in your current role"
+        ],
+        "clinical": [
+            "Describe your fellowship training and subspecialty interests or focus areas",
+            "Tell me about your comfort level with different modalities - CT, MRI, ultrasound, X-ray, fluoro",
+            "Help me understand your preferred case mix - what percentage general versus subspecialty?",
+            "Walk me through your experience with subspecialty areas - neuro, body, MSK, breast, etc.",
+            "Share your thoughts on on-site versus remote/teleradiology reading preferences",
+            "Tell me about your ideal daily study volume and case complexity",
+            "What's your experience with interventional procedures, if any?",
+            "How do you feel about call requirements and after-hours coverage?"
+        ],
+        "motivation": [
+            "When you think about your ideal practice environment, what does it look like?",
+            "Help me understand what would make a move worthwhile - your top priorities?",
+            "Tell me about your decision-making process for evaluating opportunities",
+            "Describe what work-life balance means to you in practical, specific terms",
+            "What aspects of radiology do you find most professionally rewarding?"
+        ],
+        "compensation": [
+            "Help me understand your complete compensation structure - base, productivity bonuses, benefits",
+            "When you think about your next position, what compensation package would make a move worthwhile?",
+            "Tell me about your financial goals and what's driving those expectations",
+            "How important is RVU-based versus salary-based compensation to you?",
+            "Share your thoughts on partnership opportunities or equity participation"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "Workload and volume overwhelming", 
+            "response": "What daily study volume and case complexity would feel sustainable while maintaining quality?" 
+        },
+        { 
+            "challenge": "Want 100% remote teleradiology", 
+            "response": "Help me understand what appeals about full remote work - is it flexibility, location, or eliminating commute? Any concerns about isolation?" 
+        },
+        { 
+            "challenge": "Burned out from current position", 
+            "response": "Walk me through specifically what's causing burnout - volume, autonomy, administrative burden? I want your next role to actually solve those problems" 
+        },
+        { 
+            "challenge": "Want subspecialty-only reading", 
+            "response": "Tell me about your subspecialty focus and what percentage subspecialty versus general would be ideal for you" 
+        },
+        { 
+            "challenge": "Location restrictions", 
+            "response": "Help me understand what the location provides that's essential - family, schools, lifestyle? Teleradiology could potentially solve this" 
+        },
+        { 
+            "challenge": "Concerned about AI replacing radiologists", 
+            "response": "Share your thoughts on AI in radiology - do you see it as a threat or a tool to reduce repetitive work?" 
+        },
+        { 
+            "challenge": "Need partnership track with ownership", 
+            "response": "Walk me through what partnership means to you - autonomy, financial upside, long-term security, or something else?" 
+        }
+    ],
+    "challengingOpportunities": [
+        "You mentioned preferring [location/setting]. Help me understand what NEED that solves - there might be other ways to meet that same need you haven't considered",
+        "I hear you want 100% subspecialty work. What if you did primarily subspecialty with some general mixed in - would that be worth exploring if the overall package was compelling?",
+        "You said work-life balance is critical. If I could show you a practice with defined shifts, no after-hours work, and predictable schedules, how would location flexibility factor in?",
+        "Many radiologists think they want traditional private practice until they realize the administrative burden. Have you considered employed positions that offer autonomy without business headaches?",
+        "You mentioned avoiding teleradiology. What if I could address your concerns about isolation and show you a model with strong peer support and mentorship?"
+    ]
+}
