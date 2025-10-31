@@ -8,10 +8,9 @@
     </title>
     <!-- 
         V4 MODULAR ARCHITECTURE:
-        - Core HTML file remains lightweight (~2400 lines instead of 2800+)
+        - Core HTML file
         - Specialty data loaded dynamically from specialties/ folder
         - To add a new specialty: Simply drop a new JSON file in specialties/ folder
-        - See README-MODULAR.md for detailed instructions
     -->
     <script src="/auth.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -1845,9 +1844,9 @@
                                 ${currentSpecialty.challengingOpportunities
                                   .map(
                                     (script) => `
-                                    <div class="bg-white dark:bg-gray-800 border border-purple-200 rounded p-3 text-sm italic text-purple-800">
-                                        "${script}"
-                                    </div>
+                                    <div class="bg-white dark:bg-gray-800 border border-purple-200 dark:border-purple-700 rounded p-3 text-sm italic text-purple-800 dark:text-purple-100">
+                                      "${script}"
+                                  </div>
                                 `
                                   )
                                   .join("")}
@@ -2458,7 +2457,7 @@
                         </h3>
                         <div class="space-y-4">
                             <div class="border-l-4 border-green-500 bg-green-50 rounded-lg p-4">
-                                <div class="font-bold text-green-900 mb-2">1. Current Compensation Discovery</div>
+                              <div class="font-bold text-green-900 mb-2">1. Current Compensation Structure</div>
                                 <div class="text-sm italic text-green-800 mb-3">
                                     "Help me understand your current compensation structure - base salary, bonuses, benefits, partnership potential. Give me the complete picture so I can make sure any opportunities I present are a step forward for you..."
                                 </div>
@@ -2468,7 +2467,7 @@
                             </div>
 
                             <div class="border-l-4 border-blue-500 bg-blue-50 rounded-lg p-4">
-                                <div class="font-bold text-blue-900 mb-2">2. Expectations Discovery</div>
+                                <div class="font-bold text-blue-900 mb-2">2. Future Compensation Expectations</div>
                                 <div class="text-sm italic text-blue-800 mb-3">
                                     "When you think about your next position, what compensation package would make a move worthwhile? What's driving those expectations?"
                                 </div>
@@ -2478,7 +2477,7 @@
                             </div>
 
                             <div class="border-l-4 border-purple-500 bg-purple-50 rounded-lg p-4">
-                                <div class="font-bold text-purple-900 mb-2">3. Priority Exploration</div>
+                                <div class="font-bold text-purple-900 mb-2">3. Financial Goals & Priorities</div>
                                 <div class="text-sm italic text-purple-800 mb-3">
                                     "Tell me about your financial goals for the next 5 years and how your next position fits into that plan..."
                                 </div>
