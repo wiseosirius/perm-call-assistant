@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-200">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Pacific Companies Recruiter Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {}
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .dark .gradient-bg {
+      background: linear-gradient(135deg, #4c51bf 0%, #5a3a8e 100%);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center p-4">
+  
+  <!-- Dark Mode Toggle -->
+  <button id="darkModeToggle" class="fixed top-4 right-4 p-2 rounded-lg bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-all z-50">
+    <svg id="sunIcon" class="w-6 h-6 text-gray-800 dark:text-gray-200 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+    </svg>
+    <svg id="moonIcon" class="w-6 h-6 text-gray-800 dark:text-gray-200 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+    </svg>
+  </button>
+
+  <!-- Login Container -->
+  <div class="max-w-md w-full">
+    
+    <!-- Logo & Header -->
+    <div class="text-center mb-8">
+      <div class="gradient-bg w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+      </div>
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+        Pacific Companies
+      </h1>
+      <p class="text-gray-600 dark:text-gray-400">
+        Recruiter Training Portal
+      </p>
+    </div>
+
+    <!-- Login Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+      
+      <!-- Email Entry Step -->
+      <div id="emailStep" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+            Welcome Back
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            Enter your email to receive a verification code
+          </p>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white transition-all"
+            placeholder="your.email@pacificcompanies.com"
+            autocomplete="email"
+          >
+          <p id="emailError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden"></p>
+        </div>
+
+        <button
+          id="sendCodeBtn"
+          class="w-full gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Send Verification Code
+        </button>
+      </div>
+
+      <!-- Code Verification Step -->
+      <div id="codeStep" class="space-y-6 hidden">
+        <div>
+          <button
+            id="backToEmail"
+            class="text-sm text-purple-600 dark:text-purple-400 hover:underline mb-4 flex items-center"
+          >
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Change email
+          </button>
+          
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+            Enter Verification Code
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            We sent a 5-digit code to <span id="displayEmail" class="font-medium text-gray-900 dark:text-white"></span>
+          </p>
+        </div>
+
+        <div>
+          <label for="code" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Verification Code
+          </label>
+          <input
+            type="text"
+            id="code"
+            maxlength="5"
+            class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-900 dark:text-white text-center text-2xl font-mono tracking-widest transition-all"
+            placeholder="12345"
+            autocomplete="one-time-code"
+          >
+          <p id="codeError" class="mt-2 text-sm text-red-600 dark:text-red-400 hidden"></p>
+        </div>
+
+        <button
+          id="verifyCodeBtn"
+          class="w-full gradient-bg text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Verify & Login
+        </button>
+
+        <button
+          id="resendCode"
+          class="w-full text-sm text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+        >
+          Didn't receive a code? Send again
+        </button>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="hidden text-center py-8">
+        <div class="animate-spin rounded-full h-12 w-12 border-4 border-gray-200 border-t-purple-600 mx-auto mb-4"></div>
+        <p class="text-gray-600 dark:text-gray-400">Processing...</p>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">
+      <p>Only authorized Pacific Companies recruiters can access this portal.</p>
+      <p class="mt-2">Need help? Contact <a href="mailto:support@pacificcompanies.com" class="text-purple-600 dark:text-purple-400 hover:underline">support@pacificcompanies.com</a></p>
+    </div>
+
+  </div>
+
+  <script>
+    // Dark mode handling
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const html = document.documentElement;
+    
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      html.classList.add('dark');
+    }
+    
+    darkModeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('darkMode', html.classList.contains('dark'));
+    });
+
+    // Authentication flow
+    const emailStep = document.getElementById('emailStep');
+    const codeStep = document.getElementById('codeStep');
+    const loadingState = document.getElementById('loadingState');
+    
+    const emailInput = document.getElementById('email');
+    const codeInput = document.getElementById('code');
+    const emailError = document.getElementById('emailError');
+    const codeError = document.getElementById('codeError');
+    const displayEmail = document.getElementById('displayEmail');
+    
+    const sendCodeBtn = document.getElementById('sendCodeBtn');
+    const verifyCodeBtn = document.getElementById('verifyCodeBtn');
+    const resendCodeBtn = document.getElementById('resendCode');
+    const backToEmailBtn = document.getElementById('backToEmail');
+
+    let currentEmail = '';
+
+    // Check if already logged in
+    const sessionCookie = document.cookie.split('; ').find(row => row.startsWith('recruiter_session='));
+    if (sessionCookie) {
+      window.location.href = '/';
+    }
+
+    // Send verification code
+    sendCodeBtn.addEventListener('click', async () => {
+      const email = emailInput.value.trim().toLowerCase();
+      
+      if (!email || !email.includes('@')) {
+        showError(emailError, 'Please enter a valid email address');
+        return;
+      }
+
+      currentEmail = email;
+      await sendVerificationCode(email);
+    });
+
+    // Verify code
+    verifyCodeBtn.addEventListener('click', async () => {
+      const code = codeInput.value.trim();
+      
+      if (!code || code.length !== 5) {
+        showError(codeError, 'Please enter the 5-digit code');
+        return;
+      }
+
+      await verifyCode(currentEmail, code);
+    });
+
+    // Resend code
+    resendCodeBtn.addEventListener('click', async () => {
+      await sendVerificationCode(currentEmail);
+    });
+
+    // Back to email step
+    backToEmailBtn.addEventListener('click', () => {
+      hideError(codeError);
+      codeInput.value = '';
+      showStep('email');
+    });
+
+    // Auto-submit when 5 digits entered
+    codeInput.addEventListener('input', (e) => {
+      // Only allow numbers
+      e.target.value = e.target.value.replace(/[^0-9]/g, '');
+      
+      if (e.target.value.length === 5) {
+        verifyCodeBtn.click();
+      }
+    });
+
+    // Enter key handling
+    emailInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendCodeBtn.click();
+    });
+    
+    codeInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') verifyCodeBtn.click();
+    });
+
+    // API Functions
+    async function sendVerificationCode(email) {
+      showLoading();
+      hideError(emailError);
+
+      try {
+        const response = await fetch('/.netlify/functions/send-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Failed to send code');
+        }
+
+        displayEmail.textContent = email;
+        showStep('code');
+        codeInput.focus();
+
+        // Show warning if email delayed
+        if (data.warning) {
+          showError(codeError, data.warning);
+          setTimeout(() => hideError(codeError), 5000);
+        }
+
+      } catch (error) {
+        showStep('email');
+        showError(emailError, error.message || 'Failed to send verification code. Please try again.');
+      }
+    }
+
+    async function verifyCode(email, code) {
+      showLoading();
+      hideError(codeError);
+
+      try {
+        const response = await fetch('/.netlify/functions/verify-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, code })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Invalid verification code');
+        }
+
+        // Set session cookie (24 hours)
+        const expires = new Date();
+        expires.setHours(expires.getHours() + 24);
+        document.cookie = `recruiter_session=${data.sessionId}; expires=${expires.toUTCString()}; path=/; secure; samesite=strict`;
+
+        // Redirect to main app
+        window.location.href = '/';
+
+      } catch (error) {
+        showStep('code');
+        showError(codeError, error.message || 'Invalid or expired code. Please try again.');
+        codeInput.value = '';
+        codeInput.focus();
+      }
+    }
+
+    // UI Helper Functions
+    function showStep(step) {
+      emailStep.classList.add('hidden');
+      codeStep.classList.add('hidden');
+      loadingState.classList.add('hidden');
+
+      if (step === 'email') {
+        emailStep.classList.remove('hidden');
+      } else if (step === 'code') {
+        codeStep.classList.remove('hidden');
+      }
+    }
+
+    function showLoading() {
+      emailStep.classList.add('hidden');
+      codeStep.classList.add('hidden');
+      loadingState.classList.remove('hidden');
+    }
+
+    function showError(element, message) {
+      element.textContent = message;
+      element.classList.remove('hidden');
+    }
+
+    function hideError(element) {
+      element.textContent = '';
+      element.classList.add('hidden');
+    }
+  </script>
+
+</body>
+</html>

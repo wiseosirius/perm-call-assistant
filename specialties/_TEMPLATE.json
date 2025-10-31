@@ -1,0 +1,118 @@
+{
+    "name": "Specialty Name Here",
+    "icon": "🩺",
+    "compensation": {
+        "median": "$XXX,XXX",
+        "range": "$XXX,XXX - $XXX,XXX",
+        "percentile25": "$XXX,XXX",
+        "percentile50": "$XXX,XXX",
+        "percentile75": "$XXX,XXX",
+        "workRVUs": "X,XXX (median) - OPTIONAL",
+        "compensationPerRVU": "$XX.XX (median) - OPTIONAL",
+        "privateVsAcademic": "Private ~$XXXk vs Academic ~$XXXk - OPTIONAL"
+    },
+    "painPoints": [
+        {
+            "category": "Pain Point Category 1 (e.g., Administrative Burden)",
+            "points": [
+                "Specific pain point describing the issue",
+                "Another pain point in this category",
+                "Add 3-6 points per category",
+                "Be specific and detailed"
+            ]
+        },
+        {
+            "category": "Pain Point Category 2 (e.g., Work-Life Balance)",
+            "points": [
+                "Pain point 1",
+                "Pain point 2",
+                "Pain point 3"
+            ]
+        },
+        {
+            "category": "Pain Point Category 3",
+            "points": [
+                "Add as many categories as needed",
+                "3-6 categories is typical",
+                "Each with 3-6 specific pain points"
+            ]
+        }
+    ],
+    "motivations": [
+        "Common motivation for exploring new opportunities",
+        "Another motivation physicians cite",
+        "Better work-life balance",
+        "Compensation improvement",
+        "Add 8-15 motivations",
+        "These drive physician job searches",
+        "Be specific to the specialty",
+        "Include practice setting changes",
+        "Geographic factors",
+        "Career stage considerations"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your current practice structure and what a typical day looks like",
+            "What's driving you to explore new opportunities at this point in your career?",
+            "Help me understand what you're looking for in your next position"
+        ],
+        "painDiscovery": [
+            "You mentioned [pain point] - help me understand how that's affecting you on a daily basis",
+            "Tell me more about what led you to start looking for something different",
+            "Walk me through a typical week - where are the biggest frustrations?",
+            "How has [situation] been impacting you personally and professionally?",
+            "Add 4-6 pain discovery questions"
+        ],
+        "clinical": [
+            "Describe your patient population and typical case complexity",
+            "Help me understand your current patient volume",
+            "Tell me about your scope of practice",
+            "Walk me through your procedural skills and comfort level",
+            "Share your experience with [specialty-specific procedure/skill]",
+            "Add 6-8 clinical discovery questions",
+            "Make them specialty-specific",
+            "Focus on scope, volume, procedures, practice setting"
+        ],
+        "motivation": [
+            "When you imagine your ideal practice, what does it look like?",
+            "Help me understand what would make a move worthwhile for you",
+            "What are your top three priorities in evaluating a new opportunity?",
+            "Tell me about your decision-making process - what factors weigh most heavily?"
+        ],
+        "compensation": [
+            "Help me understand your current compensation structure - base, bonuses, benefits, the complete picture",
+            "When you think about your next position, what compensation package would make a move worthwhile?",
+            "Tell me about your financial goals and what's driving those expectations"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "Common objection physicians raise", 
+            "response": "Open-ended question to explore the underlying need" 
+        },
+        { 
+            "challenge": "Another typical challenge", 
+            "response": "Discovery question that digs deeper" 
+        },
+        { 
+            "challenge": "Location concerns", 
+            "response": "What specific community features matter most to you and your family?" 
+        },
+        { 
+            "challenge": "Compensation expectations unrealistic", 
+            "response": "Help me understand what's driving those expectations and what trade-offs you'd consider" 
+        },
+        { 
+            "challenge": "Add 5-8 common challenges", 
+            "response": "Each with an open-ended response that explores the need" 
+        }
+    ],
+    "challengingOpportunities": [
+        "I hear you prefer [preference]. Help me understand what NEED that solves for you - there might be other ways to meet that same need",
+        "You mentioned wanting [specific requirement]. If I could address the core reason behind that through a different approach, would you be open to exploring it?",
+        "Many [specialty] physicians find that what they thought they wanted differs from what actually makes them happy - what's truly non-negotiable versus nice-to-have?",
+        "Add 3-5 challenging scripts",
+        "These help broaden physician parameters",
+        "Focus on underlying needs vs stated requirements"
+    ]
+}

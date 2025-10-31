@@ -1,0 +1,67 @@
+# Netlify Configuration for Perm Recruiting Assistant V4
+# Updated with authentication functions
+
+[build]
+  # The folder to deploy (current directory)
+  publish = "."
+  
+  # No build command needed - this is a static site
+  command = ""
+  
+  # Netlify Functions directory
+  functions = "netlify/functions"
+
+# SPA (Single Page Application) routing
+# This ensures all routes redirect to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  # Don't redirect function calls
+  conditions = {Role = ["*"]}
+  force = false
+
+# Headers for better security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Cache control for HTML (don't cache)
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/specialties/*.json"
+  [headers.values]
+    # Cache JSON files for 1 hour
+    Cache-Control = "public, max-age=3600"
+    # Allow JSON loading
+    Content-Type = "application/json; charset=utf-8"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    # Cache JavaScript for 1 day
+    Cache-Control = "public, max-age=86400"
+
+# Authentication function configuration
+[functions]
+  # Node.js version for functions
+  node_bundler = "esbuild"
+  
+  # Timeout for functions (10 seconds)
+  timeout = 10
+
+# Environment variables needed (set these in Netlify UI):
+# - SUPABASE_URL
+# - SUPABASE_SERVICE_ROLE_KEY
+# - RESEND_API_KEY
+# - APPROVED_RECRUITER_EMAILS (comma-separated list)
+# - EMAIL_FROM (e.g., noreply@pacificcompanies.com or onboarding@resend.dev)
+
+# Note: Don't commit .env file with these values!
+# Set them in: Netlify Dashboard > Site Settings > Environment Variables

@@ -1,0 +1,20 @@
+{
+  "name": "perm-recruiter-assistant-auth",
+  "version": "1.0.0",
+  "description": "Authentication system for Pacific Companies Recruiter Training Portal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "netlify",
+    "serverless",
+    "authentication"
+  ],
+  "author": "Pacific Companies",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.78.0",
+    "resend": "^3.5.0"
+  }
+}

@@ -1,0 +1,101 @@
+{
+    "name": "Hematology/Oncology",
+    "icon": "🩺",
+    "compensation": {
+        "median": "$589,102",
+        "range": "$469,122 - $751,547",
+        "percentile25": "$469,122",
+        "percentile50": "$589,102",
+        "percentile75": "$751,547"
+    },
+    "painPoints": [
+        {
+            "category": "Emotional Toll",
+            "points": [
+                "Compassion fatigue from terminal diagnoses",
+                "Emotional exhaustion from patient deaths",
+                "Burnout from delivering difficult news repeatedly",
+                "Limited time to process grief between patients"
+            ]
+        },
+        {
+            "category": "Workload Pressure",
+            "points": [
+                "Productivity pressure (RVU-based models)",
+                "High patient volumes in infusion clinics",
+                "Complex patient management without adequate support",
+                "Long hours between clinic and hospital rounds"
+            ]
+        },
+        {
+            "category": "Support Deficits",
+            "points": [
+                "Insufficient APP support for patient load",
+                "Inadequate psychosocial support for patients",
+                "Limited time for multidisciplinary coordination",
+                "Heavy call burden and emergent patient needs"
+            ]
+        }
+    ],
+    "motivations": [
+        "Better patient volume management",
+        "Improved APP/nursing support structure",
+        "Escape from RVU-driven compensation",
+        "More time per patient for quality care",
+        "Better call schedule and work-life balance",
+        "Academic vs. community practice change",
+        "Access to clinical trials and cutting-edge therapies",
+        "Multidisciplinary team collaboration"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your practice focus - more hematology, oncology, or balanced between both?",
+            "What's driving you to explore new opportunities right now?",
+            "Help me understand what you're hoping to find in your next position"
+        ],
+        "painDiscovery": [
+            "You mentioned [challenge] - help me understand how that's affecting your practice",
+            "Tell me more about what's behind your decision to look for something different",
+            "Walk me through what a typical week looks like and where the pain points are",
+            "How has [situation] been impacting you both professionally and personally?"
+        ],
+        "clinical": [
+            "What solid tumors do you treat most commonly?",
+            "Describe your experience with hematologic malignancies - both benign and malignant",
+            "Walk me through your comfort level with chemotherapy ordering and management",
+            "Share your experience with immunotherapy and targeted therapies",
+            "Tell me about your procedural skills - bone marrow biopsies, port placements, etc.",
+            "What's your clinical trial experience and comfort level?",
+            "Help me understand your typical patient volume - daily clinic census and complexity"
+        ],
+        "motivation": [
+            "When you think about your ideal practice setting, what does it look like?",
+            "What would need to be true about a position for you to get excited about it?",
+            "Help me understand your priorities - what matters most in your next move?"
+        ],
+        "compensation": [
+            "Help me understand your complete compensation structure including base, incentives, and benefits",
+            "Tell me about your financial expectations and what's driving them",
+            "When you think about compensation, what components matter most to you?"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "Patient volume too demanding", 
+            "response": "What daily census would feel sustainable while maintaining quality care?" 
+        },
+        { 
+            "challenge": "Insufficient APP support", 
+            "response": "Describe the support structure that would work best for your practice style" 
+        },
+        { 
+            "challenge": "Call requirements too heavy", 
+            "response": "Help me understand your ideal call frequency and backup coverage needs" 
+        }
+    ],
+    "challengingOpportunities": [
+        "You mentioned wanting [specific feature]. What's the underlying need that drives that preference?",
+        "I hear your concern about [objection]. If we could address the core issue differently, how flexible might you be?",
+        "Many physicians find that what they thought they wanted differs from what actually makes them happy - what's non-negotiable vs. nice-to-have?"
+    ]
+}

@@ -1,0 +1,177 @@
+{
+    "name": "Gastroenterology",
+    "icon": "🔬",
+    "compensation": {
+        "median": "$606,930",
+        "range": "$499,964 - $755,471",
+        "percentile25": "$499,964",
+        "percentile50": "$606,930",
+        "percentile75": "$755,471",
+        "workRVUs": "8,522 (median)",
+        "compensationPerRVU": "$71.62 (median)",
+        "privateVsAcademic": "Private ~$540K vs Academic ~$383K"
+    },
+    "painPoints": [
+        {
+            "category": "Administrative & EHR Burden",
+            "points": [
+                "Excessive bureaucratic tasks (#1 cause of burnout)",
+                "Overwhelming EHR documentation requirements",
+                "Nearly half report EHR is not user-friendly",
+                "Prior authorization and insurance hassles",
+                "Quality metric reporting burden",
+                "Endoscopy standards documentation requirements"
+            ]
+        },
+        {
+            "category": "Work-Life Balance Deficit",
+            "points": [
+                "13-hour workdays (8 hrs patient care + 3 hrs admin + 2 hrs work at home)",
+                "Only 4 hours of free time per day after work",
+                "Patient-related work extending into evenings",
+                "Weekend and after-hours charting",
+                "Difficulty balancing work and family life",
+                "Work-home conflicts affecting personal relationships"
+            ]
+        },
+        {
+            "category": "Procedural & Clinical Demands",
+            "points": [
+                "Increasing procedure volume and complexity",
+                "High patient load with sicker, more complex patients",
+                "Constant productivity pressure and RVU expectations",
+                "Unpredictable emergency call requirements",
+                "Procedures on higher-risk patients",
+                "Advanced procedures (ERCP) requiring high skill maintenance"
+            ]
+        },
+        {
+            "category": "Financial & Reimbursement Pressures",
+            "points": [
+                "Declining reimbursement rates",
+                "ASC (Ambulatory Surgery Center) financial uncertainties",
+                "Regulatory impact on practice revenue",
+                "Medicare payment policy changes",
+                "Competition from hospital-owned facilities",
+                "Insurance company negotiating pressures"
+            ]
+        },
+        {
+            "category": "Practice Autonomy & Support",
+            "points": [
+                "Loss of clinical autonomy",
+                "Inadequate administrative support",
+                "Insufficient APP (Advanced Practice Provider) support",
+                "Corporate-driven decision making",
+                "Lack of control over practice management",
+                "Limited say in work processes and efficiency"
+            ]
+        },
+        {
+            "category": "Career-Specific Stressors",
+            "points": [
+                "37-49% burnout rate among gastroenterologists",
+                "Younger gastroenterologists at highest risk",
+                "MOC (Maintenance of Certification) burden",
+                "64% considering early retirement or leaving practice",
+                "COVID-19 impacts on practice patterns",
+                "Fear of PPE shortages and infection exposure"
+            ]
+        }
+    ],
+    "motivations": [
+        "Better work-life balance and predictable schedule",
+        "Private practice autonomy and control",
+        "Significantly higher compensation (private vs academic)",
+        "Part-time or flexible scheduling options",
+        "Reduced administrative and bureaucratic burden",
+        "Larger group practice benefits and support",
+        "Academic teaching and research opportunities",
+        "Hospital employment for stability and benefits",
+        "\"Privademic\" hybrid models (teaching + private practice)",
+        "ASC ownership and equity opportunities",
+        "Subspecialization focus (IBD, advanced endoscopy, hepatology)",
+        "Reduced call requirements or hospitalist model",
+        "Better EHR system and technology",
+        "Improved APP support structure",
+        "Protected time for research or clinical interests",
+        "Geographic relocation or lifestyle change",
+        "Escape from solo/small practice management burden",
+        "Partnership in larger, established practice"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your current practice structure - private, academic, or hospital-employed?",
+            "What's driving you to explore new opportunities at this stage of your career?",
+            "Help me understand what you're hoping to find in your next position"
+        ],
+        "painDiscovery": [
+            "You mentioned [challenge] - walk me through how that's affecting your day-to-day",
+            "Tell me more about what led you to start looking for something different",
+            "Help me understand your typical workday - when do you start, when do you finish, and what happens in between?",
+            "How has your current administrative burden been impacting your practice satisfaction?",
+            "What aspects of your current position are contributing most to your decision to explore options?",
+            "Share with me how your work-life balance looks right now and what needs to change"
+        ],
+        "clinical": [
+            "Describe your current case mix - general GI, or more subspecialized focus?",
+            "Tell me about your procedural volume - how many days per week in the procedure suite?",
+            "Help me understand your comfort level with advanced procedures - ERCP, EUS, interventional?",
+            "What's your experience with different practice settings - ASC, hospital-based, both?",
+            "Share your thoughts on call structure - how often, what type of coverage?",
+            "Walk me through your ideal split between procedures and clinic time",
+            "Tell me about your patient population preferences - outpatient, inpatient, consultation?",
+            "How do you feel about APP collaboration and support in your practice?"
+        ],
+        "motivation": [
+            "When you think about your ideal practice environment, what does it look like?",
+            "What would need to be true about a position for you to feel excited about it?",
+            "Help me understand your top priorities in making this career move",
+            "Tell me about your long-term career goals - where do you see yourself in 5-10 years?",
+            "What aspects of gastroenterology do you find most professionally rewarding?"
+        ],
+        "compensation": [
+            "Help me understand your current compensation structure - base, productivity, benefits, the complete picture",
+            "When you think about your next position, what compensation package would make a move worthwhile?",
+            "Tell me about your financial goals and what's driving those expectations",
+            "How important is RVU-based versus salary-based compensation to you?",
+            "Share your thoughts on ASC ownership or equity participation opportunities"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "Administrative burden overwhelming", 
+            "response": "What level of administrative support and EHR system would feel manageable?" 
+        },
+        { 
+            "challenge": "Work-life balance impossible", 
+            "response": "Describe your ideal work schedule - days per week, hours, call frequency" 
+        },
+        { 
+            "challenge": "Too much general GI", 
+            "response": "Help me understand what subspecialty focus interests you - IBD, hepatology, advanced endoscopy?" 
+        },
+        { 
+            "challenge": "Compensation not adequate", 
+            "response": "Walk me through what complete compensation package would address your financial goals" 
+        },
+        { 
+            "challenge": "Lack of autonomy", 
+            "response": "Tell me about the level of clinical autonomy and decision-making authority you need" 
+        },
+        { 
+            "challenge": "Call requirements too heavy", 
+            "response": "What call structure would work for you - frequency, backup coverage, hospitalist support?" 
+        },
+        { 
+            "challenge": "Solo/small practice unsustainable", 
+            "response": "What size practice or employment model would provide the support you need?" 
+        }
+    ],
+    "challengingOpportunities": [
+        "You mentioned wanting [specific preference]. Help me understand what underlying need that solves - there might be other ways to meet that same need",
+        "I hear you prefer [practice type]. If I could address your core concern about autonomy/support/balance in a different setting, would you be open?",
+        "Many gastroenterologists find that larger group practices or privademic models solve their work-life issues while maintaining autonomy - have you explored those?",
+        "You mentioned compensation concerns. If we could structure this differently with ASC equity or productivity bonuses, how would that affect your interest?"
+    ]
+}

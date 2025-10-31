@@ -1,0 +1,338 @@
+{
+    "name": "Urology",
+    "icon": "🩺",
+    "compensation": {
+        "median": "$573,137",
+        "range": "$338,764 - $877,356",
+        "percentile25": "$462,114",
+        "percentile50": "$573,137",
+        "percentile75": "$700,000",
+        "percentile10": "$338,764",
+        "percentile90": "$877,356",
+        "workRVUs": "8,997 (median)",
+        "compensationPerRVU": "$65.77 (median)",
+        "regionalVariation": "Southern region highest median ($592,740), Eastern lowest ($541,979)",
+        "privateVsAcademic": "Private practice typically offers higher compensation with 44% receiving over $500/day for weekday call vs 7% in academic settings"
+    },
+    "painPoints": [
+        {
+            "category": "Burnout & Work-Life Balance",
+            "points": [
+                "Urology ranks among highest burnout rates (36-68% depending on region and setting)",
+                "Female urologists experiencing alarming increase in burnout from 35% (2016) to 49% (2021)",
+                "Early-career urologists (<45 years) showing increased burnout from 38% to 45%",
+                "PGY-2 residents experiencing highest burnout at 70%",
+                "48% of residents and 33% of fellows meet criteria for professional burnout",
+                "Chronic worry about patients without adequate backup or coverage",
+                "Unpredictable and intense on-call responsibilities blur work-life boundaries",
+                "Solo or small group practitioners working months without breaks including weekends",
+                "Mental fog and decision fatigue affecting clinical judgment",
+                "High rates of career choice regret among residents"
+            ]
+        },
+        {
+            "category": "Call Coverage & Workforce Shortages",
+            "points": [
+                "76% of female urologists vs 67% of male urologists required to take call to maintain hospital privileges",
+                "Call identified as most significant stressor - nearly half of urologists have considered leaving current practice due to call burden",
+                "Low urologist-to-patient ratio creating excessive workload",
+                "By 2037, urology projected to fall to only 82% adequacy - an 18% workforce gap",
+                "63% of American counties have no urologist at all",
+                "Rural urologists increasingly older than national average, suggesting younger urologists prefer urban settings",
+                "Difficulty with recruitment and succession planning, especially in rural/underserved areas",
+                "Only 31.9% of non-metropolitan urologists plan to be in same practice at same volume in 5 years",
+                "48.5% of rural urologists experience burnout at least monthly",
+                "Projected shortfall of 10,100-19,900 surgeons by 2036"
+            ]
+        },
+        {
+            "category": "Administrative Burden & Regulatory Challenges",
+            "points": [
+                "Increasing regulation, excess bureaucracy, and declining autonomy cited as major burnout factors",
+                "Increasing administrative burdens driving physicians toward hospital employment",
+                "Prior authorization delays and complexity adding significant time burden",
+                "Multiple IPA authorization systems requiring separate logins for each patient referral",
+                "EHR systems described as 'cumbersome' and 'one-size-fits-all' for subspecialty needs",
+                "Decreasing reimbursement despite increased administrative requirements",
+                "Complex CPT coding updates requiring constant education and adaptation",
+                "Barriers to accessing new technology reimbursement and coverage decisions",
+                "Time spent on non-clinical tasks reducing patient care time",
+                "Quality metrics and value-based payment adjustments adding reporting burden"
+            ]
+        },
+        {
+            "category": "Practice Structure & Consolidation Pressures",
+            "points": [
+                "Trend toward consolidation - small 1-4 physician offices merging into 6-12 person groups",
+                "Emergence of 'mega-groups' with 25+ physicians changing traditional practice models",
+                "Private equity acquisitions drastically affecting job security, quality of life, and income",
+                "Solo practice survival becoming increasingly difficult",
+                "Small business challenges: health insurance, retirement funding for employees, IT infrastructure costs ($150-200k investment)",
+                "Loss of autonomy in decision-making when employed by larger systems",
+                "Partnership opportunities decreasing as hospital employment increases",
+                "Buy-in requirements creating financial risk and barriers for new physicians",
+                "Difficulty maintaining practice independence amid healthcare system changes",
+                "Pressure to adopt ancillary services (CT scanning, labs) for practice survival"
+            ]
+        },
+        {
+            "category": "Declining Professional Status & Scope Changes",
+            "points": [
+                "Shift from robotic prostatectomy to primarily outpatient office procedures and medical management",
+                "Perceived reduction in field's prestige within healthcare hierarchy",
+                "Loss of complex surgical opportunities affecting professional satisfaction",
+                "Declining reimbursement not keeping pace with inflation or complexity",
+                "Reduced opportunities for academic advancement and research time",
+                "Increasing competition from APPs for certain procedural work",
+                "EMR documentation requirements reducing face-to-face patient time",
+                "Limited opportunities for professional development due to time constraints",
+                "Pressure to increase patient volume and RVU production",
+                "Technology requiring constant learning but implementation often poorly supported"
+            ]
+        },
+        {
+            "category": "Gender & Career Stage Disparities",
+            "points": [
+                "Female urologists less likely to be paid for weekend call (28% vs 38% for males)",
+                "Only 18% of female urologists make over $500/day for weekend call vs 32% of males",
+                "Women experiencing unique stressors in male-dominated surgical field",
+                "Early-career physicians facing challenges of learning to be attending, establishing practice, and financial pressures",
+                "Student loan debt burden affecting career and location choices",
+                "Lack of developed resiliency in new-to-practice urologists",
+                "Academic pressures for promotion and productivity creating additional stress",
+                "Mortgage and vehicle payment pressures on young physicians",
+                "Limited mentorship and support for work-life integration",
+                "Barriers to accessing medical and mental health care frequently cited by residents"
+            ]
+        },
+        {
+            "category": "Resource & Technology Limitations",
+            "points": [
+                "Limited local hospital resources in rural and community settings",
+                "Difficulty collaborating with other institutions for complex patient transfers",
+                "Inadequate access to latest robotic and surgical technology",
+                "High costs of new medical devices and inability to secure proper reimbursement",
+                "Demonstration of medical necessity required for new techniques creating documentation burden",
+                "Delay in technology adoption due to cost and training requirements",
+                "Regional disparities in access to advanced treatment modalities",
+                "Insufficient OR block time limiting surgical volume and practice growth",
+                "Limited access to multidisciplinary care teams in smaller settings",
+                "Outdated or incompatible EMR systems hindering efficiency"
+            ]
+        }
+    ],
+    "motivations": [
+        "Reduced call burden and better call schedule (most frequently cited motivation)",
+        "Less administrative hassle and reduced non-clinical responsibilities",
+        "More free time and improved work-life balance",
+        "Geographic location and lifestyle preferences (cited by 72.6% of rural urologists)",
+        "Compensation improvement - particularly moving to higher-paying regions (Midwest/Southern)",
+        "Access to better technology and resources (robotic systems, advanced imaging, lithotripsy)",
+        "Partnership in established group with financial stability",
+        "Escape from solo practice isolation and lack of backup coverage",
+        "Academic opportunities with teaching and research time protected",
+        "Access to subspecialty training and mentorship in oncology, robotics, or stone disease",
+        "Employment security without business ownership risk or buy-in requirements",
+        "Better benefit packages including retirement, health insurance, and malpractice coverage",
+        "Capital support for practice growth and expansion",
+        "Integration with health system providing referral base and patient volume",
+        "Opportunity to practice full scope of urology including complex cases",
+        "Reduced financial stress from business operations and overhead costs",
+        "Team-based care model with APP support",
+        "Work schedule flexibility and phased retirement options for late-career physicians",
+        "Signing bonuses, loan repayment programs, and relocation assistance",
+        "Professional development support and CME funding",
+        "Escape from private equity ownership concerns",
+        "Better EMR systems and IT infrastructure support",
+        "Opportunity to focus on clinical care rather than business management",
+        "Access to multidisciplinary tumor boards and specialty consultations",
+        "Lifestyle communities with better schools, outdoor recreation, and family amenities"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your current practice structure and what a typical day looks like for you",
+            "What's driving you to explore new opportunities at this point in your career?",
+            "Help me understand what you're looking for in your next position",
+            "Walk me through your current call schedule and how it's affecting your life"
+        ],
+        "painDiscovery": [
+            "You mentioned call burden - help me understand specifically how that's impacting you and your family on a daily basis",
+            "Tell me more about what led you to start looking for something different",
+            "Describe your current work-life balance and where the biggest frustrations are",
+            "How has the administrative burden been affecting your ability to practice medicine the way you want?",
+            "What impact is your current situation having on you personally and professionally?",
+            "When you think about what's not working in your current role, what comes to mind first?",
+            "Help me understand the moments in your current practice that make you think 'I can't keep doing this'",
+            "Share with me how your current call coverage is structured and what that means for your personal time"
+        ],
+        "clinical": [
+            "Describe your patient population and the types of cases you're managing regularly",
+            "Help me understand your current surgical volume and case mix",
+            "Tell me about your scope of practice - what procedures are you doing regularly vs what you'd like to be doing?",
+            "Walk me through your access to technology - robotic systems, imaging, lithotripsy - and how that affects your practice",
+            "Share your experience with specific procedures you enjoy most and those you'd prefer to refer",
+            "What's your current patient volume per day in clinic and how does that feel?",
+            "Describe your experience with urologic oncology cases - radical prostatectomies, cystectomies, nephrectomies",
+            "Help me understand your stone disease management approach and available technology",
+            "Tell me about your experience with robotic surgery and your comfort level with da Vinci systems",
+            "What's been your experience managing complex BPH cases?",
+            "Describe your approach to male infertility and erectile dysfunction cases",
+            "Share with me your experience with female urology and reconstructive procedures",
+            "Help me understand your pediatric urology experience if any",
+            "What subspecialty interests do you have - oncology, robotics, stone disease, female urology, men's health?"
+        ],
+        "motivation": [
+            "When you imagine your ideal urology practice, what does it look like?",
+            "Help me understand what would make a move worthwhile for you and your family",
+            "What are your top three priorities in evaluating a new opportunity?",
+            "Tell me about your decision-making process - what factors weigh most heavily?",
+            "Describe what better work-life balance means to you specifically",
+            "Share with me your thoughts on practice structure - employed vs partnership, single-specialty vs multispecialty",
+            "What role does call coverage play in your decision about opportunities?"
+        ],
+        "compensation": [
+            "Help me understand your complete compensation structure - base, bonuses, productivity incentives, benefits, the complete picture",
+            "When you think about your next position, what compensation package would make a move worthwhile?",
+            "Tell me about your financial goals and what's driving those expectations",
+            "Describe your current work RVU production and how compensation is structured around that",
+            "Share with me your thoughts on call pay - are you compensated separately for taking call?",
+            "Help me understand what you value most in a compensation package beyond base salary"
+        ],
+        "callCoverage": [
+            "Walk me through your current call schedule - how many nights per week, weekends per month?",
+            "Tell me about your backup coverage when you need time off or have emergencies",
+            "Describe what an ideal call schedule would look like for your life stage",
+            "Help me understand how call is currently affecting your family life and personal time",
+            "Share with me your experience with call volume - how many calls per night typically and what's the acuity?",
+            "What would need to be true about call for you to feel sustainable long-term?"
+        ],
+        "technologyAccess": [
+            "Tell me about the robotic systems you currently have access to - da Vinci Xi, Si, or single-port?",
+            "Describe your experience and comfort level with robotic-assisted surgery",
+            "Help me understand what imaging capabilities you have access to - CT, MRI fusion biopsy, PET scans?",
+            "Share with me your stone management technology - lithotripsy availability, ureteroscopy equipment, laser systems",
+            "What technology gaps are you experiencing that limit your practice?"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "Location concerns - rural or smaller community", 
+            "response": "Help me understand what specific community features matter most to you and your family - is it schools, outdoor recreation, access to amenities, proximity to major cities? What's driving your location preference?"
+        },
+        { 
+            "challenge": "Call coverage concerns", 
+            "response": "Tell me about your ideal call schedule and what would make it sustainable for you long-term. What's worked well in the past and what hasn't?"
+        },
+        { 
+            "challenge": "Compensation expectations above market", 
+            "response": "Help me understand what's driving those expectations and what trade-offs you'd consider. If we could address work-life balance, technology access, or partnership timeline exceptionally well, how would that affect your compensation requirements?"
+        },
+        { 
+            "challenge": "Wants partnership but concerned about buy-in costs", 
+            "response": "Share with me your thoughts on practice ownership versus employed models. What does partnership represent to you beyond financial investment - autonomy, decision-making, long-term security?"
+        },
+        { 
+            "challenge": "Concerned about administrative burden in private practice", 
+            "response": "Describe your tolerance for business management versus purely clinical focus. What administrative support would you need to make private practice work for you?"
+        },
+        { 
+            "challenge": "Wants to maintain academic involvement but needs better compensation", 
+            "response": "Help me understand what aspects of academic medicine are most important to you - teaching, research, prestige - and what clinical volume and compensation would justify that involvement?"
+        },
+        { 
+            "challenge": "Technology requirements - wants latest robotic systems", 
+            "response": "Tell me about which technologies are truly essential to your practice versus nice-to-have. How would access to the right technology affect your practice satisfaction?"
+        },
+        { 
+            "challenge": "Concerned about patient volume and ability to establish practice", 
+            "response": "Walk me through your thoughts on building a practice - what referral base, marketing support, and ramp-up timeline would you need? What patient volume would feel sustainable?"
+        },
+        {
+            "challenge": "Worried about solo practice or inadequate backup",
+            "response": "Share with me your ideal group size and coverage model. What's been your experience with backup coverage and what would you need to feel supported?"
+        },
+        {
+            "challenge": "Burnout from current position - needs immediate change",
+            "response": "Help me understand what specifically needs to be different in your next role to prevent the same situation. What boundaries or changes are non-negotiable for your wellbeing?"
+        }
+    ],
+    "challengingOpportunities": [
+        "I hear you prefer [specific location]. Help me understand what NEED that location solves for you - whether it's schools, lifestyle, family proximity, or something else - because there might be other communities that meet those same needs in ways you haven't considered",
+        "You mentioned wanting [specific call schedule]. If I could show you how a different call model actually gives you more predictable free time and better backup coverage, would you be open to exploring that structure?",
+        "Many urologists find that what they thought they wanted in practice structure differs from what actually makes them happy long-term. What's truly non-negotiable versus nice-to-have in your ideal opportunity?",
+        "You said partnership is important. Help me understand what partnership represents to you - is it financial upside, autonomy, or something else? Sometimes employed models with strong medical directorship roles offer similar benefits without the business risk",
+        "I hear the compensation number is critical. Walk me through what's driving that - loan repayment, family needs, retirement planning? Sometimes we can address the underlying need in creative ways beyond just base salary",
+        "You mentioned technology access is a priority. If I could show you a practice that has exceptional technology but requires relocating to a smaller community, what would that conversation look like?",
+        "Many burned-out urologists discover that reducing call and administrative burden matters more than they initially thought compared to other factors. If you could only optimize two things in your next role, what would they be?"
+    ],
+    "subspecialtyNotes": {
+        "urologic oncology": {
+            "prevalence": "66% of urologists identify oncology as area of subspecialization",
+            "procedures": "Radical prostatectomy (76.7% use robotics), radical cystectomy, partial/radical nephrectomy, RPLND",
+            "trends": "Shift toward minimally invasive approaches, robotic platforms, focal therapies, precision medicine with biomarkers",
+            "challenges": "High complexity cases requiring multidisciplinary teams, academic vs community practice models differ significantly"
+        },
+        "endourology & stone disease": {
+            "prevalence": "Major subspecialty focus with dedicated fellowship programs",
+            "procedures": "Ureteroscopy with laser lithotripsy, PCNL, ESWL, management of complex stone disease",
+            "trends": "Thulium fiber laser adoption, robotic-assisted ureteroscopy, improved stone dusting techniques, outpatient PCNL",
+            "challenges": "High volume requirements, on-call burden for emergency cases, technology costs"
+        },
+        "robotics": {
+            "prevalence": "39.8% identify robotics as area of subspecialization, 76.7% use robotics for prostatectomy",
+            "systems": "da Vinci Xi/Si most common, newer da Vinci 5 and single-port systems emerging",
+            "trends": "Expansion beyond prostatectomy to cystectomy, pyeloplasty, partial nephrectomy; augmented reality integration; telesurgery capabilities",
+            "challenges": "Credentialing requirements, OR time competition, steep learning curve, system maintenance costs"
+        },
+        "female urology/reconstructive": {
+            "procedures": "Slings, prolapse repair, urethral reconstruction, neurogenic bladder management",
+            "trends": "Increasing demand, overlap with urogynecology, minimally invasive techniques",
+            "challenges": "Underserved area with growing patient population"
+        },
+        "male infertility & erectile dysfunction": {
+            "procedures": "Vasectomy reversal, varicocelectomy, penile prosthesis, Peyronie's treatment",
+            "trends": "Low-intensity shockwave therapy (LISWT), genetic testing, precision approaches",
+            "challenges": "Often lower reimbursement, cash-pay component, requires specific interest and training"
+        },
+        "pediatric urology": {
+            "procedures": "Hypospadias repair, orchiopexy, pyeloplasty, VUR management",
+            "trends": "Increasing robotic approaches, minimally invasive techniques",
+            "challenges": "Limited number of practitioners, often requires academic setting or large groups"
+        }
+    },
+    "practiceSettings": {
+        "private practice": {
+            "advantages": "Higher income potential (44% paid >$500 for weekday call vs 7% academic), autonomy, control over practice decisions, potential for partnership/ownership",
+            "challenges": "Administrative burden, business risk, buy-in costs, EMR/IT infrastructure investment, declining autonomy amid consolidation",
+            "trends": "Consolidation into larger groups (6-12+), private equity acquisitions, shift toward employment"
+        },
+        "hospital employed": {
+            "advantages": "Less administrative hassle, better work-life balance, capital for technology, job security, IT/EMR support",
+            "challenges": "Less autonomy, compensation tied to RVU metrics, one-size-fits-all systems, administrative duties without protected time",
+            "trends": "Increasing proportion choosing employment especially new graduates, multispecialty integration"
+        },
+        "academic": {
+            "advantages": "Teaching opportunities, research time, resident support, complex case referrals, intellectual stimulation",
+            "challenges": "Lower compensation, call burden often heavier, promotion pressures, administrative responsibilities",
+            "trends": "30% of urologists in academic settings, struggling to compete with private practice compensation"
+        },
+        "rural/underserved": {
+            "advantages": "High patient demand, community impact, lifestyle attractions, less competition",
+            "challenges": "Call burden significant (48.5% burn out monthly), limited resources, difficulty recruiting partners, professional isolation",
+            "trends": "Aging workforce, younger urologists preferring urban settings, 63% of counties without urologist"
+        }
+    },
+    "recruiterTips": {
+        "openingStrategy": "Lead with work-life balance and call schedule conversation - these are the #1 and #2 drivers for considering change, ahead of compensation",
+        "painDiscoveryFocus": "Dig deep on call burden and administrative hassle - these are the primary burnout drivers. Ask about coverage models, backup availability, and time away from practice",
+        "genderAwareness": "Female urologists experiencing dramatically higher burnout rates and compensation disparities. Show understanding of work-life integration challenges and family considerations",
+        "careerStageMatters": "Early career (<45) showing increased burnout. They need mentorship, partnership track clarity, and realistic expectations about practice building vs late-career seeking reduced call and flexible schedules",
+        "technologyQuestions": "Robotic access and training is critical - 76.7% use robotics for prostatectomy. Ask about current access and comfort level. Technology gaps significantly affect practice satisfaction",
+        "callCoverageDetails": "Get specifics: nights per week, weekends per month, call volume, acuity level, backup availability. This is the #1 make-or-break factor. Rural practices especially struggle here",
+        "practiceStructureExploration": "Understand their tolerance for business management. Many want to escape administrative burden but also value autonomy. Employed positions with medical director roles can bridge this gap",
+        "subspecialtyAlignment": "66% identify oncology as subspecialty area, 39.8% robotics. Understand their focus and ensure opportunity matches. Misalignment in case mix is a significant dissatisfier",
+        "ruralOpportunityApproach": "For rural positions, lead with lifestyle and geography (72.6% cite this as attraction). Be honest about call burden but emphasize practice building support and community impact",
+        "compensationTiming": "Don't lead with money - it ranks third behind work-life balance and less administrative hassle. Discover financial goals in context of lifestyle priorities",
+        "burnoutAwareness": "If physician mentions fatigue, decision paralysis, or chronic worry, these are red flags for burnout. They need immediate change, not just opportunity exploration. Focus on what must be different to prevent recurrence"
+    }
+}

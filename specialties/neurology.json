@@ -1,0 +1,265 @@
+{
+    "name": "Neurology",
+    "icon": "🧠",
+    "compensation": {
+        "median": "$369,011",
+        "range": "$247,711 - $600,027",
+        "percentile25": "$315,652",
+        "percentile50": "$369,011",
+        "percentile75": "$446,457",
+        "percentile90": "$600,027",
+        "mean": "$406,610",
+        "workRVUs": "5,059 (median); Range: 2,413 (10th) - 9,431 (90th percentile)",
+        "compensationPerRVU": "$70.19 (median); Range: $43.99 (10th) - $158.65 (90th percentile)",
+        "privateVsAcademic": "Private Practice ~$370k vs Hospital-Employed ~$344k vs Academic ~$315k",
+        "subspecialtyVariations": "Neurohospitalists/Neurocritical Care highest ~$350-400k, Epilepsy/Behavioral lowest ~$298-320k, Stroke/Vascular ~$345-365k",
+        "regionalVariation": "Midwest highest $374,509 median, Eastern lowest $352,217 median (2025 MGMA data)"
+    },
+    "painPoints": [
+        {
+            "category": "Administrative Burden & EHR Overload",
+            "points": [
+                "Spending 2 hours on EHR and desk work for every 1 hour of direct patient care",
+                "Average of 18 hours per week dedicated to paperwork and administrative tasks",
+                "Complex neurologic exam documentation requirements not well-supported by most EHR systems",
+                "Excessive inbox management with patient portal messages requiring detailed responses",
+                "Prior authorization requirements consuming significant time for imaging, procedures, and medications",
+                "Poor EHR interoperability making it difficult to access outside records and imaging",
+                "Medicare and insurance reporting requirements creating additional documentation layers"
+            ]
+        },
+        {
+            "category": "Burnout & Work-Life Balance Crisis",
+            "points": [
+                "60% of neurologists experiencing at least one burnout symptom - second-highest rate among all specialties",
+                "High emotional exhaustion from dealing with progressive, life-altering neurologic conditions",
+                "Psychological trauma from caring for patients with conditions affecting their very essence and personality",
+                "Only 67% would choose neurology again despite 88% finding the work meaningful",
+                "Chronic stress from managing complex, high-stakes conditions with significant morbidity and mortality",
+                "Poor work-life balance compared to other specialties, ranking worst among medical fields",
+                "Limited recovery time between demanding hospital shifts and outpatient clinics"
+            ]
+        },
+        {
+            "category": "Call Coverage & Availability Demands",
+            "points": [
+                "24/7 stroke coverage requirements with expectation for immediate ED availability",
+                "Excessive nights on call per week correlating directly with burnout risk",
+                "Growing pressure to provide continuous inpatient coverage while maintaining outpatient practice",
+                "Hospital expectations for neurologists to be available for emergent consults within minutes",
+                "Difficulty finding call coverage partners leading to excessive personal call burden",
+                "Sleep deprivation from frequent nighttime stroke activations and ICU consults",
+                "Weekend and holiday coverage demands interfering with family time and personal life"
+            ]
+        },
+        {
+            "category": "Patient Volume & Practice Pressure",
+            "points": [
+                "Severe shortage with only ~14,000 active neurologists serving entire US population (57,000 people per neurologist)",
+                "Projected 73% increase in national neurologist shortfall by 2025",
+                "Excessive outpatient volumes (25-30+ patients per day) to maintain productivity targets",
+                "Complex patients requiring 45-60 minute appointments scheduled in 20-minute slots",
+                "High no-show rates creating schedule chaos and revenue pressure",
+                "Increasing demand from aging population with more strokes, dementia, and neurodegenerative diseases",
+                "Pressure to see more patients while quality metrics demand more time per patient"
+            ]
+        },
+        {
+            "category": "Financial & Reimbursement Challenges",
+            "points": [
+                "Compensation among the lowest for medical specialties despite high complexity and long training",
+                "Declining Medicare reimbursement rates not keeping pace with practice costs",
+                "Significant student loan debt (~$200-300k average) with relatively lower earning potential",
+                "RVU-based compensation models not adequately valuing complex cognitive work",
+                "10+ years of training before reaching terminal salary (4 years med school, 3 years residency, 3+ years fellowship)",
+                "Hospital fair market value caps limiting compensation despite high demand",
+                "Private practice profitability challenges due to rising overhead costs and declining reimbursement"
+            ]
+        },
+        {
+            "category": "Autonomy & Professional Satisfaction",
+            "points": [
+                "Loss of autonomy with increasing hospital employment and administrative oversight",
+                "Feeling like a cog in corporate healthcare machine rather than independent physician",
+                "Limited control over schedule, patient volume, and clinical decision-making",
+                "Administrators making clinical decisions without understanding neurology complexity",
+                "Pressure to use hospital-owned imaging centers and refer to hospital-employed specialists",
+                "Inability to practice medicine the way they were trained due to system constraints",
+                "Lack of support staff and resources while being held to high productivity standards"
+            ]
+        },
+        {
+            "category": "Clinical Complexity & Emotional Toll",
+            "points": [
+                "Caring for patients with devastating, progressive neurologic conditions affecting personality and cognition",
+                "High rates of diagnostic uncertainty requiring extensive workups and difficult conversations",
+                "Delivering life-altering diagnoses (ALS, MS, Alzheimer's, etc.) with limited treatment options",
+                "Managing family expectations when disease progression is inevitable",
+                "Emotional burden of caring for young stroke patients and traumatic brain injuries",
+                "Limited satisfaction from 'wins' compared to surgical specialties - more management than cures",
+                "Dealing with challenging behavioral symptoms in dementia and encephalopathy patients"
+            ]
+        },
+        {
+            "category": "Practice Setting Dissatisfaction",
+            "points": [
+                "Hospital employment restrictions on practice style and clinical freedom",
+                "Academic positions offering meaningful work but significantly lower compensation",
+                "Private practice requiring both clinical and business management skills with rising overhead",
+                "Lack of effective support staff to handle administrative tasks and patient communications",
+                "Inadequate resources for complex diagnostic testing and specialty consultations",
+                "Geographic isolation in rural areas without subspecialty support or coverage partners",
+                "Toxic workplace cultures with poor leadership and lack of physician input"
+            ]
+        },
+        {
+            "category": "Subspecialty-Specific Challenges",
+            "points": [
+                "Epilepsy: Managing refractory seizures with limited effective medications and challenging compliance issues",
+                "Stroke: Pressure of time-critical decision-making with significant malpractice risk",
+                "Movement Disorders: Slow titration of medications requiring frequent adjustments and patient frustration",
+                "Neuromuscular: Long appointment times needed for detailed EMG/NCS studies affecting schedule flow",
+                "Headache: High patient volumes with difficult-to-treat chronic conditions and medication overuse",
+                "Neurohospitalist: Shift work with unpredictable census and 24-hour availability requirements",
+                "Cognitive/Behavioral: Emotionally draining work with limited treatment options for progressive dementia"
+            ]
+        }
+    ],
+    "motivations": [
+        "Desire for better work-life balance with predictable schedule and protected personal time",
+        "Seeking reduced call burden with better coverage arrangements and equitable distribution",
+        "Looking for lower administrative burden with better EHR support and adequate staff",
+        "Want to focus on specific subspecialty interest rather than general neurology",
+        "Escaping toxic work environment with poor leadership or unsupportive colleagues",
+        "Seeking higher compensation to address student loans or improve financial security",
+        "Desire for more clinical autonomy and independence in medical decision-making",
+        "Looking for academic affiliation with teaching opportunities and intellectual stimulation",
+        "Want location change for family reasons or better quality of life",
+        "Seeking hospital employment for stability and benefits without call burden",
+        "Transitioning from private practice to eliminate business management responsibilities",
+        "Desire to practice in a supportive, collegial environment with strong team culture",
+        "Looking for stroke center affiliation or comprehensive neurologic resources",
+        "Want better EMR system and technology tools to improve efficiency",
+        "Seeking position with protected time for research, quality improvement, or education",
+        "Desire for more manageable patient volumes with appropriate appointment times",
+        "Looking for practice with strong APP support to extend clinical reach",
+        "Want better compensation structure with fair RVU thresholds and production bonuses",
+        "Seeking geographic location with access to outdoor activities and lifestyle amenities",
+        "Desire for neurohospitalist role to eliminate outpatient and call responsibilities",
+        "Looking to transition out of hospital coverage into pure outpatient practice",
+        "Want partnership track or ownership opportunity in established practice",
+        "Seeking temporary locum tenens work for flexibility and higher hourly rates"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your current practice structure - are you hospital-employed, private practice, or academic, and how is that working for you?",
+            "Walk me through a typical week in your current role - what does your schedule look like and where are the biggest challenges?",
+            "What's driving you to explore new opportunities at this point in your career?",
+            "Help me understand your current mix of inpatient, outpatient, call coverage, and any administrative responsibilities"
+        ],
+        "painDiscovery": [
+            "You mentioned [specific pain point] - help me understand how that's affecting you on a daily basis and what impact it's having",
+            "Tell me more about what led you to start looking for something different - what was the tipping point?",
+            "Describe your call coverage situation - how many nights per week, what's the patient volume, and how is that impacting your life?",
+            "Walk me through your administrative burden - hours in the EHR, prior authorizations, inbox management - where does your time actually go?",
+            "Help me understand your patient volume expectations - how many patients per day in clinic, and how does that feel compared to what you need for quality care?",
+            "What's been your experience with burnout or work-life balance issues in your current role?",
+            "Tell me about the autonomy you have in clinical decision-making - do you feel supported or micromanaged?",
+            "Describe your relationship with hospital administration or practice leadership - how well do they understand the realities of neurology practice?"
+        ],
+        "clinical": [
+            "Tell me about your subspecialty training and areas of clinical interest - what aspects of neurology do you most enjoy?",
+            "Describe your patient population - what percentage general neurology versus subspecialty focused?",
+            "Help me understand your inpatient versus outpatient split - what's your preference and what are you currently doing?",
+            "Walk me through your stroke coverage experience - comprehensive center, telestroke, primary stroke center, or no stroke coverage?",
+            "Share your experience with EMG/NCS, EEG interpretation, or other procedures - what's your comfort level and interest?",
+            "Tell me about your experience as a neurohospitalist or with dedicated inpatient coverage",
+            "Describe your comfort level with neurocritical care and managing ICU patients",
+            "What movement disorder experience do you have - Parkinson's, deep brain stimulation, botox clinics?",
+            "Share your epilepsy experience - general seizure management or more specialized refractory epilepsy and monitoring unit?",
+            "Help me understand your cognitive/behavioral neurology experience and interest in dementia care"
+        ],
+        "motivation": [
+            "When you imagine your ideal practice, what does it look like - walk me through a typical day that would feel fulfilling",
+            "Help me understand what would make a move worthwhile for you - what are your top three priorities?",
+            "Tell me about your decision-making process for evaluating opportunities - what factors weigh most heavily?",
+            "Describe what work-life balance means to you specifically - what does that look like in practical terms?",
+            "What type of practice setting appeals to you most and why - academic, hospital-employed community, private practice?",
+            "Help me understand your call coverage preferences - what frequency feels sustainable long-term?",
+            "Share your thoughts on compensation versus lifestyle trade-offs - where's your comfort zone?",
+            "Tell me about your interest in teaching, research, or clinical quality improvement activities"
+        ],
+        "compensation": [
+            "Help me understand your complete current compensation structure - base salary, productivity bonuses, call stipends, benefits - the full picture",
+            "Describe how your productivity is measured - RVU-based, collections-based, or straight salary?",
+            "Tell me about your student loan situation and how that factors into your financial goals",
+            "When you think about your next position, what compensation package would make a move worthwhile?",
+            "Help me understand your financial priorities - is it base salary security, upside potential, loan repayment, or a combination?",
+            "Share your thoughts on productivity expectations - what RVU threshold or patient volume feels sustainable while maintaining quality?",
+            "Describe your experience with productivity bonuses - have you been able to earn them, and were the thresholds realistic?"
+        ],
+        "searchStatus": [
+            "Tell me about other opportunities you're exploring - what's attractive about each?",
+            "Help me understand your timeline - are you actively interviewing or early in your search?",
+            "Describe what would your current employer need to do to keep you - is there any scenario where you'd stay?",
+            "Share with me how you're evaluating and comparing different opportunities - what's your decision framework?",
+            "Have you discussed making a change with your family - what are their thoughts and concerns?",
+            "Tell me about how long you've been considering a change - what prompted you to start looking now?",
+            "What other opportunities have you seen or interviewed for so far - what did you like or not like about them?"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "I need at least $400k base salary, and I know that's higher than average", 
+            "response": "Help me understand what's driving that expectation - is it student loans, lifestyle needs, or market research you've done? If I could show you a position that addressed your underlying needs in a different way, how flexible might you be on that number?" 
+        },
+        { 
+            "challenge": "I only want to do outpatient neurology with zero call coverage", 
+            "response": "That makes sense given burnout rates from call. Help me understand what specifically about call is most problematic - is it frequency, patient volume, lack of support, or something else? Understanding the 'why' helps me find solutions you might not have considered" 
+        },
+        { 
+            "challenge": "I'm burned out and need a complete change from what I'm doing now", 
+            "response": "Walk me through specifically what's causing the burnout - is it volume, call, administrative burden, lack of autonomy? I want to make sure your next position actually solves those problems rather than just changing the scenery" 
+        },
+        { 
+            "challenge": "I need to stay in major metropolitan area only - I won't consider anything else", 
+            "response": "Tell me what the metropolitan area provides that's essential for you and your family - is it schools, culture, family proximity, or something else? Sometimes we can solve those same needs in locations physicians haven't considered" 
+        },
+        { 
+            "challenge": "I want stroke only, no general neurology patients", 
+            "response": "Help me understand your stroke experience and what specifically draws you to it versus general neurology. What percentage stroke versus general would feel right? Understanding this helps me identify the best fits" 
+        },
+        { 
+            "challenge": "I need a practice that uses Epic EMR - I won't learn another system", 
+            "response": "Tell me about your experience with Epic and what specifically works well for you with that system. What are the must-have features versus nice-to-haves? This helps me understand if it's truly about Epic or about good EHR functionality" 
+        },
+        { 
+            "challenge": "I'm not interested in employed positions - only true private practice", 
+            "response": "Help me understand what aspects of private practice appeal to you - autonomy, compensation model, practice culture? And what concerns do you have about employed positions? There's actually a spectrum between these models that might address what you're really seeking" 
+        },
+        { 
+            "challenge": "I need partnership track with ownership potential", 
+            "response": "Share with me what partnership and ownership mean to you - is it about long-term financial security, having a voice in practice decisions, or something else? Understanding the underlying need helps me identify the right opportunities" 
+        },
+        {
+            "challenge": "I want a neurohospitalist position with 7 on/7 off schedule only",
+            "response": "Tell me what appeals to you about that specific schedule versus other shift patterns. Help me understand your priorities - is it the concentrated work periods, the predictability, the time off, or all of the above? This helps me identify positions that truly match your lifestyle goals"
+        },
+        {
+            "challenge": "I need a position without any EMG or EEG responsibilities",
+            "response": "Help me understand your experience with those procedures and what makes them less appealing. Is it time commitment, reimbursement, skill level, or preference? Knowing this helps me find the right clinical scope match"
+        }
+    ],
+    "challengingOpportunities": [
+        "You mentioned you prefer [specific location]. Help me understand what NEED that location solves for you and your family - because there might be other communities that meet those same needs that you haven't considered yet",
+        "I hear you want [specific subspecialty only]. What if I could show you a position where you do primarily that work but with some general neurology mixed in - would that be worth exploring if the overall package was compelling?",
+        "You said you need minimal call coverage. Help me understand what 'minimal' means to you numerically - once a month, once a week? And what if the call volume was very low or well-supported - would that change your thinking?",
+        "Many neurologists think they want pure outpatient until they realize the volume required to maintain productivity targets. Have you thought about mixing some inpatient work that actually gives you more control of your time?",
+        "You mentioned needing to stay hospital-employed for benefits. What if I showed you a private practice with comparable benefits plus higher compensation and more autonomy - would that be worth considering?",
+        "I hear you want academic medicine for the intellectual stimulation. What if I could find you a community hospital with strong teaching relationships and research opportunities without the academic salary constraints?",
+        "You said compensation is your top priority. If I could show you a position that addressed your work-life balance issues so dramatically that you could work more years without burning out, how would that factor into compensation expectations?",
+        "Many neurologists want comprehensive stroke centers until they experience the 24/7 demands. Help me understand if you're looking for stroke volume or stroke expertise support - those are different things",
+        "You mentioned wanting perfect work-life balance. What if I told you that your burnout might be more about how you work than where you work - would you be open to exploring positions with better systems and support even if the hours were similar?",
+        "I hear you need [specific EMR system]. The reality is that EMR frustration usually comes from poor implementation and lack of support rather than the system itself. Would you be open to great practices with other well-supported EMR systems?"
+    ]
+}

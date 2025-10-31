@@ -1,0 +1,106 @@
+{
+    "name": "Family Medicine",
+    "icon": "👨‍⚕️",
+    "compensation": {
+        "median": "$311,557",
+        "range": "$264,982 - $372,477",
+        "percentile25": "$264,982",
+        "percentile50": "$311,557",
+        "percentile75": "$372,477"
+    },
+    "painPoints": [
+        {
+            "category": "Administrative Burden",
+            "points": [
+                "Overwhelming EHR documentation requirements",
+                "Prior authorization consuming 2-3 hours daily",
+                "Excessive paperwork vs. patient care time",
+                "Quality metric reporting burden"
+            ]
+        },
+        {
+            "category": "Work-Life Balance",
+            "points": [
+                "Too many patient encounters (25-30+ daily)",
+                "Inadequate time per patient visit",
+                "Evening/weekend charting requirements",
+                "Burnout from unrealistic expectations"
+            ]
+        },
+        {
+            "category": "Practice Autonomy",
+            "points": [
+                "Loss of clinical autonomy and decision-making",
+                "Corporate-driven productivity quotas (RVU pressure)",
+                "Inadequate staffing and support",
+                "Inability to practice full-spectrum care"
+            ]
+        }
+    ],
+    "motivations": [
+        "Better work-life balance with controlled schedule",
+        "More time per patient for quality care",
+        "Reduced administrative burden",
+        "Escape from RVU/productivity pressure",
+        "Return to patient-centered practice",
+        "Geographic relocation or lifestyle change",
+        "Desire for practice ownership or partnership",
+        "Escape from corporate medicine"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your current practice structure and what a typical day looks like for you",
+            "What's driving you to explore new opportunities at this point in your career?",
+            "Help me understand what you're looking to change or improve in your next position"
+        ],
+        "painDiscovery": [
+            "You mentioned [pain point] - help me understand how that's affecting you on a daily basis",
+            "When you think about what needs to change, what comes to mind first?",
+            "Tell me more about what led you to start looking for something different",
+            "Walk me through a typical week - where are the biggest frustrations?",
+            "How has [situation] been impacting you personally and professionally?"
+        ],
+        "clinical": [
+            "Describe your patient population - age range, complexity, typical conditions",
+            "Help me understand your current patient volume - how many do you see daily?",
+            "Tell me about your scope of practice - pediatrics, women's health, geriatrics?",
+            "What's your experience and comfort level with OB - prenatal care, deliveries, or no OB?",
+            "Walk me through your procedural skills - suturing, joint injections, minor procedures?",
+            "Share your thoughts on hospital privileges and inpatient responsibilities"
+        ],
+        "motivation": [
+            "When you imagine your ideal practice, what does it look like?",
+            "Help me understand what would make a move worthwhile for you",
+            "What are your top three priorities in evaluating a new opportunity?",
+            "Tell me about your decision-making process - what factors weigh most heavily?"
+        ],
+        "compensation": [
+            "Help me understand your current compensation structure - base, bonuses, benefits, the complete picture",
+            "When you think about your next position, what compensation package would make a move worthwhile?",
+            "Tell me about your financial goals and what's driving those expectations"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "Patient volume still too high", 
+            "response": "What patient volume would feel sustainable for providing quality care?" 
+        },
+        { 
+            "challenge": "Too much OB required", 
+            "response": "Help me understand your comfort level with women's health - what would work for you?" 
+        },
+        { 
+            "challenge": "Location too rural", 
+            "response": "What specific community features are most important for you and your family?" 
+        },
+        { 
+            "challenge": "EMR system unfamiliar", 
+            "response": "Tell me about your learning curve with new EMR systems in the past" 
+        }
+    ],
+    "challengingOpportunities": [
+        "I hear you prefer [preference]. Help me understand what NEED that solves for you - there might be other ways to meet that same need",
+        "You mentioned avoiding [location type]. If I could address your underlying concern through a different approach, would you be open to exploring it?",
+        "Most physicians I talk to start with similar parameters and end up accepting positions that don't match their initial criteria - what matters more to you, the label or the actual quality of life?"
+    ]
+}

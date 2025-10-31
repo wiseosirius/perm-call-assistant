@@ -1,0 +1,157 @@
+{
+    "name": "OB/GYN - General",
+    "icon": "👶",
+    "compensation": {
+        "median": "$399,519",
+        "range": "$332,598 - $488,761",
+        "percentile25": "$332,598",
+        "percentile50": "$399,519",
+        "percentile75": "$488,761",
+        "workRVUs": "7,231 (median)",
+        "compensationPerRVU": "$56.83 (median)"
+    },
+    "painPoints": [
+        {
+            "category": "Unpredictable Hours & Liability",
+            "points": [
+                "Unpredictable call for labor & deliveries 24/7",
+                "High malpractice liability stress",
+                "Constant fear of litigation (\"perfect baby\" pressure)",
+                "Can be called at any hour when patients go into labor",
+                "No control over timing of patient needs"
+            ]
+        },
+        {
+            "category": "Workload & Time Pressure",
+            "points": [
+                "Heavy patient volume with less time per patient",
+                "Long hours split between clinic and hospital",
+                "RVU/productivity pressure",
+                "Standardized care limiting individualized approach",
+                "Seeing more patients in less time",
+                "Administrative burden with EHR documentation"
+            ]
+        },
+        {
+            "category": "Post-Dobbs Legal Environment",
+            "points": [
+                "Legal uncertainty around abortion care",
+                "Moral injury from restricted evidence-based care",
+                "Fear of license loss or legal prosecution",
+                "Forced to delay care or consult attorneys",
+                "Complex, confusing state-specific restrictions",
+                "Physicians relocating due to restrictive state laws"
+            ]
+        },
+        {
+            "category": "Emotional Toll",
+            "points": [
+                "Dealing with pregnancy loss and fetal anomalies",
+                "Emotional exhaustion from difficult cases",
+                "Compassion fatigue",
+                "Limited time to process grief between patients",
+                "Stillbirths and delivering babies with lethal anomalies",
+                "High emotional intensity of care during critical life stages"
+            ]
+        },
+        {
+            "category": "Work-Life Balance Challenges",
+            "points": [
+                "Difficulty maintaining work-life balance",
+                "Gender disparity challenges (80%+ female specialty)",
+                "Dual-career household coordination",
+                "Family time disrupted by unpredictable schedule",
+                "Female physicians 60% more likely to report burnout",
+                "Higher rates of reducing hours or taking time off (especially women <40)"
+            ]
+        }
+    ],
+    "motivations": [
+        "Better work-life balance with predictable schedule",
+        "Escape from unpredictable call obligations",
+        "OB hospitalist model (shift-based, no personal call)",
+        "Reduced liability exposure and litigation stress",
+        "More time per patient for quality care",
+        "Practice autonomy and control over patient care",
+        "Geographic relocation (post-Dobbs or lifestyle)",
+        "Clinical focus change (GYN-only, less/no OB)",
+        "Academic vs. community practice transition",
+        "Better APP/nursing support structure",
+        "Locum tenens flexibility",
+        "Private practice ownership opportunity",
+        "Compensation improvement and benefits",
+        "Student loan repayment assistance",
+        "More time with family",
+        "Multidisciplinary team environment"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your current practice - what's your mix of OB versus GYN?",
+            "What's driving you to explore new opportunities at this point in your career?",
+            "Help me understand what you're hoping to find in your next position"
+        ],
+        "painDiscovery": [
+            "You mentioned [challenge] - help me understand how that's affecting your day-to-day",
+            "Tell me more about what led you to start looking for something different",
+            "Walk me through a typical week - where are the biggest pain points?",
+            "How has your call schedule been impacting you and your family?",
+            "What's your experience been with the post-Dobbs legal environment in your state?",
+            "Help me understand what aspects of your current situation need to change"
+        ],
+        "clinical": [
+            "Describe your OB volume - how many deliveries per month are you comfortable with?",
+            "Tell me about your comfort level with high-risk OB versus low-risk",
+            "Help me understand your GYN scope - office procedures, surgery preferences?",
+            "What's your experience with gynecologic surgery - minimally invasive, robotics?",
+            "Share your thoughts on call structure - what would be ideal for you?",
+            "Walk me through your patient volume expectations - daily clinic census?",
+            "Tell me about your interest in areas like adolescent GYN, menopause, urogynecology",
+            "How do you feel about hospital privileges versus ambulatory-only practice?"
+        ],
+        "motivation": [
+            "When you think about your ideal practice, what does it look like?",
+            "What would need to be true about a position for you to get excited about it?",
+            "Help me understand your priorities in making this next career move",
+            "Tell me about your long-term career goals - where do you see yourself in 5 years?",
+            "What aspects of OB/GYN do you find most rewarding?"
+        ],
+        "compensation": [
+            "Help me understand your current compensation structure - base, productivity bonus, benefits",
+            "When you think about your next position, what compensation package would make a move worthwhile?",
+            "Tell me about your financial goals and what's driving those expectations",
+            "How important is RVU-based versus salary-based compensation to you?"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "Call schedule too demanding", 
+            "response": "Describe your ideal call structure - frequency, backup coverage, hospitalist support?" 
+        },
+        { 
+            "challenge": "Want to reduce/eliminate OB", 
+            "response": "Help me understand what mix of OB versus GYN would be ideal - GYN-only, or just lower OB volume?" 
+        },
+        { 
+            "challenge": "Post-Dobbs legal concerns", 
+            "response": "What states or practice settings would you feel most comfortable in legally?" 
+        },
+        { 
+            "challenge": "Volume too high", 
+            "response": "What daily patient volume would feel sustainable for the quality of care you want to provide?" 
+        },
+        { 
+            "challenge": "Liability stress overwhelming", 
+            "response": "Tell me about your ideal practice environment for reducing liability exposure" 
+        },
+        { 
+            "challenge": "Work-life balance impossible", 
+            "response": "Walk me through your ideal work schedule - days per week, weekends, time with family" 
+        }
+    ],
+    "challengingOpportunities": [
+        "You mentioned wanting [specific preference]. Help me understand what underlying need that solves - there might be other ways to meet that same need",
+        "I hear you prefer avoiding [aspect]. If I could address your core concern through a different approach, would you be open to exploring it?",
+        "Many OB/GYNs find that the hospitalist model or GYN-focused practice solves their work-life balance issues - have you considered those options?",
+        "You mentioned geographic restrictions - what if we could find the lifestyle you want in a location you hadn't considered?"
+    ]
+}
