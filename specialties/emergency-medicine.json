@@ -1,0 +1,146 @@
+{
+  "name": "Emergency Medicine (Hospital, Freestanding & Urgent Care)",
+  "icon": "\ud83d\ude91",
+  "compensation": {
+    "median": "$397,648",
+    "range": "$343,877 - $462,050",
+    "percentile25": "$343,877",
+    "percentile50": "$397,648",
+    "percentile75": "$462,050",
+    "workRVUs": "7,207 (median)",
+    "compensationPerRVU": "$56.09 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "Staffing & APP Utilization",
+      "points": [
+        "High patient volumes with fewer board-certified EM physicians on shift",
+        "Increased reliance on APPs without consistent supervision ratios or protocols",
+        "Concerns over patient safety and liability in APP-heavy staffing models",
+        "Difficulty recruiting and retaining nurses, techs, and scribes",
+        "Pressure to cover additional shifts due to national physician shortages"
+      ]
+    },
+    {
+      "category": "Throughput & Boarding",
+      "points": [
+        "ED boarding leading to crowding, increased LWBS (left without being seen) rates",
+        "Hospitalist and inpatient bed shortages delaying admissions",
+        "Lengthy diagnostic turnaround times (CT, lab, imaging) extending door-to-disposition metrics",
+        "Unrealistic throughput expectations from administration without system-wide fixes",
+        "EM physicians held accountable for delays beyond their control"
+      ]
+    },
+    {
+      "category": "Compensation & Contract Stability",
+      "points": [
+        "Declining hourly rates and RVU compression with corporate staffing models",
+        "Contract turnover and loss of democratic group structures",
+        "Inconsistent stipend support for medical directorship or leadership duties",
+        "Opaque productivity formulas that don\u2019t reflect patient complexity or acuity",
+        "Increased malpractice risk without proportional compensation adjustment"
+      ]
+    },
+    {
+      "category": "Work-Life Balance & Burnout",
+      "points": [
+        "Irregular shift schedules and circadian disruption from night rotations",
+        "Extended shifts due to patient surges and inadequate relief coverage",
+        "Frequent exposure to high-acuity trauma and behavioral health crises",
+        "Emotional exhaustion compounded by staffing shortages and administrative oversight",
+        "Desire for flexibility (part-time, tele-triage, or hybrid urgent care models)"
+      ]
+    },
+    {
+      "category": "Operational & Administrative Friction",
+      "points": [
+        "EMRs slowing workflow and increasing charting time per patient",
+        "Administrative micromanagement focused on metrics (door-to-doc, LWBS, Press Ganey)",
+        "Lack of physician input in operational or staffing decisions",
+        "Understaffed ancillary departments (radiology, lab, transport) delaying throughput",
+        "Limited escalation pathways when safety concerns arise"
+      ]
+    }
+  ],
+  "motivations": [
+    "Predictable scheduling and shift control (block scheduling, 12s or 9s)",
+    "Stable physician-led group structure with transparent governance",
+    "Fair compensation for acuity, throughput, and leadership roles",
+    "Adequate APP, nursing, and scribe support to improve workflow and safety",
+    "Balanced APP utilization with clear supervision expectations",
+    "Opportunities for medical directorship, quality, or operational leadership",
+    "Modern ED infrastructure\u2014efficient layout, imaging access, updated EHRs",
+    "Freestanding or urgent care roles with fewer nights and manageable acuity",
+    "Hybrid or tele-triage options for work-life balance",
+    "Commitment from administration to address throughput and boarding",
+    "Geographic or lifestyle-driven relocation for family or community fit",
+    "Professional respect, autonomy, and reduced administrative interference"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current ED setup\u2014hospital, freestanding, or hybrid?",
+      "What\u2019s motivating you to explore new opportunities right now?",
+      "What are the key things you\u2019d like to change in your next role?"
+    ],
+    "painDiscovery": [
+      "You mentioned [pain point]\u2014how does that impact your daily shift flow or morale?",
+      "How has staffing (APPs, nurses, scribes) changed your workload recently?",
+      "What challenges are you seeing with throughput and patient boarding?",
+      "What support or process changes would make your shifts more manageable?",
+      "If you could redesign your department\u2019s operations tomorrow, what would you change first?"
+    ],
+    "clinical": [
+      "What is your typical shift structure\u2014number of patients per hour or total encounters per shift?",
+      "Do you currently work alongside APPs, and what supervision model is used?",
+      "What\u2019s your comfort level with trauma, pediatrics, or OB cases?",
+      "How many shifts do you typically work per month, and what\u2019s your ideal number?",
+      "Do you prefer hospital-based, freestanding, or urgent care environments?",
+      "Tell me about your experience with EHR systems\u2014what works well and what doesn\u2019t?",
+      "How involved are you in department leadership, QA, or process improvement?",
+      "What level of autonomy or governance involvement is important to you?"
+    ],
+    "motivation": [
+      "When you picture your ideal EM position, what stands out\u2014schedule, team structure, or compensation?",
+      "What would make a move clearly worthwhile for you and your family?",
+      "Rank your top three priorities: compensation stability, lifestyle, leadership, location, culture.",
+      "What factors would make you stay long-term once you find the right fit?"
+    ],
+    "compensation": [
+      "Walk me through your current compensation\u2014hourly, RVU-based, or hybrid model?",
+      "What hourly or annual rate would feel right given your experience and workload?",
+      "Would you consider a slightly lower rate for a lighter schedule or improved work environment?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "The ED is consistently understaffed and unsafe.",
+      "response": "What ideal physician-to-patient ratio and APP support would make your shifts feel sustainable?"
+    },
+    {
+      "challenge": "APPs are being used without proper supervision or oversight.",
+      "response": "What supervision structure or governance would ensure safe, collaborative practice for you?"
+    },
+    {
+      "challenge": "Patient boarding and throughput issues are constant.",
+      "response": "What hospital-side changes or throughput metrics would need to improve to make your job more manageable?"
+    },
+    {
+      "challenge": "My compensation keeps decreasing despite higher volume.",
+      "response": "What mix of base, hourly, and leadership stipends would feel more equitable?"
+    },
+    {
+      "challenge": "Shift work and nights are wearing me down.",
+      "response": "What schedule model\u2014block shifts, reduced nights, or freestanding work\u2014would improve your lifestyle?"
+    },
+    {
+      "challenge": "Corporate management doesn\u2019t listen to physicians.",
+      "response": "What level of physician-led decision-making or ownership would restore your confidence in leadership?"
+    }
+  ],
+  "challengingOpportunities": [
+    "You mentioned burnout\u2014if a group offered flexible scheduling with guaranteed staffing support, would that restore balance for you?",
+    "If throughput is the biggest issue, would a facility with dedicated flow coordinators and boarding reduction initiatives address that pain?",
+    "If compensation is the concern, would a stable hourly model with leadership stipends and transparent bonuses appeal to you?",
+    "You said APP oversight is frustrating\u2014if the next organization had physician-led supervision protocols and governance, would that meet your standards?"
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "name": "Otolaryngology (ENT) - General",
+  "icon": "\ud83d\udc42",
+  "compensation": {
+    "median": "$527,477",
+    "range": "$439,507 - $656,578",
+    "percentile25": "$439,507",
+    "percentile50": "$527,477",
+    "percentile75": "$656,578",
+    "workRVUs": "8,171 (median)",
+    "compensationPerRVU": "$69.24 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "Clinic & OR Throughput",
+      "points": [
+        "High clinic volumes with limited time for comprehensive evaluations (sinus/voice/dizziness)",
+        "OR block scarcity and turnover delays limiting surgical access and growth",
+        "In-office procedure scheduling bottlenecks (scope, turbinate reduction, ET dilation)",
+        "Backlog for audiology and vestibular testing delaying care plans"
+      ]
+    },
+    {
+      "category": "Call Burden & Urgent Cases",
+      "points": [
+        "Unpredictable ED consults (epistaxis, peritonsillar abscess, airway) extending workdays",
+        "Pediatric add-ons and after-hours emergencies affecting work-life balance",
+        "Variable cross-coverage with head & neck or facial trauma adding intensity",
+        "Limited post-call recovery in smaller groups"
+      ]
+    },
+    {
+      "category": "Staffing & Ancillary Services",
+      "points": [
+        "Insufficient audiology/allergy staffing leading to patient leakage",
+        "Lack of dedicated scope techs or image-capture/documentation support",
+        "Challenges recruiting experienced ENT RNs/MAs familiar with procedures",
+        "Inconsistent support for hearing aid sales, VNG, and vestibular rehab"
+      ]
+    },
+    {
+      "category": "Compensation & Alignment",
+      "points": [
+        "RVU targets not calibrated to case mix or in-office procedures",
+        "Opaque credit for allergy testing/IT or hearing aid revenue",
+        "Limited stipends for medical directorships (allergy, audiology, clinic lead)",
+        "Mismatch between call burden and compensation"
+      ]
+    },
+    {
+      "category": "Administrative & EHR",
+      "points": [
+        "Documentation burden for scoping and procedure notes",
+        "Prior auth hurdles for CT sinus, imaging, and advanced meds",
+        "Quality metrics and registry reporting competing with clinical time",
+        "Multiple EHRs across clinic and hospital settings"
+      ]
+    }
+  ],
+  "motivations": [
+    "Predictable clinic templates with protected procedure blocks",
+    "Adequate OR block time and efficient turnover processes",
+    "Robust audiology and allergy programs to support comprehensive care",
+    "Transparent compensation for in-office procedures and ancillary contributions",
+    "Balanced call schedules with post-call recovery",
+    "Updated equipment (endoscopes, towers, image capture, microdebriders) and capital support",
+    "Opportunities for leadership (Clinic Lead, Medical Director of Audiology/Allergy)",
+    "Geographic and school considerations for family",
+    "Teaching opportunities with residents/APPs and ENT service-line development",
+    "EHR optimization, scribes, and documentation tools to reduce after-hours work"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current ENT practice\u2014clinic/OR mix and typical case spectrum.",
+      "What\u2019s driving you to explore new opportunities right now?",
+      "What changes would make your next role feel like a clear upgrade?"
+    ],
+    "painDiscovery": [
+      "You mentioned [pain point]\u2014how does that show up during a typical clinic or OR day?",
+      "Where are your biggest bottlenecks\u2014OR access, audiology/allergy capacity, or staffing?",
+      "How does call (ED consults, pediatric add-ons) impact your schedule and recovery time?",
+      "What tools or staffing would meaningfully reduce your documentation burden?",
+      "If you could fix one operational process tomorrow, what would it be and why?"
+    ],
+    "clinical": [
+      "Scope: adult vs pediatric mix; common procedures (T&A, septoplasty, FESS, thyroid/parathyroid, ear surgery).",
+      "In-office procedures: nasal endoscopy/laryngoscopy, turbinate reduction, eustachian tube dilation\u2014what\u2019s your comfort and volume?",
+      "Audiology integration: hearing aids, CI referrals, VNG; what support do you need?",
+      "Typical clinic volume and ideal template; desired OR block days per week?",
+      "Comfort with head & neck cases and trauma call expectations?",
+      "Preference for personally performing versus supervising APPs; team composition that works best for you?",
+      "Interest in leadership roles (clinic, allergy, audiology) or program-building (voice, sleep, sinus centers)?",
+      "How do you prefer to handle post-op care and complex chronic ENT conditions (CRSwNP, Meniere\u2019s, LPR)?"
+    ],
+    "motivation": [
+      "When you picture your ideal ENT practice, what stands out\u2014OR time, clinic flow, or ancillary support?",
+      "What would make a move clearly worthwhile for you and your family in the next 12\u201324 months?",
+      "Rank your top three priorities: schedule predictability, compensation transparency, program resources, location, leadership.",
+      "Which trade-offs are acceptable (e.g., slightly higher volume for better OR access or leadership opportunities)?"
+    ],
+    "compensation": [
+      "Walk me through your current compensation\u2014base, wRVU plan, procedure credit, and any ancillary revenue share.",
+      "How should in-office procedures, allergy testing/IT, and hearing aid contributions be recognized?",
+      "What mix of base, productivity, and stipends would feel equitable given call and program leadership?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "OR access is too limited for my surgical volume.",
+      "response": "How many block days and what turnover targets would allow you to meet your surgical goals?"
+    },
+    {
+      "challenge": "Call and ED consults are burning me out.",
+      "response": "What call cadence and post-call recovery would feel sustainable, and how should compensation reflect that?"
+    },
+    {
+      "challenge": "Audiology and allergy capacity can\u2019t keep up with clinic demand.",
+      "response": "What staffing and equipment would let you manage demand and reduce leakage?"
+    },
+    {
+      "challenge": "Compensation doesn\u2019t reflect my in-office procedures or ancillary contributions.",
+      "response": "Which elements\u2014procedure credit, allergy, hearing aid revenue\u2014should be explicitly included in your plan?"
+    },
+    {
+      "challenge": "Documentation takes too much time after hours.",
+      "response": "Which supports\u2014scribes, templates, image capture\u2014would meaningfully reduce your charting load?"
+    },
+    {
+      "challenge": "I want to keep a general practice without heavy subspecialty call.",
+      "response": "What case mix and call structure would maintain breadth while staying sustainable for you?"
+    }
+  ],
+  "challengingOpportunities": [
+    "You prefer outpatient-heavy\u2014if we guarantee OR block with efficient turnover, would that balance your surgical goals and lifestyle?",
+    "If call is the major pain point, would defined ED consult windows and true post-call relief make a difference?",
+    "If compensation transparency is key, would explicit crediting for in-office procedures and ancillaries meet your needs?",
+    "You mentioned limited audiology/allergy capacity\u2014if we build those services with staffing and equipment, would that solve the underlying bottleneck?"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+    "name": "Certified Registered Nurse Anesthetist (CRNA)",
+    "icon": "💉",
+    "compensation": {
+        "median": "$256,389",
+        "range": "$200,804 - $343,278",
+        "percentile25": "$224,996",
+        "percentile50": "$256,389",
+        "percentile75": "$291,796"
+    },
+    "painPoints": [
+        {
+            "category": "Burnout & Work Stress",
+            "points": [
+                "Over 60% report moderate to high stress levels",
+                "Primary causes: staffing shortages, last-minute schedule changes, limited recovery time",
+                "Emotional exhaustion from high-stakes patient care",
+                "10% substance abuse rate (higher than average American job)",
+                "Younger CRNAs at highest burnout risk",
+                "Cultural stigma around seeking mental health support"
+            ]
+        },
+        {
+            "category": "Call Burden & Scheduling",
+            "points": [
+                "Unpredictable call requirements and last-minute changes",
+                "Limited recovery time between cases",
+                "Long hours including nights, weekends, holidays",
+                "Difficulty planning personal life around call schedule",
+                "76% of female CRNAs required to take call vs 67% male"
+            ]
+        },
+        {
+            "category": "Autonomy & Supervision Constraints",
+            "points": [
+                "Physician supervision requirements in non-opt-out states",
+                "Limited independent practice authority (varies by state)",
+                "Restriction to practice under physician orders in some states",
+                "Conflict between training/capability and regulatory restrictions",
+                "Hospital bylaws may restrict practice even in opt-out states"
+            ]
+        },
+        {
+            "category": "Administrative & Communication Issues",
+            "points": [
+                "Lack of feedback from administration",
+                "Poor CRNA-administration relationships",
+                "Limited voice in decision-making",
+                "Inadequate support staff and resources",
+                "Work prioritized over personal responsibilities"
+            ]
+        },
+        {
+            "category": "Work-Life Balance Deficit",
+            "points": [
+                "Conflict between work demands and personal life",
+                "Pressure to work overtime",
+                "Student loan debt burden ($100k-$200k typical)",
+                "Difficulty maintaining work-life boundaries",
+                "High-stakes environment with limited recovery time"
+            ]
+        }
+    ],
+    "motivations": [
+        "Greater practice autonomy and independence",
+        "Better work-life balance and predictable schedule",
+        "Relocation to opt-out state for independent practice",
+        "Higher compensation and financial security",
+        "Reduced call burden and more manageable schedule",
+        "Skill variety and professional development opportunities",
+        "Escape from toxic administration or poor leadership",
+        "Better administrative support and feedback",
+        "Flexible scheduling options (part-time, locum tenens)",
+        "Geographic move for lifestyle or family reasons",
+        "Rural practice opportunities with full autonomy",
+        "ASC or office-based practice vs. hospital setting"
+    ],
+    "keyQuestions": {
+        "opening": [
+            "Tell me about your current practice setting - hospital, ASC, office-based?",
+            "What's driving you to explore new opportunities right now?",
+            "Help me understand your current anesthesia delivery model - are you working independently or with supervision?"
+        ],
+        "painDiscovery": [
+            "You mentioned [pain point] - walk me through how that's affecting your day-to-day practice",
+            "Tell me more about what led you to start looking for something different",
+            "Describe your typical work week - hours, call schedule, case load",
+            "Help me understand your call coverage - frequency, predictability, backup support",
+            "What aspects of your current position are contributing most to your decision to explore options?",
+            "Share with me how your work-life balance looks right now and what needs to change"
+        ],
+        "clinical": [
+            "Walk me through your case mix - what types of procedures and specialties?",
+            "Tell me about your patient population - inpatient, outpatient, trauma, pediatrics?",
+            "Describe your comfort level with different anesthesia techniques - general, regional, sedation",
+            "Help me understand your procedural skills - nerve blocks, arterial lines, epidurals?",
+            "Share your experience with different practice settings you've worked in",
+            "What's your average daily case volume and how does that feel?",
+            "Tell me about your experience working independently versus in a team model"
+        ],
+        "motivation": [
+            "When you think about your ideal practice environment, what does it look like?",
+            "What would need to be true about a position for you to get excited about it?",
+            "Help me understand your top priorities in making this career move",
+            "Describe what better work-life balance means to you specifically",
+            "Tell me about your thoughts on practice autonomy - how important is independent practice to you?"
+        ],
+        "compensation": [
+            "Help me understand your current compensation structure - base, call pay, bonuses, benefits",
+            "When you think about your next position, what compensation package would make a move worthwhile?",
+            "Tell me about your financial priorities - base security, upside potential, loan repayment?",
+            "Share with me how call coverage factors into your compensation expectations"
+        ]
+    },
+    "commonChallenges": [
+        { 
+            "challenge": "Only want to work in opt-out state for independent practice", 
+            "response": "Help me understand what independent practice means to you - is it the autonomy, the billing, or the lack of supervision? Sometimes non-opt-out states offer more autonomy than you'd expect" 
+        },
+        { 
+            "challenge": "Call burden too heavy in current position", 
+            "response": "Walk me through your ideal call schedule - frequency, predictability, backup coverage. What would make call manageable?" 
+        },
+        { 
+            "challenge": "Compensation expectations above market", 
+            "response": "Help me understand what's driving those expectations. If we could address work-life balance or autonomy exceptionally well, how would that affect your compensation flexibility?" 
+        },
+        { 
+            "challenge": "Want ASC only, no hospital work", 
+            "response": "Tell me what appeals about ASC practice versus hospital - predictability, hours, case types? What would need to be true about a hospital position to consider it?" 
+        },
+        { 
+            "challenge": "Burned out and need immediate change", 
+            "response": "Help me understand what specifically needs to be different - call schedule, volume, leadership, autonomy? I want your next position to actually solve those problems" 
+        },
+        {
+            "challenge": "Must stay in major metropolitan area",
+            "response": "Share what the metro area provides that's essential - family, culture, spouse's job? Sometimes smaller communities near metros offer the best of both worlds"
+        }
+    ],
+    "challengingOpportunities": [
+        "You mentioned preferring [specific location/setting]. Help me understand what NEED that solves - there might be other opportunities meeting those same needs you haven't considered",
+        "I hear you want independent practice only. What if I could show you a supervised model with exceptional autonomy, great support, and better compensation - would that be worth exploring?",
+        "You said minimal call coverage. Help me understand what 'minimal' means numerically. What if call volume was very low with great backup - would that change your thinking?",
+        "Many CRNAs think they want ASC-only until they realize hospital work offers more variety and professional growth. Have you considered a mixed model?",
+        "You mentioned needing to stay in [non-opt-out state]. What if the practice gave you essentially independent function despite the regulatory requirement - would that address your concern?",
+        "You said work-life balance is your top priority. If I showed you a position with that balance but requiring relocation to a great community, what would that conversation look like?"
+    ]
+}

@@ -1,0 +1,141 @@
+{
+  "name": "Cardiology - Interventional (PCI + Structural)",
+  "icon": "\ud83e\udec0",
+  "compensation": {
+    "median": "$795,493",
+    "range": "$642,421 - $989,659",
+    "percentile25": "$642,421",
+    "percentile50": "$795,493",
+    "percentile75": "$989,659",
+    "workRVUs": "11,184 (median)",
+    "compensationPerRVU": "$68.05 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "Call, Coverage & Throughput",
+      "points": [
+        "STEMI call intensity and off-hours PCI volumes driving fatigue and burnout",
+        "Unpredictable add-on cases and prolonged lab days impacting work-life balance",
+        "Cath lab turnover delays and limited room availability bottleneck throughput",
+        "Competition for lab time with other services (EP/structural) causing scheduling conflicts",
+        "Limited ICU/step-down bed availability delaying complex PCI or post-procedure care"
+      ]
+    },
+    {
+      "category": "Program Infrastructure & Resources",
+      "points": [
+        "Insufficient access to advanced devices for complex PCI (atherectomy, microcatheters, MCS)",
+        "Gaps in structural heart program (limited TAVR/TEER days, device availability, or imaging support)",
+        "Inadequate heart team coordination (CT surgery, imaging, anesthesia) slowing case growth",
+        "Lack of protected time for QI, conference, and case review",
+        "Older imaging equipment (IVUS/OCT) reducing diagnostic confidence and outcomes"
+      ]
+    },
+    {
+      "category": "Risk, Safety & Quality",
+      "points": [
+        "Radiation exposure and ortho strain from lead use over long careers",
+        "Pressure to push borderline cases due to access or revenue targets",
+        "Inconsistent protocols for MCS, anticoagulation, and contrast nephropathy risk",
+        "Challenging transfer workflows for high-risk PCI or structural candidates"
+      ]
+    },
+    {
+      "category": "Compensation & Alignment",
+      "points": [
+        "Compensation not aligned with STEMI call burden or complex case mix",
+        "Misalignment between wRVU targets and lab capacity/resources",
+        "Opaque distribution of structural case credit across the heart team",
+        "Stipend uncertainty for medical directorships or call coverage"
+      ]
+    },
+    {
+      "category": "Career Trajectory & Lifestyle",
+      "points": [
+        "Desire to balance high-acuity work with teaching/research or admin leadership",
+        "Limited pathways for growth into Program/Service Line Director roles",
+        "Geographic or school-system needs for family",
+        "Interest in reducing nights/weekends after years of heavy STEMI coverage"
+      ]
+    }
+  ],
+  "motivations": [
+    "Predictable STEMI call rotation with equitable compensation and post-call recovery",
+    "Robust cath lab infrastructure: modern imaging (IVUS/OCT), MCS (Impella/IABP/ECMO) access, skilled staff",
+    "Established structural heart program with adequate block time and device portfolio (TAVR, TEER, LAAC, PFO)",
+    "Clear wRVU and structural crediting models with leadership stipends",
+    "Supportive heart team culture with CT surgery, imaging (TEE/CT/ICE), and anesthesia alignment",
+    "Protected time for quality, conferences, and case review",
+    "Opportunities for program-building and medical directorship",
+    "Geographic relocation or lifestyle improvement for family",
+    "Academic/community balance\u2014teaching opportunities with stable compensation",
+    "Capital investment commitments and growth plan for the service line"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current interventional practice\u2014lab days, clinic days, and call coverage.",
+      "What\u2019s motivating you to explore new roles at this point in your career?",
+      "What needs to change in your next position for it to feel like a clear upgrade?"
+    ],
+    "painDiscovery": [
+      "You mentioned [pain point]. Walk me through how that affects your week in the lab and at home.",
+      "Where do you see the biggest bottlenecks\u2014room availability, staffing, imaging, or post-procedure beds?",
+      "How are STEMI activations and after-hours cases impacting your schedule and recovery time?",
+      "What resources or protocols would meaningfully improve safety and outcomes for your cases?",
+      "If you could fix one cath lab process tomorrow, what would it be and why?"
+    ],
+    "clinical": [
+      "Describe your PCI scope: radial vs femoral approach, complex/high-risk PCI, CTO, atherectomy.",
+      "Comfort with hemodynamic support (IABP, Impella, ECMO) and criteria for escalation?",
+      "Annual PCI volume and desired lab days; typical clinic template and follow-up cadence?",
+      "Structural experience: TAVR, TEER/MitraClip, LAAC/Watchman, PFO/ASD closures\u2014roles (primary, imager, co-surgeon)?",
+      "Imaging tools used: IVUS, OCT, FFR/iFR, ICE, TEE; preferred vendors and must-haves?",
+      "STEMI call expectations\u2014current frequency, double-call scenarios, and post-call relief?",
+      "Interest in leadership: Cath Lab/Structural Director, heart team governance, QI initiatives?",
+      "Experience with multidisciplinary case conferences and heart team pathways?"
+    ],
+    "motivation": [
+      "When you picture your ideal interventional/structural practice, what stands out\u2014case mix, call, or leadership?",
+      "What would make a move clearly worthwhile for you and your family in the next 12\u201324 months?",
+      "Rank your top three priorities: call predictability, compensation, program resources, location, leadership.",
+      "Which trade-offs (e.g., fewer lab days for leadership, heavier lab time for top compensation) are acceptable?"
+    ],
+    "compensation": [
+      "Walk me through your current compensation\u2014base, wRVU plan, call stipends, directorships, and bonus mechanics.",
+      "What compensation model (salary + productivity + stipends) would feel fair given your call and procedural scope?",
+      "How should complex PCI and structural heart case credit be recognized in your bonus plan?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "STEMI call is too heavy where I am.",
+      "response": "What call cadence would feel sustainable, and would guaranteed post-call recovery or back-up coverage change the equation?"
+    },
+    {
+      "challenge": "Lab resources limit my ability to do complex PCI.",
+      "response": "Which specific tools or protocols (IVUS/OCT, atherectomy, MCS access) are must-haves to deliver your best outcomes?"
+    },
+    {
+      "challenge": "Structural time is scarce\u2014I can\u2019t build volume.",
+      "response": "How much block time and which devices do you need, and what\u2019s the ideal mix of PCI vs structural each week?"
+    },
+    {
+      "challenge": "Compensation doesn\u2019t reflect my case complexity and call burden.",
+      "response": "Help me understand the mix of base, wRVU, call pay, and directorship stipends that would make this feel right."
+    },
+    {
+      "challenge": "Too many nights/weekends are impacting my family.",
+      "response": "If we adjusted call distribution and added protected weekends, what would an ideal schedule look like?"
+    },
+    {
+      "challenge": "Governance is opaque and slows program growth.",
+      "response": "What decision rights or leadership role would enable you to drive safety, quality, and growth in the lab?"
+    }
+  ],
+  "challengingOpportunities": [
+    "You prefer fewer STEMI nights\u2014if we secure equitable call and guaranteed post-call time, would that achieve the predictability you\u2019re looking for?",
+    "You\u2019re focused on PCI\u2014if structured block time for TAVR/TEER with robust imaging support existed, would expanding structural align with your goals?",
+    "Top-end salary is important\u2014if a balanced plan adds leadership stipend, reliable block time, and MCS access, does that better meet your underlying needs?",
+    "If lab throughput is the pain, would standardized pathways (radial-first, IVUS-first, QI huddles) plus added staff solve the core issue?"
+  ]
+}

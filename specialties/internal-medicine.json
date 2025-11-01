@@ -1,0 +1,146 @@
+{
+  "name": "Internal Medicine - General (Outpatient + Inpatient)",
+  "icon": "\ud83e\ude7a",
+  "compensation": {
+    "median": "$314,450",
+    "range": "$262,218 - $376,046",
+    "percentile25": "$262,218",
+    "percentile50": "$314,450",
+    "percentile75": "$376,046",
+    "workRVUs": "5,736 (median)",
+    "compensationPerRVU": "$54.87 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "Workload & Patient Volume",
+      "points": [
+        "High patient volumes with limited appointment time per visit",
+        "Excessive panel sizes reducing ability to deliver comprehensive care",
+        "Limited administrative or MA support for rooming, refills, and paperwork",
+        "Hospitalist workloads exceeding sustainable daily encounters",
+        "Short turnaround between discharges, admits, and follow-up responsibilities"
+      ]
+    },
+    {
+      "category": "EMR & Administrative Burden",
+      "points": [
+        "Documentation overload and after-hours charting (\u201cpajama time\u201d)",
+        "Frequent EMR clicks, inbox management, and prescription refill queues",
+        "Multiple EHR transitions or poorly integrated systems across hospital and clinic",
+        "Time-consuming prior authorizations and insurance paperwork",
+        "Quality metrics and coding demands reducing focus on patient care"
+      ]
+    },
+    {
+      "category": "Compensation & Productivity",
+      "points": [
+        "RVU-based pay not aligned with panel complexity or time spent per patient",
+        "Bonuses tied to quality metrics that are difficult to influence directly",
+        "Opaque compensation formulas and lack of transparency in incentive plans",
+        "Hospitalist shifts or nocturnist premiums not reflecting intensity of workload",
+        "Discrepancy between inpatient and outpatient pay for similar time commitments"
+      ]
+    },
+    {
+      "category": "Work-Life Balance",
+      "points": [
+        "Long days with charting spilling into evenings or weekends",
+        "Limited flexibility for part-time or 4-day workweeks",
+        "Excessive call or weekend coverage in smaller practices",
+        "Difficulty taking uninterrupted vacation due to patient continuity concerns",
+        "Burnout driven by administrative overload and emotional fatigue"
+      ]
+    },
+    {
+      "category": "Practice Infrastructure & Support",
+      "points": [
+        "Insufficient staffing (RNs, MAs, front office) leading to inefficiency",
+        "Lack of integrated behavioral health or care coordination support",
+        "Limited access to subspecialists or diagnostic testing in community settings",
+        "Inconsistent rounding or handoff systems for hospitalist teams",
+        "Pressure to see more patients without operational investment"
+      ]
+    }
+  ],
+  "motivations": [
+    "More sustainable patient volumes and manageable panel size",
+    "Protected administrative time and improved documentation support",
+    "Greater work-life balance with predictable schedules and reduced call",
+    "Transparent compensation plans tied to fairness and achievable metrics",
+    "Strong nursing and ancillary staff support to improve efficiency",
+    "Access to integrated behavioral health and care coordination resources",
+    "Geographic relocation for family or lifestyle reasons",
+    "Hybrid or hospitalist model with clear expectations and continuity plans",
+    "Opportunity for leadership (Chief of Medicine, Quality, or Medical Director roles)",
+    "Culture that values quality over quantity and physician well-being",
+    "Opportunities for teaching residents or medical students",
+    "Employer investment in updated technology, EHR optimization, and workflow tools"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current practice setup\u2014outpatient, inpatient, or a mix of both?",
+      "What\u2019s motivating you to explore new opportunities at this point in your career?",
+      "What are the key changes you\u2019d like to see in your next position?"
+    ],
+    "painDiscovery": [
+      "You mentioned [pain point]\u2014walk me through how that impacts your day-to-day schedule.",
+      "Where do you feel the biggest inefficiencies\u2014in staffing, scheduling, or support systems?",
+      "How has EMR workload affected your time with patients or family?",
+      "What kind of administrative or documentation support would make your job more sustainable?",
+      "If you could change one aspect of your current setup, what would it be and why?"
+    ],
+    "clinical": [
+      "What\u2019s your typical daily patient volume and ideal target?",
+      "Do you manage chronic care panels or primarily focus on acute visits?",
+      "For inpatient or hybrid roles, what\u2019s your average daily census and shift structure?",
+      "How do you prefer to structure call coverage and patient handoffs?",
+      "What support staff ratios (MAs, RNs) help you function most effectively?",
+      "What\u2019s your comfort level with procedures (joint injections, paracentesis, central lines, etc.)?",
+      "Are teaching or leadership opportunities important to you in your next position?",
+      "How do you prefer to collaborate with specialists and care coordination teams?"
+    ],
+    "motivation": [
+      "When you picture your ideal internal medicine practice, what stands out?",
+      "What balance between clinical and administrative work feels sustainable for you?",
+      "Which is most important\u2014schedule predictability, compensation, or patient continuity?",
+      "What would make a new opportunity feel like a clear improvement over your current role?"
+    ],
+    "compensation": [
+      "Walk me through your current compensation model\u2014base, wRVU, bonuses, and benefits.",
+      "How do you feel about your current balance of compensation versus workload?",
+      "What structure\u2014salary, RVU-based, or hybrid\u2014would feel most fair and motivating?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "I\u2019m burned out from excessive charting and EMR time.",
+      "response": "What EMR tools or support (scribes, templates, automation) would meaningfully reduce that burden for you?"
+    },
+    {
+      "challenge": "My patient volume is too high to deliver quality care.",
+      "response": "What panel size or daily volume feels sustainable without sacrificing quality?"
+    },
+    {
+      "challenge": "Compensation doesn\u2019t reflect my workload or complexity.",
+      "response": "What metrics or structure\u2014RVUs, quality bonuses, or hybrid\u2014would better align with your effort?"
+    },
+    {
+      "challenge": "I\u2019m looking for better work-life balance.",
+      "response": "What schedule model\u20144-day week, reduced call, or hybrid\u2014would create that balance for you?"
+    },
+    {
+      "challenge": "We\u2019re short-staffed and it\u2019s affecting patient care.",
+      "response": "What support ratios (MAs, RNs) or operational investments would make the biggest difference in your day?"
+    },
+    {
+      "challenge": "I don\u2019t feel heard by administration.",
+      "response": "What kind of leadership culture or communication structure would make you feel more supported?"
+    }
+  ],
+  "challengingOpportunities": [
+    "You mentioned wanting fewer hours\u2014if we structured your schedule around protected admin time or 4-day weeks, would that achieve your goal?",
+    "You prefer outpatient-only\u2014if a hybrid model offered predictable rounding and shared call, would that balance your needs?",
+    "If compensation is a top priority, would a wRVU plan with guaranteed base plus quality bonuses appeal to you?",
+    "If burnout is the main driver, would strong ancillary support and EHR optimization tools make a meaningful difference?"
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "name": "Psychiatry - General (Adult Inpatient & Outpatient)",
+  "icon": "\ud83e\udde0",
+  "compensation": {
+    "median": "$327,430",
+    "range": "$258,293 - $394,452",
+    "percentile25": "$258,293",
+    "percentile50": "$327,430",
+    "percentile75": "$394,452",
+    "workRVUs": "3,918 (median)",
+    "compensationPerRVU": "$78.83 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "Patient Volume & Caseload",
+      "points": [
+        "High patient load with limited time per encounter, leading to rushed evaluations",
+        "Overbooked schedules for medication management visits with minimal support",
+        "Growing complexity of cases (dual diagnosis, treatment-resistant depression, comorbidities)",
+        "Insufficient time for therapy or psychosocial interventions",
+        "Administrative pressure to increase productivity despite burnout risks"
+      ]
+    },
+    {
+      "category": "Staffing & Support",
+      "points": [
+        "Limited access to therapists, case managers, and social workers for coordinated care",
+        "Shortage of psychiatric nurses and APPs, increasing physician burden",
+        "Delayed access to inpatient beds and crisis stabilization resources",
+        "Fragmented discharge planning processes impacting continuity of care"
+      ]
+    },
+    {
+      "category": "Compensation & Productivity",
+      "points": [
+        "Compensation not aligned with time spent on complex cases and documentation",
+        "RVU-based models discouraging adequate session length for complex patients",
+        "No credit for non-billable duties such as family meetings or care coordination",
+        "Opaque or inconsistent bonus metrics tied to throughput or satisfaction scores"
+      ]
+    },
+    {
+      "category": "Work-Life Balance & Burnout",
+      "points": [
+        "Emotional exhaustion from high-acuity or chronic patients",
+        "Limited schedule flexibility for personal wellness or family obligations",
+        "Call demands and consults after hours impacting recovery time",
+        "Increased administrative work due to medication pre-authorizations",
+        "Insufficient mental health resources even for providers themselves"
+      ]
+    },
+    {
+      "category": "Operational Challenges",
+      "points": [
+        "EHR documentation redundancy and slow systems reducing efficiency",
+        "Inconsistent communication between psychiatry, primary care, and specialists",
+        "Limited telepsychiatry infrastructure or technical support",
+        "Pressure to see more patients without additional staff or workflow improvements"
+      ]
+    }
+  ],
+  "motivations": [
+    "Predictable schedule with manageable patient volumes",
+    "Balanced workload between med management and therapeutic time",
+    "Access to interdisciplinary team support (therapists, social work, case managers)",
+    "Transparent compensation aligned with clinical complexity and quality care",
+    "Reduced administrative burden and optimized EMR tools",
+    "Opportunities for leadership (Medical Director, Chief of Psychiatry, QI roles)",
+    "Hybrid telepsychiatry and on-site work options",
+    "Stable inpatient or outpatient focus with clear expectations",
+    "Culture prioritizing physician wellness and burnout prevention",
+    "Geographic relocation or family lifestyle improvement",
+    "Opportunities for teaching or resident supervision",
+    "Adequate call coverage and support for crisis situations"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current psychiatric practice\u2014outpatient, inpatient, or a combination?",
+      "What\u2019s motivating you to explore new opportunities right now?",
+      "What are the top changes you\u2019d like to see in your next role?"
+    ],
+    "painDiscovery": [
+      "You mentioned [pain point]\u2014how is that affecting your daily schedule and patient interactions?",
+      "Where do you experience the most friction\u2014documentation, patient load, or staffing gaps?",
+      "How has your call or consult volume impacted your ability to recharge?",
+      "What kind of support (therapists, APPs, case managers) would make the biggest difference for you?",
+      "If you could change one operational process tomorrow, what would it be and why?"
+    ],
+    "clinical": [
+      "Describe your typical patient mix\u2014depression, anxiety, bipolar, psychosis, dual-diagnosis, etc.",
+      "How many patients do you typically see per day, and what\u2019s your ideal workload?",
+      "Do you currently manage both med management and therapy, or primarily pharmacologic care?",
+      "Tell me about your call schedule\u2014how often and what type of coverage is expected?",
+      "What\u2019s your comfort level with telepsychiatry and virtual patient management?",
+      "How do you handle crisis stabilization, involuntary holds, or inpatient transitions?",
+      "What does your interdisciplinary team look like, and what improvements would you like to see?",
+      "Are you interested in leadership or academic involvement in your next position?"
+    ],
+    "motivation": [
+      "When you picture your ideal psychiatric practice, what stands out\u2014patient mix, schedule, or culture?",
+      "What factors would make a move clearly worthwhile for you and your family?",
+      "Which priorities rank highest for you\u2014schedule control, compensation, or team support?",
+      "What elements would make your next environment feel more fulfilling than your current one?"
+    ],
+    "compensation": [
+      "Walk me through your current compensation model\u2014base, productivity, stipends, and bonuses.",
+      "Do you feel your current structure fairly reflects your workload and case complexity?",
+      "What compensation range and model would make a new opportunity attractive to you?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "My patient load is too high to provide quality care.",
+      "response": "What daily volume feels sustainable, and how do you define a balanced schedule for yourself?"
+    },
+    {
+      "challenge": "I\u2019m struggling with burnout and emotional fatigue.",
+      "response": "What kinds of schedule adjustments or support systems would help you recover and thrive?"
+    },
+    {
+      "challenge": "Compensation doesn\u2019t reflect the complexity of my cases.",
+      "response": "Would a hybrid model\u2014base plus quality or complexity metrics\u2014better fit your expectations?"
+    },
+    {
+      "challenge": "I feel isolated and lack team collaboration.",
+      "response": "What team composition or interdisciplinary setup would enhance your day-to-day experience?"
+    },
+    {
+      "challenge": "I want to move into more telepsychiatry or leadership opportunities.",
+      "response": "What balance of clinical versus administrative or remote work would you find ideal?"
+    },
+    {
+      "challenge": "Administrative work is overwhelming.",
+      "response": "If documentation support or EMR streamlining were implemented, how would that impact your satisfaction?"
+    }
+  ],
+  "challengingOpportunities": [
+    "You mentioned burnout\u2014if a new role offered a capped daily schedule with strong team support, would that address your core concern?",
+    "You prefer outpatient-only\u2014if we structured a hybrid with flexible telepsychiatry and minimal inpatient time, would that fit your goals?",
+    "If compensation is the key issue, would a transparent plan with quality bonuses and wellness incentives meet your expectations?",
+    "You said administrative work is draining\u2014if a practice invested in scribes and EHR optimization, would that improve your quality of life?"
+  ]
+}

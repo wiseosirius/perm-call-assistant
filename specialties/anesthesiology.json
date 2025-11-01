@@ -1,0 +1,141 @@
+{
+  "name": "Anesthesiology",
+  "icon": "\ud83d\udc89",
+  "compensation": {
+    "median": "$563,750",
+    "range": "$480,161 - $661,296",
+    "percentile25": "$480,161",
+    "percentile50": "$563,750",
+    "percentile75": "$661,296"
+  },
+  "painPoints": [
+    {
+      "category": "Workload & Staffing",
+      "points": [
+        "Increased case volume with limited anesthesia providers or CRNA support",
+        "OR delays and late add-ons create unpredictable days and extended hours",
+        "Call demands and post-call expectations lead to fatigue and burnout",
+        "Understaffing leads to pressure to cover multiple rooms or long shifts",
+        "Minimal recovery time between call shifts impacts safety and satisfaction"
+      ]
+    },
+    {
+      "category": "Care Team Dynamics & Autonomy",
+      "points": [
+        "Tension between anesthesiologists and CRNAs regarding supervision ratios and autonomy",
+        "Hospital administrators reducing physician oversight to cut costs",
+        "Inconsistent care team models across sites add confusion and inefficiency",
+        "Loss of decision-making authority in clinical or scheduling processes"
+      ]
+    },
+    {
+      "category": "Compensation & Contracting",
+      "points": [
+        "Compensation not keeping pace with increased productivity and coverage demands",
+        "Declining hospital stipends or unpredictable call stipends",
+        "Buy-out clauses and partnership tracks lack transparency",
+        "Inequitable distribution of premium call and overtime pay",
+        "Ambiguity around base vs. productivity bonuses and stipend renewals"
+      ]
+    },
+    {
+      "category": "Work-Life Balance",
+      "points": [
+        "Extended shifts, late cases, and early starts limit family or personal time",
+        "Difficult to take uninterrupted vacations due to limited coverage",
+        "Weekend and holiday rotations causing family strain",
+        "Desire for predictable scheduling or 4-day workweeks"
+      ]
+    },
+    {
+      "category": "Administrative & Operational Challenges",
+      "points": [
+        "Inefficient OR scheduling or turnover times extending total work hours",
+        "Constantly changing hospital or ASC policies without physician input",
+        "Burden of quality reporting, EMR documentation, and compliance tasks",
+        "Difficulty recruiting and retaining new anesthesia team members"
+      ]
+    }
+  ],
+  "motivations": [
+    "More predictable schedule and improved work-life balance",
+    "Reduced call burden or post-call expectations",
+    "Transparent compensation model with fair stipends and bonuses",
+    "Stable team with adequate CRNA and anesthesia tech support",
+    "Geographic relocation for family or lifestyle reasons",
+    "Opportunity for leadership (Chief, Medical Director, OR Committee involvement)",
+    "Hospital or ASC investment in modern anesthesia equipment and support staff",
+    "Clear pathways for partnership or long-term employment stability",
+    "Improved OR efficiency and turnover processes",
+    "Comprehensive benefits, retirement contributions, and paid CME",
+    "Culture that values physician input in policy and scheduling decisions",
+    "Relief from overwork through balanced case assignment and shift models"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current anesthesia practice\u2014hospital, ASC, or mixed environment?",
+      "What\u2019s motivating you to explore new opportunities right now?",
+      "What are the top things you\u2019d like to change in your next role?"
+    ],
+    "painDiscovery": [
+      "You mentioned [pain point]\u2014how is that impacting your day-to-day satisfaction?",
+      "How are case scheduling or late add-ons affecting your work-life balance?",
+      "What does your current call rotation look like, and how manageable is it?",
+      "How has staffing\u2014whether CRNA or anesthesiologist coverage\u2014affected your workload?",
+      "If you could change one aspect of your current group\u2019s setup, what would it be?"
+    ],
+    "clinical": [
+      "Walk me through your case mix\u2014general, OB, ortho, trauma, cardiac, neuro?",
+      "What\u2019s your preferred OR or ASC environment and case volume per day?",
+      "Do you prefer personally performing cases, supervising CRNAs, or a mix?",
+      "How many rooms do you typically cover, and what\u2019s ideal for you?",
+      "Tell me about your call and post-call structure\u2014how is it managed today?",
+      "What\u2019s your comfort level with regional anesthesia and blocks?",
+      "How involved are you in pre-op clinic, PACU oversight, or administrative roles?",
+      "Would leadership opportunities, such as Chief or Medical Director, interest you?"
+    ],
+    "motivation": [
+      "When you think about your ideal anesthesia role, what does your schedule look like?",
+      "What would make a move clearly worthwhile for you and your family?",
+      "Which is more important to you\u2014predictability, compensation, or autonomy?",
+      "What are your top three priorities when evaluating new opportunities?"
+    ],
+    "compensation": [
+      "Walk me through your current compensation\u2014base, call pay, stipends, and bonuses.",
+      "What compensation level and structure would make you consider a change?",
+      "What factors\u2014schedule, case mix, location\u2014would justify a lower or higher range?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "I\u2019m not interested in heavy call schedules anymore.",
+      "response": "What call volume would feel sustainable, and would post-call relief or shift models make that more workable?"
+    },
+    {
+      "challenge": "I only want care-team supervision, not personally performing cases.",
+      "response": "What balance of supervision vs. direct patient care would feel ideal, and what\u2019s driving that preference?"
+    },
+    {
+      "challenge": "Compensation isn\u2019t competitive enough where I am.",
+      "response": "What structure would you find most motivating\u2014higher base, stronger call pay, or guaranteed stipend?"
+    },
+    {
+      "challenge": "Our group is understaffed and constantly short-handed.",
+      "response": "How many CRNAs or anesthesiologists per site would you consider adequate for sustainability?"
+    },
+    {
+      "challenge": "I don\u2019t want to relocate unless it\u2019s a clear upgrade.",
+      "response": "What factors\u2014schedule, pay, leadership, location\u2014would make it a clear step forward for you?"
+    },
+    {
+      "challenge": "Hospital administration is making all the decisions.",
+      "response": "If you had a seat at the table for staffing or OR policy decisions, how would that affect your job satisfaction?"
+    }
+  ],
+  "challengingOpportunities": [
+    "You mentioned wanting no call at all\u2014if a role offered light, evenly shared call with guaranteed post-call time off, would that meet the same need?",
+    "You prefer only ASC work\u2014if a hospital-employed model offered flexible scheduling and higher stipends, would that appeal to you?",
+    "If compensation is the top driver, how would a structured wRVU plan with guaranteed minimums compare to your current setup?",
+    "You said autonomy is key\u2014if the group offered physician-led governance and scheduling input, would that address that concern?"
+  ]
+}

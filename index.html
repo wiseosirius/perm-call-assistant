@@ -135,8 +135,6 @@
         "gastroenterology",
         "neurology",
         "urology",
-        "diagnostic-radiology",
-        "pediatrics",
       ];
 
       // Global specialty data object (will be populated on load)
@@ -155,15 +153,15 @@
             }
             const data = await response.json();
             specialtyData[specId] = data;
-            console.log(`✓ Loaded ${specId}`);
+            console.log(`âœ“ Loaded ${specId}`);
           } catch (error) {
-            console.error(`✗ Error loading ${specId}:`, error);
+            console.error(`âœ— Error loading ${specId}:`, error);
             // Create a minimal placeholder
             specialtyData[specId] = {
               name: specId
                 .replace(/-/g, " ")
                 .replace(/\b\w/g, (l) => l.toUpperCase()),
-              icon: "❓",
+              icon: "â“",
               compensation: { median: "N/A", range: "N/A" },
               painPoints: [],
               motivations: [],
@@ -195,6 +193,7 @@
         isTimerRunning: false,
         questionCounter: { open: 0, closed: 0 },
         checklistProgress: {},
+        expandedSections: {}, // Track which checklist sections are expanded
         sequenceViolation: false,
         opportunityPresented: false,
         qualificationComplete: false,
@@ -281,71 +280,178 @@
       const qualificationChecklist = [
         {
           id: "pain",
-          text: "Pain Discovery (Deep - multiple levels)",
+          text: "Pain Discovery (Deep)",
+          icon: "🔍",
           points: 15,
           category: "critical",
+          order: 1,
+          description: "WHY are they looking? Dig 3+ levels deep",
+          hasFramework: true
         },
         {
           id: "motivation",
           text: "Motivation & Priorities",
+          icon: "🎯",
           points: 12,
           category: "critical",
+          order: 2,
+          description: "WHAT do they want in ideal practice?"
         },
         {
           id: "search",
           text: "Search Status & Timeline",
+          icon: "🔎",
           points: 8,
           category: "important",
+          order: 3,
+          description: "HOW committed are they to change?"
         },
         {
           id: "current",
-          text: "Current Position Understanding",
+          text: "Current Position",
+          icon: "🏥",
           points: 8,
           category: "important",
+          order: 4,
+          description: "WHERE are they now? Establish baseline"
         },
         {
           id: "experience",
-          text: "Experience & Clinical Scope",
+          text: "Clinical Scope & Experience",
+          icon: "🥼",
           points: 8,
           category: "important",
+          order: 5,
+          description: "WHAT can they do? Capabilities"
         },
         {
           id: "compensation",
           text: "Compensation Discovery",
+          icon: "💰",
           points: 10,
           category: "critical",
+          order: 6,
+          description: "Financial expectations and current baseline"
         },
         {
           id: "location",
-          text: "Location & Community Preferences",
+          text: "Location & Community",
+          icon: "📍",
           points: 8,
           category: "important",
+          order: 7,
+          description: "WHERE do they want to be? Geography"
         },
         {
           id: "family",
           text: "Family & Personal Factors",
+          icon: "👨‍👩‍👧‍👦",
           points: 7,
           category: "important",
+          order: 8,
+          description: "WHO influences decision? Stakeholders"
         },
         {
           id: "availability",
           text: "Availability & Logistics",
+          icon: "📅",
           points: 4,
           category: "standard",
+          order: 9,
+          description: "WHEN can they start? Timing"
         },
         {
           id: "credentials",
-          text: "Compliance & Credentials",
+          text: "Credentials & Compliance",
+          icon: "✅",
           points: 6,
           category: "standard",
-        },
-        {
-          id: "depth",
-          text: "Overall Depth & Curiosity",
-          points: 5,
-          category: "critical",
-        },
+          order: 10,
+          description: "Licensing, board cert, compliance basics"
+        }
       ];
+
+      // ============= GENERIC QUALIFICATION QUESTIONS =============
+      
+      const genericQuestions = {
+        current: [
+          "Walk me through your current role - practice type, responsibilities, daily structure",
+          "What does your current compensation package look like including base, bonuses, and benefits?",
+          "Describe your typical work week - hours, call requirements, time off",
+          "How would you characterize your current patient volume and case complexity?",
+          "How long have you been in this position and what changes have you seen over time?"
+        ],
+        search: [
+          "Where are you in your search process right now?",
+          "What other opportunities are you actively exploring?",
+          "Talk to me about your timeline - when are you hoping to make a transition?",
+          "How committed are you to making a change - what would it take for you to stay put?",
+          "Walk me through your decision-making process - who else is involved?",
+          "What actions have you taken so far in your search?"
+        ],
+        location: [
+          "What geographic areas are you considering and what's driving those preferences?",
+          "Help me understand what matters most about location - schools, lifestyle, family proximity, career opportunities?",
+          "How flexible might you be on location if other factors were exceptional?",
+          "What do you know about [target regions] and what appeals to you about them?",
+          "Are there areas you'd prefer to avoid? What's behind that preference?"
+        ],
+        family: [
+          "Tell me about your family situation and how it factors into this decision",
+          "What's most important to your family in a potential move?",
+          "How does your spouse's career situation affect your geographic flexibility?",
+          "Talk to me about your children if applicable - ages, school stages, special needs or activities",
+          "How is your family approaching this potential transition? Are they excited, hesitant, supportive?"
+        ],
+        availability: [
+          "What does your contract situation look like - notice requirements, restrictive covenants, non-competes?",
+          "When would you ideally like to start a new position and what flexibility do you have?",
+          "Are there any constraints on your availability we should be aware of?",
+          "Walk me through your timeline from offer acceptance to start date - what needs to happen?",
+          "What upcoming commitments might affect your availability or start date?"
+        ],
+        credentials: [
+          "What's your board certification status and timeline if you're still in the process?",
+          "Tell me about your licensing - current states, any restrictions or limitations?",
+          "How does your credentialing typically go - any issues or concerns to be aware of?",
+          "Walk me through your DEA status and malpractice history",
+          "Any visa or work authorization considerations we should discuss?"
+        ]
+      };
+
+      // Generic follow-up questions for pain point categories
+      const painFollowUps = {
+        "Administrative Burden": [
+          "Walk me through a typical day - what percentage is clinical versus administrative?",
+          "How has the administrative burden changed over time in your practice?",
+          "What specific EMR or documentation issues are consuming your time?"
+        ],
+        "Work-Life Balance": [
+          "Help me understand your current schedule and how it's affecting you",
+          "What would better work-life balance look like for you specifically?",
+          "How is this impacting your family and personal life?"
+        ],
+        "Call Burden": [
+          "Tell me about your call schedule - how often are you covering?",
+          "How is the call schedule structured and how has it been affecting you?",
+          "What support systems exist for after-hours coverage?"
+        ],
+        "Compensation": [
+          "Help me understand what you're seeing in the market that's different from your current package",
+          "When you think about competitive compensation, what are you comparing it to?",
+          "How does the total package - not just base - compare to your expectations?"
+        ],
+        "Partnership": [
+          "Walk me through your current partnership track and what concerns you about it",
+          "What are you looking for in a partnership structure?",
+          "How important is true ownership versus income opportunity?"
+        ],
+        "Default": [
+          "Help me understand what's behind that concern...",
+          "How has this been affecting you day-to-day?",
+          "When did you first start noticing this was a problem?"
+        ]
+      };
 
       // ============= HELPER FUNCTIONS =============
 
@@ -367,20 +473,20 @@
           return {
             status: "excellent",
             color: "green",
-            message: "🎯 Excellent!",
+            message: "ðŸŽ¯ Excellent!",
           };
         if (ratio >= 70)
-          return { status: "good", color: "blue", message: "👍 Good" };
+          return { status: "good", color: "blue", message: "ðŸ‘ Good" };
         if (ratio >= 60)
           return {
             status: "satisfactory",
             color: "yellow",
-            message: "⚠️ Fair",
+            message: "âš ï¸ Fair",
           };
         return {
           status: "needs-improvement",
           color: "red",
-          message: "❌ Needs Work",
+          message: "âŒ Needs Work",
         };
       }
 
@@ -412,19 +518,19 @@
 
       function getScoreLevel(score) {
         if (score >= 90)
-          return { level: "Excellent", class: "score-excellent", emoji: "🌟" };
+          return { level: "Excellent", class: "score-excellent", emoji: "ðŸŒŸ" };
         if (score >= 75)
-          return { level: "Good", class: "score-good", emoji: "👍" };
+          return { level: "Good", class: "score-good", emoji: "ðŸ‘" };
         if (score >= 60)
           return {
             level: "Satisfactory",
             class: "score-satisfactory",
-            emoji: "⚠️",
+            emoji: "âš ï¸",
           };
         return {
           level: "Needs Development",
           class: "score-needs-dev",
-          emoji: "🔴",
+          emoji: "ðŸ”´",
         };
       }
 
@@ -482,6 +588,11 @@
       function toggleChecklistItem(id) {
         state.checklistProgress[id] = !state.checklistProgress[id];
 
+        // Auto-collapse when checked
+        if (state.checklistProgress[id]) {
+          delete state.expandedSections[id];
+        }
+
         // Check if qualification is complete (all critical and important items checked)
         const criticalComplete = qualificationChecklist
           .filter((i) => i.category === "critical")
@@ -493,6 +604,46 @@
         state.qualificationComplete = criticalComplete && importantComplete;
 
         render();
+      }
+
+      function toggleExpandSection(id) {
+        if (state.expandedSections[id]) {
+          delete state.expandedSections[id];
+        } else {
+          state.expandedSections[id] = true;
+        }
+        render();
+      }
+
+      // Get questions for a checklist section (specialty-specific or generic)
+      function getQuestionsForSection(sectionId, specialty) {
+        // Sections that use specialty-specific questions
+        if (sectionId === 'experience') {
+          return specialty.keyQuestions.clinical || [];
+        }
+        if (sectionId === 'motivation') {
+          return specialty.keyQuestions.motivation || [];
+        }
+        if (sectionId === 'compensation') {
+          return specialty.keyQuestions.compensation || [];
+        }
+        if (sectionId === 'pain') {
+          return specialty.keyQuestions.painDiscovery || [];
+        }
+        
+        // Sections that use generic questions
+        return genericQuestions[sectionId] || [];
+      }
+
+      // Get pain point follow-up questions based on category
+      function getPainFollowUps(category) {
+        // Match category name to follow-ups (case insensitive, partial match)
+        for (const [key, questions] of Object.entries(painFollowUps)) {
+          if (category.toLowerCase().includes(key.toLowerCase())) {
+            return { category: key, questions };
+          }
+        }
+        return { category: "General", questions: painFollowUps.Default };
       }
 
       function addQuestion(type) {
@@ -532,7 +683,7 @@
                     <!-- Ready to Call Section -->
                     <div class="bg-gradient-to-br from-blue-500 via-purple-600 to-pink-500 text-white rounded-2xl p-8 shadow-2xl">
                         <h2 class="text-3xl font-bold mb-3 flex items-center">
-                            <span class="mr-3">🎯</span>
+                            <span class="mr-3">ðŸŽ¯</span>
                             Ready to Make the Call?
                         </h2>
                         <p class="text-lg mb-6 opacity-95">
@@ -542,7 +693,7 @@
                             onclick="startCall('live')"
                             class="bg-white dark:bg-gray-800 text-purple-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-purple-50 transition transform hover:scale-105 shadow-xl flex items-center justify-center space-x-3 w-full md:w-auto"
                         >
-                            <span class="text-2xl">📞</span>
+                            <span class="text-2xl">ðŸ“ž</span>
                             <span>Start Live Call Assistant</span>
                         </button>
                     </div>
@@ -550,7 +701,7 @@
                     <!-- Call Type Selector -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-lg mb-4 flex items-center">
-                            <span class="mr-2">📋</span>
+                            <span class="mr-2">ðŸ“‹</span>
                             Pre-Call Setup
                         </h3>
                         <div class="grid md:grid-cols-2 gap-4">
@@ -596,22 +747,22 @@
                     <!-- V3.4 Framework Overview -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">⚡</span>
+                            <span class="mr-2">âš¡</span>
                             V3.4 Framework Excellence Standards
                         </h3>
                         <div class="grid md:grid-cols-3 gap-4">
                             <div class="border-2 border-green-200 bg-green-50 rounded-lg p-4">
-                                <div class="text-3xl mb-2">❓</div>
+                                <div class="text-3xl mb-2">â“</div>
                                 <div class="font-bold text-green-800 mb-1">80/20 Question Rule</div>
                                 <div class="text-sm text-green-700">80% open-ended questions to unlock deep discovery</div>
                             </div>
                             <div class="border-2 border-blue-200 bg-blue-50 rounded-lg p-4">
-                                <div class="text-3xl mb-2">🎯</div>
+                                <div class="text-3xl mb-2">ðŸŽ¯</div>
                                 <div class="font-bold text-blue-800 mb-1">Sequence Compliance</div>
                                 <div class="text-sm text-blue-700">Complete qualification BEFORE opportunity presentation</div>
                             </div>
                             <div class="border-2 border-purple-200 bg-purple-50 rounded-lg p-4">
-                                <div class="text-3xl mb-2">🔍</div>
+                                <div class="text-3xl mb-2">ðŸ”</div>
                                 <div class="font-bold text-purple-800 mb-1">Deep Pain Discovery</div>
                                 <div class="text-sm text-purple-700">Ask "why" repeatedly to uncover true motivations</div>
                             </div>
@@ -621,7 +772,7 @@
                     <!-- Pre-Call Checklist -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-lg mb-4 flex items-center">
-                            <span class="mr-2">✅</span>
+                            <span class="mr-2">âœ…</span>
                             Pre-Call Checklist
                         </h3>
                         <div class="grid md:grid-cols-2 gap-3">
@@ -638,7 +789,7 @@
                               .map(
                                 (item) => `
                                 <div class="flex items-start space-x-2 text-sm p-2 bg-gray-50 dark:bg-gray-900 rounded">
-                                    <span class="text-green-500 text-lg">✓</span>
+                                    <span class="text-green-500 text-lg">âœ“</span>
                                     <span>${item}</span>
                                 </div>
                             `
@@ -652,21 +803,21 @@
                         <h3 class="font-bold text-lg mb-4">Quick Reference: Opening Approaches</h3>
                         <div class="grid md:grid-cols-2 gap-4">
                             <div class="border-l-4 border-green-500 bg-green-50 p-4 rounded">
-                                <div class="font-bold text-green-800 mb-2">✅ Warm Lead Opening</div>
+                                <div class="font-bold text-green-800 mb-2">âœ… Warm Lead Opening</div>
                                 <p class="text-sm italic text-green-700 mb-2">
                                     "Good morning Dr. [Name], this is [Your Name] with Pacific Companies. I'm calling because you expressed interest in exploring permanent opportunities..."
                                 </p>
                                 <div class="text-xs text-green-600">
-                                    → Acknowledge their interest → Ask about current situation
+                                    â†’ Acknowledge their interest â†’ Ask about current situation
                                 </div>
                             </div>
                             <div class="border-l-4 border-blue-500 bg-blue-50 p-4 rounded">
-                                <div class="font-bold text-blue-800 mb-2">📞 Cold Call Opening</div>
+                                <div class="font-bold text-blue-800 mb-2">ðŸ“ž Cold Call Opening</div>
                                 <p class="text-sm italic text-blue-700 mb-2">
                                     "Good morning Dr. [Name], this is [Your Name] with Pacific Companies, a national physician recruitment firm. I'm reaching out because..."
                                 </p>
                                 <div class="text-xs text-blue-600">
-                                    → Brief credibility → Open-ended discovery question
+                                    â†’ Brief credibility â†’ Open-ended discovery question
                                 </div>
                             </div>
                         </div>
@@ -698,7 +849,7 @@
                                     class="bg-white dark:bg-gray-800 bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition"
                                 >
                                     <span class="text-2xl">${
-                                      state.isTimerRunning ? "⏸" : "▶"
+                                      state.isTimerRunning ? "â¸" : "â–¶"
                                     }</span>
                                 </button>
                                 <div>
@@ -743,7 +894,7 @@
                           state.sequenceViolation
                             ? `
                             <div class="mt-4 bg-red-500 text-white px-4 py-3 rounded-lg flex items-center space-x-2">
-                                <span class="text-2xl">⚠️</span>
+                                <span class="text-2xl">âš ï¸</span>
                                 <div>
                                     <div class="font-bold">Sequence Violation Detected!</div>
                                     <div class="text-sm">Opportunity presented before complete qualification. This will significantly impact your evaluation score.</div>
@@ -762,7 +913,7 @@
                             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4">
                                 <h3 class="font-bold mb-3 flex items-center justify-between">
                                     <span class="flex items-center">
-                                        <span class="mr-2">❓</span>
+                                        <span class="mr-2">â“</span>
                                         Question Tracker
                                     </span>
                                     <span class="text-sm px-3 py-1 rounded-full ${
@@ -784,13 +935,13 @@
                                         onclick="addQuestion('open')"
                                         class="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg font-bold transition"
                                     >
-                                        ➕ Open-Ended
+                                        âž• Open-Ended
                                     </button>
                                     <button
                                         onclick="addQuestion('closed')"
                                         class="bg-red-500 hover:bg-red-600 text-white px-4 py-3 rounded-lg font-bold transition"
                                     >
-                                        ➕ Closed
+                                        âž• Closed
                                     </button>
                                 </div>
 
@@ -836,9 +987,9 @@
                                 <div class="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
                                     <div class="text-xs font-bold text-blue-900 mb-2">Quick Convert:</div>
                                     <div class="text-xs text-blue-800 space-y-1">
-                                        <div>❌ "Do you..." → ✅ "Tell me about..."</div>
-                                        <div>❌ "Are you..." → ✅ "Help me understand..."</div>
-                                        <div>❌ "Have you..." → ✅ "Walk me through..."</div>
+                                        <div>âŒ "Do you..." â†’ âœ… "Tell me about..."</div>
+                                        <div>âŒ "Are you..." â†’ âœ… "Help me understand..."</div>
+                                        <div>âŒ "Have you..." â†’ âœ… "Walk me through..."</div>
                                     </div>
                                 </div>
                             </div>
@@ -847,7 +998,7 @@
                             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4">
                                 <h3 class="font-bold mb-3 flex items-center justify-between">
                                     <span class="flex items-center">
-                                        <span class="mr-2">🔍</span>
+                                        <span class="mr-2">ðŸ”</span>
                                         Pain Discovery Depth
                                     </span>
                                 </h3>
@@ -885,7 +1036,7 @@
                                                 ${
                                                   state.painDepthLevel >=
                                                   item.level
-                                                    ? "✓"
+                                                    ? "âœ“"
                                                     : item.level
                                                 }
                                             </div>
@@ -906,78 +1057,158 @@
                                     onclick="increasePainDepth()"
                                     class="w-full mt-3 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg font-bold transition text-sm"
                                 >
-                                    ⬆️ Asked "Why"
+                                    â¬†ï¸ Asked "Why"
                                 </button>
                             </div>
 
-                            <!-- Qualification Checklist -->
+// This is the new expandable qualification checklist rendering
+// Replace lines 1064-1131 in index.html
+
+                            <!-- Qualification Tracker (Expandable) -->
                             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4">
                                 <h3 class="font-bold mb-3 flex items-center justify-between">
                                     <span class="flex items-center">
-                                        <span class="mr-2">✅</span>
-                                        Qualification
+                                        <span class="mr-2">📋</span>
+                                        Qualification Tracker
                                     </span>
                                     <span class="text-sm">${completedCount}/${totalItems}</span>
                                 </h3>
-                                <div class="space-y-2 max-h-96 overflow-y-auto" data-scroll-id="qualification-checklist">
+                                <div class="space-y-2 max-h-[600px] overflow-y-auto" data-scroll-id="qualification-checklist">
                                     ${qualificationChecklist
                                       .map(
-                                        (item) => `
-                                        <div
-                                            onclick="toggleChecklistItem('${
-                                              item.id
-                                            }')"
-                                            class="checklist-item p-3 rounded-lg border-2 cursor-pointer transition ${
-                                              state.checklistProgress[item.id]
-                                                ? "bg-green-50 dark:bg-green-900 dark:bg-opacity-30 border-green-500 dark:border-green-400"
-                                                : item.category === "critical"
-                                                ? "bg-red-50 dark:bg-red-900 dark:bg-opacity-20 border-red-200 dark:border-red-700 hover:border-red-400 dark:hover:border-red-500"
-                                                : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-blue-300"
-                                            }"
-                                        >
-                                            <div class="flex items-center justify-between">
-                                                <div class="flex items-center space-x-2 flex-1">
-                                                    <div class="w-5 h-5 rounded border-2 flex items-center justify-center ${
-                                                      state.checklistProgress[
-                                                        item.id
-                                                      ]
-                                                        ? "bg-green-500 border-green-500"
-                                                        : "border-gray-300 dark:border-gray-600"
-                                                    }">
-                                                        ${
-                                                          state
-                                                            .checklistProgress[
-                                                            item.id
-                                                          ]
-                                                            ? `
-                                                            <span class="text-white text-xs">✓</span>
-                                                        `
-                                                            : ""
-                                                        }
+                                        (item) => {
+                                          const isCompleted = state.checklistProgress[item.id];
+                                          const isExpanded = state.expandedSections[item.id];
+                                          const questions = getQuestionsForSection(item.id, currentSpecialty);
+                                          
+                                          return `
+                                        <div class="rounded-lg border-2 transition-all duration-200 ${
+                                          isCompleted
+                                            ? "bg-green-50 dark:bg-green-900 dark:bg-opacity-30 border-green-500 dark:border-green-400"
+                                            : item.category === "critical"
+                                            ? "bg-red-50 dark:bg-red-900 dark:bg-opacity-20 border-red-200 dark:border-red-700"
+                                            : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
+                                        }">
+                                            <!-- Header (always visible) -->
+                                            <div class="p-3 cursor-pointer" onclick="toggleExpandSection('${item.id}')">
+                                                <div class="flex items-center justify-between">
+                                                    <div class="flex items-center space-x-3 flex-1">
+                                                        <!-- Step number -->
+                                                        <div class="flex-shrink-0 w-7 h-7 rounded-full ${
+                                                          isCompleted
+                                                            ? "bg-green-500 text-white"
+                                                            : "bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300"
+                                                        } flex items-center justify-center text-xs font-bold">
+                                                          ${item.order}
+                                                        </div>
+                                                        
+                                                        <!-- Checkbox -->
+                                                        <div 
+                                                          class="w-6 h-6 rounded border-2 flex items-center justify-center cursor-pointer ${
+                                                            isCompleted
+                                                              ? "bg-green-500 border-green-500"
+                                                              : "border-gray-300 dark:border-gray-600 hover:border-green-400"
+                                                          }"
+                                                          onclick="event.stopPropagation(); toggleChecklistItem('${item.id}')"
+                                                        >
+                                                          ${isCompleted ? '<span class="text-white text-sm font-bold">✓</span>' : ''}
+                                                        </div>
+                                                        
+                                                        <!-- Icon and text -->
+                                                        <div class="flex items-center space-x-2 flex-1">
+                                                          <span class="text-lg">${item.icon}</span>
+                                                          <div class="flex flex-col">
+                                                            <span class="text-sm font-semibold text-gray-900 dark:text-gray-100">${item.text}</span>
+                                                            <span class="text-xs text-gray-500 dark:text-gray-400 italic">${item.description}</span>
+                                                          </div>
+                                                        </div>
                                                     </div>
-                                                    <span class="text-sm font-medium text-gray-900 dark:text-gray-100">${
-                                                      item.text
-                                                    }</span>
-                                                </div>
-                                                <div class="flex items-center space-x-2">
-                                                    ${
-                                                      item.category ===
-                                                      "critical"
-                                                        ? `
-                                                        <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Critical</span>
-                                                    `
-                                                        : ""
-                                                    }
-                                                    <span class="text-xs text-gray-500">${
-                                                      item.points
-                                                    }pts</span>
+                                                    
+                                                    <!-- Right side -->
+                                                    <div class="flex items-center space-x-2">
+                                                        ${item.category === "critical" 
+                                                          ? '<span class="text-xs bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded font-semibold">Critical</span>' 
+                                                          : ''
+                                                        }
+                                                        <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">${item.points}pts</span>
+                                                        <svg class="w-5 h-5 text-gray-400 dark:text-gray-500 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            
+                                            <!-- Expandable Questions Section -->
+                                            ${isExpanded ? `
+                                            <div class="border-t border-gray-200 dark:border-gray-700 px-4 pb-4 pt-3">
+                                                <!-- Framework Tips for Critical Sections -->
+                                                ${item.id === 'pain' ? `
+                                                <div class="mb-3 p-3 bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 border border-blue-200 dark:border-blue-700 rounded text-xs text-blue-800 dark:text-blue-200">
+                                                  <strong>💡 Critical:</strong> Pain Discovery is worth 15 points. Ask "why" at least 3 times to dig deep. Use variations: "Help me understand..." "Tell me more..." "What's the story behind..."
+                                                </div>` : ''}
+                                                
+                                                ${item.id === 'motivation' ? `
+                                                <div class="mb-3 p-3 bg-purple-50 dark:bg-purple-900 dark:bg-opacity-30 border border-purple-200 dark:border-purple-700 rounded text-xs text-purple-800 dark:text-purple-200">
+                                                  <strong>🎯 Critical:</strong> Worth 12 points. Go beyond surface preferences - understand what they REALLY want in their ideal practice.
+                                                </div>` : ''}
+                                                
+                                                ${item.id === 'compensation' ? `
+                                                <div class="mb-3 p-3 bg-green-50 dark:bg-green-900 dark:bg-green-opacity-30 border border-green-200 dark:border-green-700 rounded text-xs text-green-800 dark:text-green-200">
+                                                  <strong>💰 Critical:</strong> Worth 10 points. Discover current baseline BEFORE discussing opportunities. Use open-ended questions.
+                                                </div>` : ''}
+                                                
+                                                <!-- Questions List -->
+                                                <div class="space-y-2 mb-3">
+                                                  ${questions.slice(0, 6).map(q => `
+                                                    <div class="flex items-start text-sm">
+                                                      <span class="text-blue-500 dark:text-blue-400 mr-2 mt-0.5 flex-shrink-0">•</span>
+                                                      <span class="text-gray-700 dark:text-gray-300 italic">"${q}"</span>
+                                                    </div>
+                                                  `).join('')}
+                                                </div>
+                                                
+                                                <!-- Pain Point Follow-Ups (only for pain section) -->
+                                                ${item.id === 'pain' && currentSpecialty.painPoints && currentSpecialty.painPoints.length > 0 ? `
+                                                <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                                                  <div class="text-xs font-bold text-gray-700 dark:text-gray-300 mb-2">📌 Common ${currentSpecialty.name} Pain Points - Listen For:</div>
+                                                  ${currentSpecialty.painPoints.slice(0, 3).map(category => {
+                                                    const followUp = getPainFollowUps(category.category);
+                                                    return `
+                                                    <div class="mb-3 p-2 bg-yellow-50 dark:bg-yellow-900 dark:bg-opacity-20 border border-yellow-200 dark:border-yellow-700 rounded">
+                                                      <div class="text-xs font-semibold text-yellow-900 dark:text-yellow-200 mb-1">${category.category}</div>
+                                                      <div class="text-xs text-yellow-800 dark:text-yellow-300 space-y-1 mb-2">
+                                                        ${category.points.slice(0, 2).map(point => `<div>• ${point}</div>`).join('')}
+                                                      </div>
+                                                      <div class="text-xs font-semibold text-yellow-900 dark:text-yellow-200 mb-1">↳ Dig deeper:</div>
+                                                      <div class="text-xs text-yellow-800 dark:text-yellow-300 space-y-1 pl-3">
+                                                        ${followUp.questions.map(q => `<div class="italic">→ "${q}"</div>`).join('')}
+                                                      </div>
+                                                    </div>
+                                                    `;
+                                                  }).join('')}
+                                                </div>
+                                                ` : ''}
+                                                
+                                                <!-- Link to Pain Framework -->
+                                                ${item.hasFramework ? `
+                                                <button 
+                                                  onclick="event.stopPropagation(); state.activeScriptTab = 'pain'; render();"
+                                                  class="mt-2 text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition"
+                                                >
+                                                  🔍 See Full Pain Discovery Framework →
+                                                </button>
+                                                ` : ''}
+                                            </div>
+                                            ` : ''}
                                         </div>
-                                    `
+                                        `;
+                                        }
                                       )
                                       .join("")}
                                 </div>
+
+
+                                <!-- Opportunity Presentation Button -->                                </div>
 
                                 <!-- Opportunity Presentation Button -->
                                 ${
@@ -993,14 +1224,14 @@
                                     >
                                         ${
                                           state.qualificationComplete
-                                            ? "✅"
-                                            : "⚠️"
+                                            ? "âœ…"
+                                            : "âš ï¸"
                                         } Present Opportunity
                                     </button>
                                 `
                                     : `
                                     <div class="mt-4 bg-green-100 border border-green-500 text-green-800 px-4 py-2 rounded-lg text-center font-semibold">
-                                        ✅ Opportunity Presented
+                                        âœ… Opportunity Presented
                                     </div>
                                 `
                                 }
@@ -1009,7 +1240,7 @@
                             <!-- Quick Notes -->
                             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4">
                                 <h3 class="font-bold mb-2 flex items-center">
-                                    <span class="mr-2">📝</span>
+                                    <span class="mr-2">ðŸ“</span>
                                     Quick Notes
                                 </h3>
                                 <textarea
@@ -1018,7 +1249,7 @@
                                     class="w-full border-2 rounded-lg p-3 text-sm h-32 focus:border-blue-500 focus:outline-none"
                                 ></textarea>
                                 <p class="text-xs text-gray-500 mt-2">
-                                    💾 Transfer to Bullhorn immediately after call
+                                    ðŸ’¾ Transfer to Bullhorn immediately after call
                                 </p>
                             </div>
                         </div>
@@ -1032,32 +1263,28 @@
                                       {
                                         id: "opening",
                                         label: "Opening",
-                                        icon: "👋",
+                                        icon: "ðŸ‘‹",
                                       },
                                       {
                                         id: "pain",
                                         label: "Pain Discovery",
-                                        icon: "🔍",
+                                        icon: "ðŸ”",
                                       },
                                       {
-                                        id: "qualification",
-                                        label: "Qualification",
-                                        icon: "📋",
-                                      },
                                       {
                                         id: "challenging",
                                         label: "Challenging",
-                                        icon: "💪",
+                                        icon: "ðŸ’ª",
                                       },
                                       {
-                                        id: "presentation",
-                                        label: "Presentation",
-                                        icon: "🎯",
+                                        id: "closing",
+                                        label: "Closing & Presentation",
+                                        icon: "ðŸŽ¯",
                                       },
                                       {
                                         id: "closing",
                                         label: "Closing",
-                                        icon: "🤝",
+                                        icon: "ðŸ¤",
                                       },
                                     ]
                                       .map(
@@ -1099,7 +1326,7 @@
                                 </h3>
                                 <div class="grid md:grid-cols-2 gap-4">
                                     <div>
-                                        <div class="text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">💰 Compensation Range</div>
+                                        <div class="text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">ðŸ’° Compensation Range</div>
                                         <div class="text-lg font-bold text-green-600">${
                                           currentSpecialty.compensation.median
                                         }</div>
@@ -1108,11 +1335,11 @@
                                         }</div>
                                     </div>
                                     <div>
-                                        <div class="text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">🎯 Common Motivations</div>
+                                        <div class="text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">ðŸŽ¯ Common Motivations</div>
                                         <div class="text-xs space-y-1">
                                             ${currentSpecialty.motivations
                                               .slice(0, 3)
-                                              .map((m) => `<div>• ${m}</div>`)
+                                              .map((m) => `<div>â€¢ ${m}</div>`)
                                               .join("")}
                                         </div>
                                     </div>
@@ -1132,7 +1359,7 @@
                     <div class="space-y-4">
                         <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
                             <div class="font-bold text-blue-900 mb-2 flex items-center">
-                                <span class="mr-2">👋</span>
+                                <span class="mr-2">ðŸ‘‹</span>
                                 GREETING & PERMISSION
                             </div>
                             <p class="text-sm italic text-blue-800 mb-3">
@@ -1153,7 +1380,7 @@
 
                         <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
                             <div class="font-bold text-green-900 mb-2 flex items-center">
-                                <span class="mr-2">🎯</span>
+                                <span class="mr-2">ðŸŽ¯</span>
                                 PURPOSE STATEMENT
                             </div>
                             <p class="text-sm italic text-green-800 mb-3">
@@ -1170,7 +1397,7 @@
 
                         <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-lg">
                             <div class="font-bold text-purple-900 mb-2 flex items-center">
-                                <span class="mr-2">🚀</span>
+                                <span class="mr-2">ðŸš€</span>
                                 OPENING DISCOVERY QUESTION
                             </div>
                             <div class="space-y-2 text-sm italic text-purple-800">
@@ -1184,12 +1411,12 @@
                         </div>
 
                         <div class="bg-yellow-50 border border-yellow-500 p-4 rounded-lg">
-                            <div class="font-bold text-yellow-900 mb-2">⚠️ What NOT to Say</div>
+                            <div class="font-bold text-yellow-900 mb-2">âš ï¸ What NOT to Say</div>
                             <div class="text-sm text-yellow-800 space-y-1">
-                                <div>❌ "I have the perfect position for you..." (premature)</div>
-                                <div>❌ "Do you have a few minutes?" (invites no)</div>
-                                <div>❌ Long company pitch before asking about them</div>
-                                <div>❌ "Are you open to opportunities?" (closed question)</div>
+                                <div>âŒ "I have the perfect position for you..." (premature)</div>
+                                <div>âŒ "Do you have a few minutes?" (invites no)</div>
+                                <div>âŒ Long company pitch before asking about them</div>
+                                <div>âŒ "Are you open to opportunities?" (closed question)</div>
                             </div>
                         </div>
                     </div>
@@ -1201,7 +1428,7 @@
                     <div class="space-y-4">
                         <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg">
                             <div class="font-bold text-red-900 mb-3 flex items-center">
-                                <span class="mr-2">🔍</span>
+                                <span class="mr-2">ðŸ”</span>
                                 DEEP PAIN DISCOVERY FRAMEWORK
                             </div>
                             <div class="space-y-3">
@@ -1229,7 +1456,7 @@
                         </div>
 
                         <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-lg">
-                            <div class="font-bold text-purple-900 mb-2">💎 Specialty-Specific Pain Discovery</div>
+                            <div class="font-bold text-purple-900 mb-2">ðŸ’Ž Specialty-Specific Pain Discovery</div>
                             ${currentSpecialty.painPoints
                               .slice(0, 2)
                               .map(
@@ -1242,7 +1469,7 @@
                                         ${category.points
                                           .slice(0, 3)
                                           .map(
-                                            (point) => `<div>• ${point}</div>`
+                                            (point) => `<div>â€¢ ${point}</div>`
                                           )
                                           .join("")}
                                     </div>
@@ -1253,14 +1480,14 @@
                         </div>
 
                         <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
-                            <div class="font-bold text-blue-900 mb-2">🎯 Pain Discovery Questions</div>
+                            <div class="font-bold text-blue-900 mb-2">ðŸŽ¯ Pain Discovery Questions</div>
                             <div class="space-y-2 text-sm text-blue-800">
                                 ${currentSpecialty.keyQuestions.painDiscovery
                                   .slice(0, 4)
                                   .map(
                                     (q) =>
                                       `<div class="flex items-start">
-                                        <span class="mr-2 mt-1">•</span>
+                                        <span class="mr-2 mt-1">â€¢</span>
                                         <span class="italic">"${q}"</span>
                                     </div>`
                                   )
@@ -1269,88 +1496,9 @@
                         </div>
 
                         <div class="bg-yellow-50 border border-yellow-500 p-4 rounded-lg">
-                            <div class="font-bold text-yellow-900 mb-2">💡 Pro Tip: The Curiosity Loop</div>
+                            <div class="font-bold text-yellow-900 mb-2">ðŸ’¡ Pro Tip: The Curiosity Loop</div>
                             <div class="text-sm text-yellow-800">
                                 After EVERY answer the physician gives, pause and ask yourself: "What's behind this?" Then ask them. This simple habit will transform your discovery depth and differentiate you from every other recruiter.
-                            </div>
-                        </div>
-                    </div>
-                `;
-        }
-
-        if (tab === "qualification") {
-          return `
-                    <div class="space-y-4">
-                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-                            <div class="font-bold text-green-900 mb-2">📋 Critical Qualification Areas</div>
-                            <div class="text-sm text-green-800 space-y-2">
-                                <div class="font-semibold">Use these questions to complete your qualification checklist:</div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-3">
-                            ${Object.entries(currentSpecialty.keyQuestions)
-                              .filter(([key]) =>
-                                [
-                                  "clinical",
-                                  "motivation",
-                                  "compensation",
-                                ].includes(key)
-                              )
-                              .map(
-                                ([category, questions]) => `
-                                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
-                                    <div class="font-bold text-blue-900 mb-2 capitalize">
-                                        ${
-                                          category === "clinical"
-                                            ? "🏥 Clinical Discovery"
-                                            : category === "motivation"
-                                            ? "🎯 Motivation & Priorities"
-                                            : "💰 Compensation Discovery"
-                                        }
-                                    </div>
-                                    <div class="space-y-2 text-sm text-blue-800">
-                                        ${questions
-                                          .slice(0, 3)
-                                          .map(
-                                            (q) =>
-                                              `<div class="flex items-start">
-                                                <span class="mr-2 mt-1">•</span>
-                                                <span class="italic">"${q}"</span>
-                                            </div>`
-                                          )
-                                          .join("")}
-                                    </div>
-                                </div>
-                            `
-                              )
-                              .join("")}
-                        </div>
-
-                        <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-lg">
-                            <div class="font-bold text-purple-900 mb-2">🔍 Search Status Questions</div>
-                            <div class="space-y-2 text-sm italic text-purple-800">
-                                <div>• "Have you decided to leave your current position?"</div>
-                                <div>• "What would your current employer need to do to keep you?"</div>
-                                <div>• "Have you discussed making a change with your family?"</div>
-                                <div>• "Tell me about the other opportunities you're exploring..."</div>
-                                <div>• "What's your timeline for making a decision?"</div>
-                            </div>
-                        </div>
-
-                        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg">
-                            <div class="font-bold text-orange-900 mb-2">👨‍👩‍👧‍👦 Family & Personal Factors</div>
-                            <div class="space-y-2 text-sm italic text-orange-800">
-                                <div>• "Tell me about your family situation and what's important to them in a potential move..."</div>
-                                <div>• "Help me understand your family's needs and how they factor into your decision-making..."</div>
-                                <div>• "When you think about relocating, what considerations come up for your family?"</div>
-                            </div>
-                        </div>
-
-                        <div class="bg-red-50 border border-red-500 p-4 rounded-lg">
-                            <div class="font-bold text-red-900 mb-2">⚠️ Critical Rule</div>
-                            <div class="text-sm text-red-800">
-                                Complete ALL qualification areas BEFORE presenting any opportunity. Presenting too early = sequence violation = significant score penalty. Use your checklist!
                             </div>
                         </div>
                     </div>
@@ -1362,14 +1510,14 @@
                     <div class="space-y-4">
                         <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-lg">
                             <div class="font-bold text-indigo-900 mb-3 flex items-center">
-                                <span class="mr-2">💪</span>
+                                <span class="mr-2">ðŸ’ª</span>
                                 PROFESSIONAL CHALLENGING FRAMEWORK
                             </div>
                             <div class="text-sm text-indigo-800 mb-3">
                                 Professional challenging opens doors to opportunities physicians wouldn't consider otherwise. It's about understanding the NEED behind their preference, not arguing with them.
                             </div>
                             <div class="bg-indigo-100 p-3 rounded text-xs text-indigo-900">
-                                <strong>The Formula:</strong> Acknowledge preference → Explore underlying need → Offer alternative solution
+                                <strong>The Formula:</strong> Acknowledge preference â†’ Explore underlying need â†’ Offer alternative solution
                             </div>
                         </div>
 
@@ -1389,18 +1537,18 @@
                         </div>
 
                         <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-                            <div class="font-bold text-green-900 mb-2">✅ When to Challenge</div>
+                            <div class="font-bold text-green-900 mb-2">âœ… When to Challenge</div>
                             <div class="text-sm text-green-800 space-y-1">
-                                <div>• Physician has very narrow geographic parameters</div>
-                                <div>• Compensation expectations 20%+ above market</div>
-                                <div>• Requirements that eliminate 90%+ of opportunities</div>
-                                <div>• Surface-level preferences (not needs)</div>
-                                <div>• "Must-haves" that conflict with stated priorities</div>
+                                <div>â€¢ Physician has very narrow geographic parameters</div>
+                                <div>â€¢ Compensation expectations 20%+ above market</div>
+                                <div>â€¢ Requirements that eliminate 90%+ of opportunities</div>
+                                <div>â€¢ Surface-level preferences (not needs)</div>
+                                <div>â€¢ "Must-haves" that conflict with stated priorities</div>
                             </div>
                         </div>
 
                         <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
-                            <div class="font-bold text-blue-900 mb-2">🎯 Challenge Templates</div>
+                            <div class="font-bold text-blue-900 mb-2">ðŸŽ¯ Challenge Templates</div>
                             <div class="space-y-2 text-sm text-blue-800">
                                 <div class="border-b border-blue-200 pb-2">
                                     <strong>Geographic Flexibility:</strong>
@@ -1420,24 +1568,24 @@
                         </div>
 
                         <div class="bg-red-50 border border-red-500 p-4 rounded-lg">
-                            <div class="font-bold text-red-900 mb-2">🚫 What NOT to Do</div>
+                            <div class="font-bold text-red-900 mb-2">ðŸš« What NOT to Do</div>
                             <div class="text-sm text-red-800 space-y-1">
-                                <div>❌ "You're being unrealistic" (confrontational)</div>
-                                <div>❌ "Nobody pays that" (dismissive)</div>
-                                <div>❌ "You need to be more flexible" (demanding)</div>
-                                <div>✅ Instead: Focus on needs, use hypotheticals, stay curious</div>
+                                <div>âŒ "You're being unrealistic" (confrontational)</div>
+                                <div>âŒ "Nobody pays that" (dismissive)</div>
+                                <div>âŒ "You need to be more flexible" (demanding)</div>
+                                <div>âœ… Instead: Focus on needs, use hypotheticals, stay curious</div>
                             </div>
                         </div>
                     </div>
                 `;
         }
 
-        if (tab === "presentation") {
+        if (tab === "closing") {
           return `
                     <div class="space-y-4">
                         <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg">
                             <div class="font-bold text-red-900 mb-2 flex items-center">
-                                <span class="mr-2">⚠️</span>
+                                <span class="mr-2">âš ï¸</span>
                                 CRITICAL: Check Qualification Status First
                             </div>
                             <div class="text-sm text-red-800">
@@ -1446,7 +1594,7 @@
                         </div>
 
                         <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
-                            <div class="font-bold text-blue-900 mb-2">1️⃣ PROFESSIONAL CLARIFICATION</div>
+                            <div class="font-bold text-blue-900 mb-2">1ï¸âƒ£ PROFESSIONAL CLARIFICATION</div>
                             <div class="text-sm italic text-blue-800 mb-2">
                                 "Let me share back what I'm hearing is most important to you: [summarize priorities, pain points, and must-haves]. What did I miss or get wrong?"
                             </div>
@@ -1456,7 +1604,7 @@
                         </div>
 
                         <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-                            <div class="font-bold text-green-900 mb-2">2️⃣ REFLECTIVE INTRODUCTION</div>
+                            <div class="font-bold text-green-900 mb-2">2ï¸âƒ£ REFLECTIVE INTRODUCTION</div>
                             <div class="text-sm italic text-green-800 mb-2">
                                 "Based on what you've shared about [specific pain/priority], I have an opportunity that might address that. Let me tell you why I think this could be a fit..."
                             </div>
@@ -1466,7 +1614,7 @@
                         </div>
 
                         <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-lg">
-                            <div class="font-bold text-purple-900 mb-2">3️⃣ FEATURE-BENEFIT ALIGNMENT</div>
+                            <div class="font-bold text-purple-900 mb-2">3ï¸âƒ£ FEATURE-BENEFIT ALIGNMENT</div>
                             <div class="text-sm text-purple-800 mb-3">
                                 <strong>Always connect features to their stated needs:</strong>
                             </div>
@@ -1484,7 +1632,7 @@
                         </div>
 
                         <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg">
-                            <div class="font-bold text-orange-900 mb-2">4️⃣ HANDLING MISALIGNMENT</div>
+                            <div class="font-bold text-orange-900 mb-2">4ï¸âƒ£ HANDLING MISALIGNMENT</div>
                             <div class="text-sm text-orange-800 mb-2">
                                 If compensation or another factor doesn't perfectly align:
                             </div>
@@ -1492,14 +1640,14 @@
                                 "I want to be transparent with you. The compensation for this opportunity is [amount], which is [relationship to their expectation]. Before we dismiss it, help me understand what's most important to you - the total package, the base, the growth potential, the lifestyle factors, or something else?"
                             </div>
                             <div class="text-xs text-orange-700 bg-orange-100 p-2 rounded">
-                                <strong>Why this works:</strong> Honesty builds trust. Exploring flexibility on other factors can overcome compensation gaps. Misalignment ≠ automatic disqualification.
+                                <strong>Why this works:</strong> Honesty builds trust. Exploring flexibility on other factors can overcome compensation gaps. Misalignment â‰  automatic disqualification.
                             </div>
                         </div>
 
                         <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-lg">
-                            <div class="font-bold text-indigo-900 mb-2">5️⃣ COMMUNITY PRESENTATION</div>
+                            <div class="font-bold text-indigo-900 mb-2">5ï¸âƒ£ COMMUNITY PRESENTATION</div>
                             <div class="text-sm text-indigo-800 mb-2">
-                                <strong>Best Practice:</strong> Start broad (region) → narrow to state → specific community
+                                <strong>Best Practice:</strong> Start broad (region) â†’ narrow to state â†’ specific community
                             </div>
                             <div class="text-sm italic text-indigo-800">
                                 "Based on your interest in [family need/lifestyle], let me share what makes this region special... [regional features]. The specific community offers [local features] that align with what you described wanting..."
@@ -1507,24 +1655,28 @@
                         </div>
 
                         <div class="bg-yellow-50 border border-yellow-500 p-4 rounded-lg">
-                            <div class="font-bold text-yellow-900 mb-2">⚠️ Presentation Red Flags</div>
+                            <div class="font-bold text-yellow-900 mb-2">âš ï¸ Presentation Red Flags</div>
                             <div class="text-sm text-yellow-800 space-y-1">
-                                <div>❌ "This is perfect for you" (before understanding them)</div>
-                                <div>❌ Generic feature dump without connection to needs</div>
-                                <div>❌ No reflective statement before presenting</div>
-                                <div>❌ Presenting multiple opportunities without prioritization</div>
-                                <div>✅ One well-matched opportunity > three mediocre ones</div>
+                                <div>âŒ "This is perfect for you" (before understanding them)</div>
+                                <div>âŒ Generic feature dump without connection to needs</div>
+                                <div>âŒ No reflective statement before presenting</div>
+                                <div>âŒ Presenting multiple opportunities without prioritization</div>
+                                <div>âœ… One well-matched opportunity > three mediocre ones</div>
                             </div>
                         </div>
                     </div>
-                `;
-        }
 
-        if (tab === "closing") {
-          return `
+                        <!-- Closing & Next Steps -->
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg p-4 mt-4">
+                            <div class="font-bold text-xl mb-2">🤝 After Presentation: Strong Closing</div>
+                            <div class="text-sm opacity-90">
+                                Once you've presented the opportunity, transition to setting clear next steps and commitments.
+                            </div>
+                        </div>
+
                     <div class="space-y-4">
                         <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-                            <div class="font-bold text-green-900 mb-2">🤝 STRONG CLOSING FRAMEWORK</div>
+                            <div class="font-bold text-green-900 mb-2">ðŸ¤ STRONG CLOSING FRAMEWORK</div>
                             <div class="text-sm text-green-800 mb-3">
                                 Always end with clear next steps, mutual commitments, and specific timeline:
                             </div>
@@ -1534,29 +1686,29 @@
                         </div>
 
                         <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
-                            <div class="font-bold text-blue-900 mb-2">📋 NEXT STEPS CHECKLIST</div>
+                            <div class="font-bold text-blue-900 mb-2">ðŸ“‹ NEXT STEPS CHECKLIST</div>
                             <div class="text-sm text-blue-800 space-y-2">
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span><strong>Your commitments:</strong> Email opportunity details, coordinate with client, research specific questions</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span><strong>Their commitments:</strong> Review materials, discuss with spouse/family, prepare questions</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span><strong>Specific timing:</strong> "Tuesday at 2pm" not "early next week"</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span><strong>Confirmation:</strong> "Does that work for you?" - get verbal agreement</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-lg">
-                            <div class="font-bold text-purple-900 mb-2">💼 CONTACT INFORMATION</div>
+                            <div class="font-bold text-purple-900 mb-2">ðŸ’¼ CONTACT INFORMATION</div>
                             <div class="text-sm italic text-purple-800 mb-2">
                                 "What's the best email to send these details? And the best phone number to reach you? What's your preferred time for follow-up calls?"
                             </div>
@@ -1566,7 +1718,7 @@
                         </div>
 
                         <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-lg">
-                            <div class="font-bold text-indigo-900 mb-2">🎯 INTEREST LEVEL GAUGE</div>
+                            <div class="font-bold text-indigo-900 mb-2">ðŸŽ¯ INTEREST LEVEL GAUGE</div>
                             <div class="text-sm italic text-indigo-800 mb-2">
                                 "On a scale of 1-10, where 10 is 'I want to interview tomorrow' and 1 is 'not interested at all,' where are you on this opportunity?"
                             </div>
@@ -1576,7 +1728,7 @@
                         </div>
 
                         <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg">
-                            <div class="font-bold text-orange-900 mb-2">🚀 MOMENTUM BUILDERS</div>
+                            <div class="font-bold text-orange-900 mb-2">ðŸš€ MOMENTUM BUILDERS</div>
                             <div class="text-sm text-orange-800 space-y-2">
                                 <div>
                                     <strong>If highly interested:</strong>
@@ -1594,18 +1746,18 @@
                         </div>
 
                         <div class="bg-red-50 border border-red-500 p-4 rounded-lg">
-                            <div class="font-bold text-red-900 mb-2">🚫 Weak Closing Mistakes</div>
+                            <div class="font-bold text-red-900 mb-2">ðŸš« Weak Closing Mistakes</div>
                             <div class="text-sm text-red-800 space-y-1">
-                                <div>❌ "I'll send you some information" (vague)</div>
-                                <div>❌ "Let me know if you're interested" (puts burden on them)</div>
-                                <div>❌ "I'll follow up soon" (no specific timeline)</div>
-                                <div>❌ No mutual commitments or next steps</div>
-                                <div>✅ Always end with specific actions, timing, and agreement</div>
+                                <div>âŒ "I'll send you some information" (vague)</div>
+                                <div>âŒ "Let me know if you're interested" (puts burden on them)</div>
+                                <div>âŒ "I'll follow up soon" (no specific timeline)</div>
+                                <div>âŒ No mutual commitments or next steps</div>
+                                <div>âœ… Always end with specific actions, timing, and agreement</div>
                             </div>
                         </div>
 
                         <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-                            <div class="font-bold text-green-900 mb-2">📝 IMMEDIATE POST-CALL ACTIONS</div>
+                            <div class="font-bold text-green-900 mb-2">ðŸ“ IMMEDIATE POST-CALL ACTIONS</div>
                             <div class="text-sm text-green-800 space-y-1">
                                 <div>1. Document everything in Bullhorn immediately</div>
                                 <div>2. Send follow-up email within 30 minutes</div>
@@ -1617,6 +1769,7 @@
                     </div>
                 `;
         }
+
 
         return "";
       }
@@ -1655,7 +1808,7 @@
 
                         <!-- Compensation Data -->
                         <div class="mb-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-5 border-l-4 border-green-500">
-                            <h3 class="font-bold text-lg mb-4 text-green-800">💰 MGMA 2025 Compensation Data</h3>
+                            <h3 class="font-bold text-lg mb-4 text-green-800">ðŸ’° MGMA 2025 Compensation Data</h3>
                             <div class="grid md:grid-cols-3 gap-4">
                                 <div class="text-center">
                                     <div class="text-sm text-gray-600 dark:text-gray-400 mb-1">25th Percentile</div>
@@ -1686,7 +1839,7 @@
                         <!-- Pain Points -->
                         <div class="mb-6">
                             <h3 class="font-bold text-lg mb-4 flex items-center">
-                                <span class="mr-2">🔍</span>
+                                <span class="mr-2">ðŸ”</span>
                                 Common Pain Points & Frustrations
                             </h3>
                             <div class="grid md:grid-cols-${
@@ -1704,7 +1857,7 @@
                                               .map(
                                                 (point) => `
                                                 <li class="flex items-start">
-                                                    <span class="mr-2 mt-1">•</span>
+                                                    <span class="mr-2 mt-1">â€¢</span>
                                                     <span>${point}</span>
                                                 </li>
                                             `
@@ -1721,7 +1874,7 @@
                         <!-- Motivations -->
                         <div class="mb-6">
                             <h3 class="font-bold text-lg mb-4 flex items-center">
-                                <span class="mr-2">🎯</span>
+                                <span class="mr-2">ðŸŽ¯</span>
                                 Common Motivations & Priorities
                             </h3>
                             <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
@@ -1730,7 +1883,7 @@
                                       .map(
                                         (motivation) => `
                                         <div class="flex items-start text-sm text-blue-800">
-                                            <span class="text-blue-500 mr-2 mt-1">✓</span>
+                                            <span class="text-blue-500 mr-2 mt-1">âœ“</span>
                                             <span>${motivation}</span>
                                         </div>
                                     `
@@ -1743,7 +1896,7 @@
                         <!-- Key Questions by Category -->
                         <div class="mb-6">
                             <h3 class="font-bold text-lg mb-4 flex items-center">
-                                <span class="mr-2">❓</span>
+                                <span class="mr-2">â“</span>
                                 Discovery Questions by Phase
                             </h3>
                             <div class="space-y-4">
@@ -1774,14 +1927,14 @@
                                         }">
                                             ${
                                               category === "painDiscovery"
-                                                ? "🔍 Pain Discovery"
+                                                ? "ðŸ” Pain Discovery"
                                                 : category === "opening"
-                                                ? "👋 Opening Questions"
+                                                ? "ðŸ‘‹ Opening Questions"
                                                 : category === "clinical"
-                                                ? "🏥 Clinical Discovery"
+                                                ? "ðŸ¥ Clinical Discovery"
                                                 : category === "motivation"
-                                                ? "🎯 Motivation Discovery"
-                                                : "💰 Compensation Discovery"
+                                                ? "ðŸŽ¯ Motivation Discovery"
+                                                : "ðŸ’° Compensation Discovery"
                                             }
                                         </div>
                                         <ul class="space-y-2 text-sm ${
@@ -1799,7 +1952,7 @@
                                               .map(
                                                 (q) => `
                                                 <li class="flex items-start">
-                                                    <span class="mr-2 mt-1">•</span>
+                                                    <span class="mr-2 mt-1">â€¢</span>
                                                     <span class="italic">"${q}"</span>
                                                 </li>
                                             `
@@ -1816,7 +1969,7 @@
                         <!-- Common Challenges -->
                         <div class="mb-6">
                             <h3 class="font-bold text-lg mb-4 flex items-center">
-                                <span class="mr-2">⚠️</span>
+                                <span class="mr-2">âš ï¸</span>
                                 Common Objections & Responses
                             </h3>
                             <div class="space-y-3">
@@ -1825,7 +1978,7 @@
                                     (item) => `
                                     <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-lg p-4">
                                         <div class="font-bold text-yellow-900 mb-2">
-                                            💬 "${item.challenge}"
+                                            ðŸ’¬ "${item.challenge}"
                                         </div>
                                         <div class="text-sm italic text-yellow-800">
                                             Response: "${item.response}"
@@ -1840,7 +1993,7 @@
                         <!-- Professional Challenging Scripts -->
                         <div class="bg-purple-50 border-l-4 border-purple-500 rounded-lg p-5">
                             <h3 class="font-bold text-lg mb-3 text-purple-900">
-                                💪 Professional Challenging Scripts
+                                ðŸ’ª Professional Challenging Scripts
                             </h3>
                             <div class="space-y-3">
                                 ${currentSpecialty.challengingOpportunities
@@ -1865,7 +2018,7 @@
                     <!-- Framework Overview -->
                     <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl p-8 shadow-2xl">
                         <h2 class="text-3xl font-bold mb-3 flex items-center">
-                            <span class="mr-3">❓</span>
+                            <span class="mr-3">â“</span>
                             The 80/20 Question Quality Rule
                         </h2>
                         <p class="text-lg opacity-95 mb-4">
@@ -1883,7 +2036,7 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border-t-4 border-green-500">
                             <h3 class="font-bold text-xl mb-4 text-green-700 flex items-center">
-                                <span class="mr-2">✅</span>
+                                <span class="mr-2">âœ…</span>
                                 Open-Ended Questions
                             </h3>
                             <div class="mb-4 text-sm text-gray-700 dark:text-gray-300">
@@ -1893,23 +2046,23 @@
                                 <div class="bg-green-50 border border-green-200 rounded-lg p-3">
                                     <div class="font-semibold text-green-800 mb-1">Starters to Use:</div>
                                     <div class="text-sm text-green-700 space-y-1">
-                                        <div>• "Tell me about..."</div>
-                                        <div>• "Help me understand..."</div>
-                                        <div>• "Walk me through..."</div>
-                                        <div>• "Describe for me..."</div>
-                                        <div>• "Share with me..."</div>
-                                        <div>• "What's your experience with..."</div>
-                                        <div>• "Explain to me..."</div>
-                                        <div>• "What's the story behind..."</div>
+                                        <div>â€¢ "Tell me about..."</div>
+                                        <div>â€¢ "Help me understand..."</div>
+                                        <div>â€¢ "Walk me through..."</div>
+                                        <div>â€¢ "Describe for me..."</div>
+                                        <div>â€¢ "Share with me..."</div>
+                                        <div>â€¢ "What's your experience with..."</div>
+                                        <div>â€¢ "Explain to me..."</div>
+                                        <div>â€¢ "What's the story behind..."</div>
                                     </div>
                                 </div>
                                 <div class="bg-green-50 border border-green-200 rounded-lg p-3">
                                     <div class="font-semibold text-green-800 mb-2">Examples:</div>
                                     <div class="text-sm italic text-green-700 space-y-2">
-                                        <div>✓ "Tell me about your current practice structure"</div>
-                                        <div>✓ "Help me understand what's driving you to explore new opportunities"</div>
-                                        <div>✓ "Walk me through a typical day in your current role"</div>
-                                        <div>✓ "Describe your ideal patient population"</div>
+                                        <div>âœ“ "Tell me about your current practice structure"</div>
+                                        <div>âœ“ "Help me understand what's driving you to explore new opportunities"</div>
+                                        <div>âœ“ "Walk me through a typical day in your current role"</div>
+                                        <div>âœ“ "Describe your ideal patient population"</div>
                                     </div>
                                 </div>
                             </div>
@@ -1917,7 +2070,7 @@
 
                         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border-t-4 border-red-500">
                             <h3 class="font-bold text-xl mb-4 text-red-700 flex items-center">
-                                <span class="mr-2">❌</span>
+                                <span class="mr-2">âŒ</span>
                                 Closed-Ended Questions
                             </h3>
                             <div class="mb-4 text-sm text-gray-700 dark:text-gray-300">
@@ -1927,23 +2080,23 @@
                                 <div class="bg-red-50 border border-red-200 rounded-lg p-3">
                                     <div class="font-semibold text-red-800 mb-1">Starters to Avoid:</div>
                                     <div class="text-sm text-red-700 space-y-1">
-                                        <div>• "Do you..."</div>
-                                        <div>• "Are you..."</div>
-                                        <div>• "Can you..."</div>
-                                        <div>• "Will you..."</div>
-                                        <div>• "Have you..."</div>
-                                        <div>• "Is there..."</div>
-                                        <div>• "Would you..."</div>
-                                        <div>• "Could you..."</div>
+                                        <div>â€¢ "Do you..."</div>
+                                        <div>â€¢ "Are you..."</div>
+                                        <div>â€¢ "Can you..."</div>
+                                        <div>â€¢ "Will you..."</div>
+                                        <div>â€¢ "Have you..."</div>
+                                        <div>â€¢ "Is there..."</div>
+                                        <div>â€¢ "Would you..."</div>
+                                        <div>â€¢ "Could you..."</div>
                                     </div>
                                 </div>
                                 <div class="bg-red-50 border border-red-200 rounded-lg p-3">
                                     <div class="font-semibold text-red-800 mb-2">Examples:</div>
                                     <div class="text-sm italic text-red-700 space-y-2">
-                                        <div>✗ "Do you see pediatric patients?"</div>
-                                        <div>✗ "Are you board certified?"</div>
-                                        <div>✗ "Can you work weekends?"</div>
-                                        <div>✗ "Have you used Epic EMR?"</div>
+                                        <div>âœ— "Do you see pediatric patients?"</div>
+                                        <div>âœ— "Are you board certified?"</div>
+                                        <div>âœ— "Can you work weekends?"</div>
+                                        <div>âœ— "Have you used Epic EMR?"</div>
                                     </div>
                                 </div>
                             </div>
@@ -1953,7 +2106,7 @@
                     <!-- Conversion Practice -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">🔄</span>
+                            <span class="mr-2">ðŸ”„</span>
                             Conversion Practice: Transform Closed to Open
                         </h3>
                         <div class="space-y-4">
@@ -1993,15 +2146,15 @@
                                 (example) => `
                                 <div class="border rounded-lg overflow-hidden">
                                     <div class="bg-red-50 p-4 border-b">
-                                        <div class="text-xs font-bold text-red-700 mb-1">❌ CLOSED QUESTION:</div>
+                                        <div class="text-xs font-bold text-red-700 mb-1">âŒ CLOSED QUESTION:</div>
                                         <div class="text-sm text-red-800">"${example.closed}"</div>
                                     </div>
                                     <div class="bg-green-50 p-4 border-b">
-                                        <div class="text-xs font-bold text-green-700 mb-1">✅ OPEN-ENDED VERSION:</div>
+                                        <div class="text-xs font-bold text-green-700 mb-1">âœ… OPEN-ENDED VERSION:</div>
                                         <div class="text-sm italic text-green-800">"${example.open}"</div>
                                     </div>
                                     <div class="bg-blue-50 p-4">
-                                        <div class="text-xs font-bold text-blue-700 mb-1">💡 WHY THIS WORKS BETTER:</div>
+                                        <div class="text-xs font-bold text-blue-700 mb-1">ðŸ’¡ WHY THIS WORKS BETTER:</div>
                                         <div class="text-xs text-blue-800">${example.why}</div>
                                     </div>
                                 </div>
@@ -2014,7 +2167,7 @@
                     <!-- The Curiosity Loop -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">🔁</span>
+                            <span class="mr-2">ðŸ”</span>
                             The Curiosity Loop: Asking "Why"
                         </h3>
                         <div class="mb-4 p-4 bg-purple-50 border-l-4 border-purple-500 rounded">
@@ -2027,14 +2180,14 @@
                             <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
                                 <div class="font-bold text-purple-900 mb-3">"Why" Alternatives:</div>
                                 <div class="space-y-2 text-sm text-purple-800">
-                                    <div>• "Help me understand what's behind that..."</div>
-                                    <div>• "Tell me more about what drives that preference..."</div>
-                                    <div>• "Walk me through your thinking on that..."</div>
-                                    <div>• "What's the story behind that decision?"</div>
-                                    <div>• "Explain what led you to that conclusion..."</div>
-                                    <div>• "Share more about that situation..."</div>
-                                    <div>• "What's driving that need?"</div>
-                                    <div>• "How did you arrive at that?"</div>
+                                    <div>â€¢ "Help me understand what's behind that..."</div>
+                                    <div>â€¢ "Tell me more about what drives that preference..."</div>
+                                    <div>â€¢ "Walk me through your thinking on that..."</div>
+                                    <div>â€¢ "What's the story behind that decision?"</div>
+                                    <div>â€¢ "Explain what led you to that conclusion..."</div>
+                                    <div>â€¢ "Share more about that situation..."</div>
+                                    <div>â€¢ "What's driving that need?"</div>
+                                    <div>â€¢ "How did you arrive at that?"</div>
                                 </div>
                             </div>
                             <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
@@ -2075,7 +2228,7 @@
                     <!-- Practice Plan -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">🎯</span>
+                            <span class="mr-2">ðŸŽ¯</span>
                             Your Question Quality Development Plan
                         </h3>
                         <div class="space-y-4">
@@ -2102,26 +2255,26 @@
 
                     <!-- Impact Visualization -->
                     <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl p-6">
-                        <h3 class="font-bold text-xl mb-4">💡 The Impact of Question Quality</h3>
+                        <h3 class="font-bold text-xl mb-4">ðŸ’¡ The Impact of Question Quality</h3>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <div class="text-lg font-bold mb-2">50% Open-Ended Ratio:</div>
                                 <div class="text-sm opacity-90 space-y-1">
-                                    <div>→ Surface-level information</div>
-                                    <div>→ Feels like interrogation</div>
-                                    <div>→ Physician holds back</div>
-                                    <div>→ Weak positioning</div>
-                                    <div>→ Low placement rate</div>
+                                    <div>â†’ Surface-level information</div>
+                                    <div>â†’ Feels like interrogation</div>
+                                    <div>â†’ Physician holds back</div>
+                                    <div>â†’ Weak positioning</div>
+                                    <div>â†’ Low placement rate</div>
                                 </div>
                             </div>
                             <div>
                                 <div class="text-lg font-bold mb-2">80% Open-Ended Ratio:</div>
                                 <div class="text-sm opacity-90 space-y-1">
-                                    <div>→ Deep insights uncovered</div>
-                                    <div>→ Feels consultative</div>
-                                    <div>→ Physician opens up</div>
-                                    <div>→ Strong positioning</div>
-                                    <div>→ High placement rate</div>
+                                    <div>â†’ Deep insights uncovered</div>
+                                    <div>â†’ Feels consultative</div>
+                                    <div>â†’ Physician opens up</div>
+                                    <div>â†’ Strong positioning</div>
+                                    <div>â†’ High placement rate</div>
                                 </div>
                             </div>
                         </div>
@@ -2136,7 +2289,7 @@
                     <!-- Framework Overview -->
                     <div class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-xl p-8 shadow-2xl">
                         <h2 class="text-3xl font-bold mb-3 flex items-center">
-                            <span class="mr-3">💪</span>
+                            <span class="mr-3">ðŸ’ª</span>
                             Professional Challenging Framework
                         </h2>
                         <p class="text-lg opacity-95 mb-4">
@@ -2145,7 +2298,7 @@
                         <div class="bg-white dark:bg-gray-800 bg-opacity-20 rounded-lg p-4">
                             <div class="text-xl font-bold mb-2">The Formula:</div>
                             <div class="text-lg">
-                                Acknowledge Preference → Explore Underlying Need → Offer Alternative Solution
+                                Acknowledge Preference â†’ Explore Underlying Need â†’ Offer Alternative Solution
                             </div>
                         </div>
                     </div>
@@ -2153,30 +2306,30 @@
                     <!-- When to Challenge -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">🎯</span>
+                            <span class="mr-2">ðŸŽ¯</span>
                             When to Use Professional Challenging
                         </h3>
                         <div class="grid md:grid-cols-2 gap-4">
                             <div class="bg-green-50 border-l-4 border-green-500 rounded-lg p-4">
-                                <div class="font-bold text-green-900 mb-3">✅ Good Opportunities to Challenge:</div>
+                                <div class="font-bold text-green-900 mb-3">âœ… Good Opportunities to Challenge:</div>
                                 <div class="text-sm text-green-800 space-y-2">
-                                    <div>• Very narrow geographic parameters (one city only)</div>
-                                    <div>• Compensation 20%+ above market range</div>
-                                    <div>• Requirements eliminating 90%+ of opportunities</div>
-                                    <div>• Surface-level preferences vs. deep needs</div>
-                                    <div>• "Must-haves" conflicting with stated priorities</div>
-                                    <div>• Unrealistic expectations based on incomplete information</div>
+                                    <div>â€¢ Very narrow geographic parameters (one city only)</div>
+                                    <div>â€¢ Compensation 20%+ above market range</div>
+                                    <div>â€¢ Requirements eliminating 90%+ of opportunities</div>
+                                    <div>â€¢ Surface-level preferences vs. deep needs</div>
+                                    <div>â€¢ "Must-haves" conflicting with stated priorities</div>
+                                    <div>â€¢ Unrealistic expectations based on incomplete information</div>
                                 </div>
                             </div>
                             <div class="bg-red-50 border-l-4 border-red-500 rounded-lg p-4">
-                                <div class="font-bold text-red-900 mb-3">❌ When NOT to Challenge:</div>
+                                <div class="font-bold text-red-900 mb-3">âŒ When NOT to Challenge:</div>
                                 <div class="text-sm text-red-800 space-y-2">
-                                    <div>• Non-negotiable family factors (spouse job, aging parents)</div>
-                                    <div>• Medical/health limitations</div>
-                                    <div>• Deep-seated values or religious requirements</div>
-                                    <div>• Recent trauma or life events</div>
-                                    <div>• When they've already thoroughly explored alternatives</div>
-                                    <div>• Aggressive or defensive tone from physician</div>
+                                    <div>â€¢ Non-negotiable family factors (spouse job, aging parents)</div>
+                                    <div>â€¢ Medical/health limitations</div>
+                                    <div>â€¢ Deep-seated values or religious requirements</div>
+                                    <div>â€¢ Recent trauma or life events</div>
+                                    <div>â€¢ When they've already thoroughly explored alternatives</div>
+                                    <div>â€¢ Aggressive or defensive tone from physician</div>
                                 </div>
                             </div>
                         </div>
@@ -2185,7 +2338,7 @@
                     <!-- The Framework -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">📋</span>
+                            <span class="mr-2">ðŸ“‹</span>
                             The 3-Step Challenging Process
                         </h3>
                         <div class="space-y-4">
@@ -2241,7 +2394,7 @@
                     <!-- Common Scenarios with Scripts -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">💬</span>
+                            <span class="mr-2">ðŸ’¬</span>
                             Common Scenarios & Challenge Scripts
                         </h3>
                         <div class="space-y-4">
@@ -2328,12 +2481,12 @@
                     <!-- What NOT to Do -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center text-red-700">
-                            <span class="mr-2">🚫</span>
+                            <span class="mr-2">ðŸš«</span>
                             Professional Challenging Mistakes
                         </h3>
                         <div class="grid md:grid-cols-2 gap-4">
                             <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-                                <div class="font-bold text-red-900 mb-3">❌ Wrong Approach:</div>
+                                <div class="font-bold text-red-900 mb-3">âŒ Wrong Approach:</div>
                                 <div class="space-y-2 text-sm text-red-800">
                                     <div class="italic">"You're being unrealistic about compensation."</div>
                                     <div class="italic">"Nobody pays that much in that location."</div>
@@ -2346,7 +2499,7 @@
                                 </div>
                             </div>
                             <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                                <div class="font-bold text-green-900 mb-3">✅ Right Approach:</div>
+                                <div class="font-bold text-green-900 mb-3">âœ… Right Approach:</div>
                                 <div class="space-y-2 text-sm text-green-800">
                                     <div class="italic">"Help me understand what's behind that expectation..."</div>
                                     <div class="italic">"What NEED is that solving for you?"</div>
@@ -2363,7 +2516,7 @@
 
                     <!-- Practice Exercise -->
                     <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl p-6">
-                        <h3 class="font-bold text-xl mb-4">🎯 Practice Exercise</h3>
+                        <h3 class="font-bold text-xl mb-4">ðŸŽ¯ Practice Exercise</h3>
                         <div class="bg-white dark:bg-gray-800 bg-opacity-20 rounded-lg p-4">
                             <div class="font-bold mb-3">On your next 3 calls, identify at least ONE opportunity to professionally challenge:</div>
                             <div class="space-y-2 text-sm opacity-95">
@@ -2388,7 +2541,7 @@
                     <!-- Overview -->
                     <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl p-8 shadow-2xl">
                         <h2 class="text-3xl font-bold mb-3 flex items-center">
-                            <span class="mr-3">💰</span>
+                            <span class="mr-3">ðŸ’°</span>
                             Compensation Management Excellence
                         </h2>
                         <p class="text-lg opacity-95 mb-4">
@@ -2405,7 +2558,7 @@
                     <!-- MGMA Data Table -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">📊</span>
+                            <span class="mr-2">ðŸ“Š</span>
                             MGMA 2025 Compensation Data by Specialty
                         </h3>
                         <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
@@ -2440,13 +2593,13 @@
                             </table>
                         </div>
                         <div class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
-                            <div class="font-bold text-blue-900 mb-2">💡 Using MGMA Data Effectively:</div>
+                            <div class="font-bold text-blue-900 mb-2">ðŸ’¡ Using MGMA Data Effectively:</div>
                             <div class="text-sm text-blue-800 space-y-1">
-                                <div>• Always present as ranges, not specific numbers</div>
-                                <div>• Acknowledge variations by geography and setting</div>
-                                <div>• Rural/underserved areas typically 10-15% above median</div>
-                                <div>• Academic positions typically 10-20% below median</div>
-                                <div>• Partnership/ownership can add 20-30% to base</div>
+                                <div>â€¢ Always present as ranges, not specific numbers</div>
+                                <div>â€¢ Acknowledge variations by geography and setting</div>
+                                <div>â€¢ Rural/underserved areas typically 10-15% above median</div>
+                                <div>â€¢ Academic positions typically 10-20% below median</div>
+                                <div>â€¢ Partnership/ownership can add 20-30% to base</div>
                             </div>
                         </div>
                     </div>
@@ -2454,7 +2607,7 @@
                     <!-- Discovery Scripts -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">🔍</span>
+                            <span class="mr-2">ðŸ”</span>
                             Compensation Discovery Scripts
                         </h3>
                         <div class="space-y-4">
@@ -2503,7 +2656,7 @@
                     <!-- Handling Misalignment -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">⚖️</span>
+                            <span class="mr-2">âš–ï¸</span>
                             Professional Misalignment Handling
                         </h3>
                         <div class="mb-4 p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
@@ -2575,7 +2728,7 @@
                     <!-- Creative Structuring Options -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">🎨</span>
+                            <span class="mr-2">ðŸŽ¨</span>
                             Creative Compensation Structuring
                         </h3>
                         <div class="grid md:grid-cols-2 gap-4">
@@ -2664,7 +2817,7 @@
                                     <div class="p-3 space-y-2">
                                         <div class="text-xs text-gray-700 dark:text-gray-300 space-y-1">
                                             ${option.examples
-                                              .map((ex) => `<div>• ${ex}</div>`)
+                                              .map((ex) => `<div>â€¢ ${ex}</div>`)
                                               .join("")}
                                         </div>
                                         <div class="bg-green-50 border border-green-200 rounded p-2 text-xs italic text-green-800">
@@ -2681,32 +2834,32 @@
                     <!-- Red Flags to Avoid -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center text-red-700">
-                            <span class="mr-2">🚫</span>
+                            <span class="mr-2">ðŸš«</span>
                             Compensation Discussion Mistakes
                         </h3>
                         <div class="grid md:grid-cols-2 gap-4">
                             <div class="bg-red-50 border border-red-200 rounded-lg p-4">
-                                <div class="font-bold text-red-900 mb-3">❌ What NOT to Do:</div>
+                                <div class="font-bold text-red-900 mb-3">âŒ What NOT to Do:</div>
                                 <div class="text-sm text-red-800 space-y-2">
-                                    <div>• Present opportunity before knowing current comp</div>
-                                    <div>• Lead with compensation when it's not their top priority</div>
-                                    <div>• Quote specific numbers without ranges/context</div>
-                                    <div>• Dismiss opportunity immediately if comp doesn't align</div>
-                                    <div>• Argue about what someone "should" make</div>
-                                    <div>• Make promises you can't keep about negotiation</div>
-                                    <div>• Share other candidates' comp expectations</div>
+                                    <div>â€¢ Present opportunity before knowing current comp</div>
+                                    <div>â€¢ Lead with compensation when it's not their top priority</div>
+                                    <div>â€¢ Quote specific numbers without ranges/context</div>
+                                    <div>â€¢ Dismiss opportunity immediately if comp doesn't align</div>
+                                    <div>â€¢ Argue about what someone "should" make</div>
+                                    <div>â€¢ Make promises you can't keep about negotiation</div>
+                                    <div>â€¢ Share other candidates' comp expectations</div>
                                 </div>
                             </div>
                             <div class="bg-green-50 border border-green-200 rounded-lg p-4">
-                                <div class="font-bold text-green-900 mb-3">✅ Best Practices:</div>
+                                <div class="font-bold text-green-900 mb-3">âœ… Best Practices:</div>
                                 <div class="text-sm text-green-800 space-y-2">
-                                    <div>• Discover current comp before any presentations</div>
-                                    <div>• Use MGMA data to anchor expectations</div>
-                                    <div>• Focus on total package, not just base</div>
-                                    <div>• Explore misalignment before dismissing</div>
-                                    <div>• Be transparent about market realities</div>
-                                    <div>• Understand motivations behind numbers</div>
-                                    <div>• Present creative structures when appropriate</div>
+                                    <div>â€¢ Discover current comp before any presentations</div>
+                                    <div>â€¢ Use MGMA data to anchor expectations</div>
+                                    <div>â€¢ Focus on total package, not just base</div>
+                                    <div>â€¢ Explore misalignment before dismissing</div>
+                                    <div>â€¢ Be transparent about market realities</div>
+                                    <div>â€¢ Understand motivations behind numbers</div>
+                                    <div>â€¢ Present creative structures when appropriate</div>
                                 </div>
                             </div>
                         </div>
@@ -2714,41 +2867,41 @@
 
                     <!-- Professional Compensation Tips -->
                     <div class="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl p-6">
-                        <h3 class="font-bold text-xl mb-4">💡 Professional Compensation Management Tips</h3>
+                        <h3 class="font-bold text-xl mb-4">ðŸ’¡ Professional Compensation Management Tips</h3>
                         <div class="grid md:grid-cols-2 gap-4 text-sm">
                             <div class="space-y-2">
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span>Always quote total compensation, not just base salary</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span>Use MGMA data to demonstrate market knowledge</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span>Explore financial motivations beyond the number</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span>Present ranges before specific numbers</span>
                                 </div>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span>Misalignment isn't automatic disqualification</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span>Benefits and lifestyle can offset lower base</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span>Be transparent about what's realistic</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">✓</span>
+                                    <span class="mr-2">âœ“</span>
                                     <span>Use creative structuring to bridge gaps</span>
                                 </div>
                             </div>
@@ -2799,10 +2952,10 @@
                         <div class="flex items-center justify-between">
                             <div>
                                 <h1 class="text-4xl font-bold mb-2 flex items-center">
-                                    <span class="mr-3">🎯</span>
+                                    <span class="mr-3">ðŸŽ¯</span>
                                     Pacific Companies
                                 </h1>
-                                <p class="text-xl opacity-95">Permanent Physician Recruiting • V3.4 Excellence Framework</p>
+                                <p class="text-xl opacity-95">Permanent Physician Recruiting â€¢ V3.4 Excellence Framework</p>
                             </div>
                             <div class="flex items-center space-x-6">
                                 <div class="text-right">
@@ -2820,7 +2973,7 @@
                                     }"
                                 >
                                     <span class="text-2xl">${
-                                      state.darkMode ? "☀️" : "🌙"
+                                      state.darkMode ? "â˜€ï¸" : "ðŸŒ™"
                                     }</span>
                                 </button>
                                 <!-- Logout Button -->
@@ -2850,27 +3003,27 @@
                                   {
                                     id: "prep",
                                     label: "Pre-Call Prep",
-                                    icon: "🎯",
+                                    icon: "ðŸŽ¯",
                                   },
                                   {
                                     id: "specialty",
                                     label: "Specialty Guide",
-                                    icon: "📚",
+                                    icon: "ðŸ“š",
                                   },
                                   {
                                     id: "questions",
                                     label: "Question Quality",
-                                    icon: "❓",
+                                    icon: "â“",
                                   },
                                   {
                                     id: "challenging",
                                     label: "Professional Challenging",
-                                    icon: "💪",
+                                    icon: "ðŸ’ª",
                                   },
                                   {
                                     id: "compensation",
                                     label: "Compensation",
-                                    icon: "💰",
+                                    icon: "ðŸ’°",
                                   },
                                 ]
                                   .map(
@@ -2908,11 +3061,11 @@
                     <div class="max-w-7xl mx-auto px-6">
                         <div class="text-center mb-4">
                             <p class="text-2xl font-bold mb-2">Excellence Through Discovery</p>
-                            <p class="text-lg opacity-90">80% Open-Ended Questions • Deep Pain Discovery • Sequence Compliance</p>
+                            <p class="text-lg opacity-90">80% Open-Ended Questions â€¢ Deep Pain Discovery â€¢ Sequence Compliance</p>
                         </div>
                         <div class="text-center text-sm opacity-75 border-t border-gray-700 pt-4">
-                            <p>All candidate data must be documented in Bullhorn • MGMA 2025 compensation data</p>
-                            <p class="mt-1">© Pacific Companies • V3.4 Framework</p>
+                            <p>All candidate data must be documented in Bullhorn â€¢ MGMA 2025 compensation data</p>
+                            <p class="mt-1">Â© Pacific Companies â€¢ V3.4 Framework</p>
                         </div>
                     </div>
                 </div>
@@ -2936,7 +3089,7 @@
             document.getElementById("app").innerHTML = `
                         <div class="flex items-center justify-center min-h-screen">
                             <div class="text-center">
-                                <p class="text-2xl text-red-600 mb-4">⚠️ Error Loading Specialties</p>
+                                <p class="text-2xl text-red-600 mb-4">âš ï¸ Error Loading Specialties</p>
                                 <p class="text-gray-600 dark:text-gray-400 dark:text-gray-400">Please ensure specialty JSON files are in the specialties/ folder</p>
                             </div>
                         </div>
@@ -2945,14 +3098,14 @@
           }
 
           // Initial render with loaded data
-          console.log("✓ Application initialized successfully");
+          console.log("âœ“ Application initialized successfully");
           render();
         } catch (error) {
           console.error("Failed to initialize application:", error);
           document.getElementById("app").innerHTML = `
                     <div class="flex items-center justify-center min-h-screen">
                         <div class="text-center">
-                            <p class="text-2xl text-red-600 mb-4">⚠️ Error Initializing Application</p>
+                            <p class="text-2xl text-red-600 mb-4">âš ï¸ Error Initializing Application</p>
                             <p class="text-gray-600 dark:text-gray-400 dark:text-gray-400">${error.message}</p>
                         </div>
                     </div>

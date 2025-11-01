@@ -1,0 +1,142 @@
+{
+  "name": "Cardiology - Noninvasive",
+  "icon": "\u2764\ufe0f\u200d\ud83e\ude79",
+  "compensation": {
+    "median": "$628,393",
+    "range": "$510,290 - $752,550",
+    "percentile25": "$510,290",
+    "percentile50": "$628,393",
+    "percentile75": "$752,550",
+    "workRVUs": "9,242 (median)",
+    "compensationPerRVU": "$65.82 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "Workload, RVUs & Access",
+      "points": [
+        "High clinic volume with limited time per patient; pressure to increase wRVUs",
+        "Backlogs for echo, stress imaging, and nuclear tests delay care and frustrate patients",
+        "Limited scanner time or sonographer staffing constrains throughput",
+        "Referral leakage to external imaging centers reduces continuity and revenue capture",
+        "Inpatient consults added on top of full clinic days"
+      ]
+    },
+    {
+      "category": "Prior Authorization & AUC Complexity",
+      "points": [
+        "Frequent denials for advanced imaging (MPI, CCTA, CMR) despite indications",
+        "Time-consuming documentation to meet Appropriate Use Criteria and payer policies",
+        "Redundant testing risk when navigating multiple modalities",
+        "Administrative burden falls on physicians and APPs, impacting access and morale"
+      ]
+    },
+    {
+      "category": "Technology & Quality",
+      "points": [
+        "Older ultrasound/nuclear equipment affecting image quality and interpretation confidence",
+        "Limited access to PET, CMR, or CCTA limits diagnostic options for complex cases",
+        "Inconsistent lab accreditation/QA processes (IAC/ASE) add friction",
+        "Fragmented PACS/reporting workflows slow turnaround and communication"
+      ]
+    },
+    {
+      "category": "Work-Life & Burnout",
+      "points": [
+        "Clinic + hospital responsibilities creep beyond scheduled hours",
+        "Unpredictable add-on studies and hospital consults disrupt family time",
+        "Documentation and inbox burden after hours",
+        "Desire for more predictable, outpatient-focused schedules"
+      ]
+    },
+    {
+      "category": "Team & Role Clarity",
+      "points": [
+        "Underutilized APPs/sonographers leading to physician doing non-physician tasks",
+        "Ambiguity around hospital call expectations for a noninvasive role",
+        "Limited leadership pathway (e.g., echo/NM lab directorship) despite interest"
+      ]
+    }
+  ],
+  "motivations": [
+    "More predictable outpatient schedule with limited/no inpatient call",
+    "Stronger imaging program (modern echo, stress, PET, CMR, CCTA) and reliable access",
+    "Efficient prior authorization support and AUC-aligned protocols",
+    "Leadership roles (Echo Lab Director, Nuclear Cardiology Director, Quality)",
+    "Improved compensation/bonus tied to realistic, supported productivity",
+    "Robust APP/sonographer staffing and triage workflows",
+    "Geographic relocation for family/schools/lifestyle",
+    "Academic vs. community shift (teaching, research, protected time)",
+    "Equipment upgrades and committed capital for imaging growth",
+    "Loan repayment/sign-on plus relocation assistance",
+    "Defined clinic templates and protected interpretation time",
+    "Tele-cardiology options for follow-ups and chronic disease management",
+    "Clear pathway to partnership or long-term stability in health system employment"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current practice\u2014outpatient vs. inpatient mix and a typical clinic day.",
+      "What\u2019s driving you to explore new opportunities right now?",
+      "Help me understand the top things you\u2019d like to change in your next role."
+    ],
+    "painDiscovery": [
+      "You mentioned [challenge]. Walk me through how that shows up during a typical week.",
+      "Where do prior auth or AUC requirements create the biggest slowdowns for you?",
+      "How are imaging access and turnaround times affecting your patient care and schedule?",
+      "What parts of your day are spilling into evenings or weekends?",
+      "If you could change one process in your clinic or imaging lab tomorrow, what would it be?"
+    ],
+    "clinical": [
+      "Describe your scope: general cardiology, preventive clinics, HF/arrhythmia follow-up, device checks oversight?",
+      "What\u2019s your typical clinic volume (new vs. follow-up) and desired daily census?",
+      "Imaging comfort: TTE/TEE, stress echo, SPECT/PET MPI, CMR, and CCTA interpretation\u2014what\u2019s in your wheelhouse?",
+      "How many studies do you interpret weekly today (echo, stress, nuclear), and what\u2019s ideal?",
+      "Experience with lab accreditation (IAC/ASE) and QA protocols?",
+      "How do you prefer to structure protected reading time vs. clinic?",
+      "What hospital call/consult involvement (if any) is acceptable in a noninvasive role?",
+      "Any interest in program-building (preventive cardiology, lipid clinic, imaging service line)?"
+    ],
+    "motivation": [
+      "When you picture your ideal noninvasive practice, what does it look like day to day?",
+      "What would make a move clearly worthwhile for you and your family?",
+      "Rank your top three priorities: schedule, compensation, imaging resources, location, leadership, other?",
+      "What longer-term goals (directorship, teaching, research) matter to you?"
+    ],
+    "compensation": [
+      "Walk me through your current compensation: base, wRVU or collections bonus, stipends, and benefits.",
+      "What target compensation and structure (salary vs. wRVU) would feel right for your next role?",
+      "What\u2019s driving your expectations\u2014market data, current productivity, cost of living, or role scope?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "I want clinic-only with no hospital obligations.",
+      "response": "What level of inpatient exposure feels acceptable\u2014e-consults only, rare weekend rounding, or strictly none? What trade-offs would you consider to secure that?"
+    },
+    {
+      "challenge": "Imaging access is too limited where I am.",
+      "response": "Which modalities are must-haves for you (PET, CMR, CCTA, stress echo), and how much weekly block time would make your practice work best?"
+    },
+    {
+      "challenge": "Prior authorizations are overwhelming.",
+      "response": "Which studies generate the most denials? If we provide dedicated PA staff and AUC-aligned protocols, how would that change your day?"
+    },
+    {
+      "challenge": "Compensation needs to be at the top of market.",
+      "response": "Help me understand what\u2019s driving that target and what mix of base vs. productivity, sign-on, and leadership stipends would make sense."
+    },
+    {
+      "challenge": "I need modern equipment and better QA.",
+      "response": "Which upgrades (probes, software, PET/CMR access) and which quality metrics would signal the lab meets your standards?"
+    },
+    {
+      "challenge": "Clinic volume is unsustainable.",
+      "response": "What daily template and support ratio (APPs/sonographers) would balance quality and productivity for you?"
+    }
+  ],
+  "challengingOpportunities": [
+    "You mentioned wanting zero inpatient time. If we could wall off clinic + protected reading time with a light e-consult model, would that address the same need for predictability?",
+    "You prefer SPECT only\u2014help me understand the underlying reason (access, comfort, accuracy). If PET or stress echo block time were guaranteed, would that meet the goal?",
+    "If prior auth is the main pain, what would dedicated PA coordinators + standardized AUC workflows unlock for your schedule and patient access?",
+    "You\u2019re seeking a top-end base salary\u2014if a balanced plan with leadership stipend, protected reading time, and reliable imaging access improves lifestyle, is that worth exploring?"
+  ]
+}
