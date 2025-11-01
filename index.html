@@ -129,11 +129,22 @@
 
       // Define which specialty files to load
       const SPECIALTY_FILES = [
+        "anesthesiology",
+        "cardiology-noninvasive",
+        "cardiology-interventional",
+        "crna",
+        "diagnostic-radiology",
+        "emergency-medicine",
+        "ent-otolaryngology",
         "family-medicine",
-        "hematology-oncology",
-        "obgyn-general",
         "gastroenterology",
+        "hematology-oncology",
+        "internal-medicine",
         "neurology",
+        "obgyn-general",
+        "pediatrics",
+        "psychiatry-general",
+        "rheumatology",
         "urology",
       ];
 
@@ -286,16 +297,16 @@
           category: "critical",
           order: 1,
           description: "WHY are they looking? Dig 3+ levels deep",
-          hasFramework: true
+          hasFramework: true,
         },
         {
           id: "motivation",
           text: "Motivation & Priorities",
-          icon: "🎯",
+          icon: "🤝",
           points: 12,
           category: "critical",
           order: 2,
-          description: "WHAT do they want in ideal practice?"
+          description: "WHAT do they want in ideal practice?",
         },
         {
           id: "search",
@@ -304,7 +315,7 @@
           points: 8,
           category: "important",
           order: 3,
-          description: "HOW committed are they to change?"
+          description: "HOW committed are they to change?",
         },
         {
           id: "current",
@@ -313,7 +324,7 @@
           points: 8,
           category: "important",
           order: 4,
-          description: "WHERE are they now? Establish baseline"
+          description: "WHERE are they now? Establish baseline",
         },
         {
           id: "experience",
@@ -322,7 +333,7 @@
           points: 8,
           category: "important",
           order: 5,
-          description: "WHAT can they do? Capabilities"
+          description: "WHAT can they do? Capabilities",
         },
         {
           id: "compensation",
@@ -331,7 +342,7 @@
           points: 10,
           category: "critical",
           order: 6,
-          description: "Financial expectations and current baseline"
+          description: "Financial expectations and current baseline",
         },
         {
           id: "location",
@@ -340,7 +351,7 @@
           points: 8,
           category: "important",
           order: 7,
-          description: "WHERE do they want to be? Geography"
+          description: "WHERE do they want to be? Geography",
         },
         {
           id: "family",
@@ -349,7 +360,7 @@
           points: 7,
           category: "important",
           order: 8,
-          description: "WHO influences decision? Stakeholders"
+          description: "WHO influences decision? Stakeholders",
         },
         {
           id: "availability",
@@ -358,7 +369,7 @@
           points: 4,
           category: "standard",
           order: 9,
-          description: "WHEN can they start? Timing"
+          description: "WHEN can they start? Timing",
         },
         {
           id: "credentials",
@@ -367,19 +378,19 @@
           points: 6,
           category: "standard",
           order: 10,
-          description: "Licensing, board cert, compliance basics"
-        }
+          description: "Licensing, board cert, compliance basics",
+        },
       ];
 
       // ============= GENERIC QUALIFICATION QUESTIONS =============
-      
+
       const genericQuestions = {
         current: [
           "Walk me through your current role - practice type, responsibilities, daily structure",
           "What does your current compensation package look like including base, bonuses, and benefits?",
           "Describe your typical work week - hours, call requirements, time off",
           "How would you characterize your current patient volume and case complexity?",
-          "How long have you been in this position and what changes have you seen over time?"
+          "How long have you been in this position and what changes have you seen over time?",
         ],
         search: [
           "Where are you in your search process right now?",
@@ -387,36 +398,36 @@
           "Talk to me about your timeline - when are you hoping to make a transition?",
           "How committed are you to making a change - what would it take for you to stay put?",
           "Walk me through your decision-making process - who else is involved?",
-          "What actions have you taken so far in your search?"
+          "What actions have you taken so far in your search?",
         ],
         location: [
           "What geographic areas are you considering and what's driving those preferences?",
           "Help me understand what matters most about location - schools, lifestyle, family proximity, career opportunities?",
           "How flexible might you be on location if other factors were exceptional?",
           "What do you know about [target regions] and what appeals to you about them?",
-          "Are there areas you'd prefer to avoid? What's behind that preference?"
+          "Are there areas you'd prefer to avoid? What's behind that preference?",
         ],
         family: [
           "Tell me about your family situation and how it factors into this decision",
           "What's most important to your family in a potential move?",
           "How does your spouse's career situation affect your geographic flexibility?",
           "Talk to me about your children if applicable - ages, school stages, special needs or activities",
-          "How is your family approaching this potential transition? Are they excited, hesitant, supportive?"
+          "How is your family approaching this potential transition? Are they excited, hesitant, supportive?",
         ],
         availability: [
           "What does your contract situation look like - notice requirements, restrictive covenants, non-competes?",
           "When would you ideally like to start a new position and what flexibility do you have?",
           "Are there any constraints on your availability we should be aware of?",
           "Walk me through your timeline from offer acceptance to start date - what needs to happen?",
-          "What upcoming commitments might affect your availability or start date?"
+          "What upcoming commitments might affect your availability or start date?",
         ],
         credentials: [
           "What's your board certification status and timeline if you're still in the process?",
           "Tell me about your licensing - current states, any restrictions or limitations?",
           "How does your credentialing typically go - any issues or concerns to be aware of?",
           "Walk me through your DEA status and malpractice history",
-          "Any visa or work authorization considerations we should discuss?"
-        ]
+          "Any visa or work authorization considerations we should discuss?",
+        ],
       };
 
       // Generic follow-up questions for pain point categories
@@ -424,33 +435,33 @@
         "Administrative Burden": [
           "Walk me through a typical day - what percentage is clinical versus administrative?",
           "How has the administrative burden changed over time in your practice?",
-          "What specific EMR or documentation issues are consuming your time?"
+          "What specific EMR or documentation issues are consuming your time?",
         ],
         "Work-Life Balance": [
           "Help me understand your current schedule and how it's affecting you",
           "What would better work-life balance look like for you specifically?",
-          "How is this impacting your family and personal life?"
+          "How is this impacting your family and personal life?",
         ],
         "Call Burden": [
           "Tell me about your call schedule - how often are you covering?",
           "How is the call schedule structured and how has it been affecting you?",
-          "What support systems exist for after-hours coverage?"
+          "What support systems exist for after-hours coverage?",
         ],
-        "Compensation": [
+        Compensation: [
           "Help me understand what you're seeing in the market that's different from your current package",
           "When you think about competitive compensation, what are you comparing it to?",
-          "How does the total package - not just base - compare to your expectations?"
+          "How does the total package - not just base - compare to your expectations?",
         ],
-        "Partnership": [
+        Partnership: [
           "Walk me through your current partnership track and what concerns you about it",
           "What are you looking for in a partnership structure?",
-          "How important is true ownership versus income opportunity?"
+          "How important is true ownership versus income opportunity?",
         ],
-        "Default": [
+        Default: [
           "Help me understand what's behind that concern...",
           "How has this been affecting you day-to-day?",
-          "When did you first start noticing this was a problem?"
-        ]
+          "When did you first start noticing this was a problem?",
+        ],
       };
 
       // ============= HELPER FUNCTIONS =============
@@ -518,7 +529,11 @@
 
       function getScoreLevel(score) {
         if (score >= 90)
-          return { level: "Excellent", class: "score-excellent", emoji: "ðŸŒŸ" };
+          return {
+            level: "Excellent",
+            class: "score-excellent",
+            emoji: "ðŸŒŸ",
+          };
         if (score >= 75)
           return { level: "Good", class: "score-good", emoji: "ðŸ‘" };
         if (score >= 60)
@@ -618,19 +633,19 @@
       // Get questions for a checklist section (specialty-specific or generic)
       function getQuestionsForSection(sectionId, specialty) {
         // Sections that use specialty-specific questions
-        if (sectionId === 'experience') {
+        if (sectionId === "experience") {
           return specialty.keyQuestions.clinical || [];
         }
-        if (sectionId === 'motivation') {
+        if (sectionId === "motivation") {
           return specialty.keyQuestions.motivation || [];
         }
-        if (sectionId === 'compensation') {
+        if (sectionId === "compensation") {
           return specialty.keyQuestions.compensation || [];
         }
-        if (sectionId === 'pain') {
+        if (sectionId === "pain") {
           return specialty.keyQuestions.painDiscovery || [];
         }
-        
+
         // Sections that use generic questions
         return genericQuestions[sectionId] || [];
       }
@@ -1075,13 +1090,18 @@
                                 </h3>
                                 <div class="space-y-2 max-h-[600px] overflow-y-auto" data-scroll-id="qualification-checklist">
                                     ${qualificationChecklist
-                                      .map(
-                                        (item) => {
-                                          const isCompleted = state.checklistProgress[item.id];
-                                          const isExpanded = state.expandedSections[item.id];
-                                          const questions = getQuestionsForSection(item.id, currentSpecialty);
-                                          
-                                          return `
+                                      .map((item) => {
+                                        const isCompleted =
+                                          state.checklistProgress[item.id];
+                                        const isExpanded =
+                                          state.expandedSections[item.id];
+                                        const questions =
+                                          getQuestionsForSection(
+                                            item.id,
+                                            currentSpecialty
+                                          );
+
+                                        return `
                                         <div class="rounded-lg border-2 transition-all duration-200 ${
                                           isCompleted
                                             ? "bg-green-50 dark:bg-green-900 dark:bg-opacity-30 border-green-500 dark:border-green-400"
@@ -1090,7 +1110,9 @@
                                             : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
                                         }">
                                             <!-- Header (always visible) -->
-                                            <div class="p-3 cursor-pointer" onclick="toggleExpandSection('${item.id}')">
+                                            <div class="p-3 cursor-pointer" onclick="toggleExpandSection('${
+                                              item.id
+                                            }')">
                                                 <div class="flex items-center justify-between">
                                                     <div class="flex items-center space-x-3 flex-1">
                                                         <!-- Step number -->
@@ -1109,29 +1131,49 @@
                                                               ? "bg-green-500 border-green-500"
                                                               : "border-gray-300 dark:border-gray-600 hover:border-green-400"
                                                           }"
-                                                          onclick="event.stopPropagation(); toggleChecklistItem('${item.id}')"
+                                                          onclick="event.stopPropagation(); toggleChecklistItem('${
+                                                            item.id
+                                                          }')"
                                                         >
-                                                          ${isCompleted ? '<span class="text-white text-sm font-bold">✓</span>' : ''}
+                                                          ${
+                                                            isCompleted
+                                                              ? '<span class="text-white text-sm font-bold">✓</span>'
+                                                              : ""
+                                                          }
                                                         </div>
                                                         
                                                         <!-- Icon and text -->
                                                         <div class="flex items-center space-x-2 flex-1">
-                                                          <span class="text-lg">${item.icon}</span>
+                                                          <span class="text-lg">${
+                                                            item.icon
+                                                          }</span>
                                                           <div class="flex flex-col">
-                                                            <span class="text-sm font-semibold text-gray-900 dark:text-gray-100">${item.text}</span>
-                                                            <span class="text-xs text-gray-500 dark:text-gray-400 italic">${item.description}</span>
+                                                            <span class="text-sm font-semibold text-gray-900 dark:text-gray-100">${
+                                                              item.text
+                                                            }</span>
+                                                            <span class="text-xs text-gray-500 dark:text-gray-400 italic">${
+                                                              item.description
+                                                            }</span>
                                                           </div>
                                                         </div>
                                                     </div>
                                                     
                                                     <!-- Right side -->
                                                     <div class="flex items-center space-x-2">
-                                                        ${item.category === "critical" 
-                                                          ? '<span class="text-xs bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded font-semibold">Critical</span>' 
-                                                          : ''
+                                                        ${
+                                                          item.category ===
+                                                          "critical"
+                                                            ? '<span class="text-xs bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded font-semibold">Critical</span>'
+                                                            : ""
                                                         }
-                                                        <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">${item.points}pts</span>
-                                                        <svg class="w-5 h-5 text-gray-400 dark:text-gray-500 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">${
+                                                          item.points
+                                                        }pts</span>
+                                                        <svg class="w-5 h-5 text-gray-400 dark:text-gray-500 transition-transform duration-300 ${
+                                                          isExpanded
+                                                            ? "rotate-180"
+                                                            : ""
+                                                        }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                                         </svg>
                                                     </div>
@@ -1139,71 +1181,123 @@
                                             </div>
                                             
                                             <!-- Expandable Questions Section -->
-                                            ${isExpanded ? `
+                                            ${
+                                              isExpanded
+                                                ? `
                                             <div class="border-t border-gray-200 dark:border-gray-700 px-4 pb-4 pt-3">
                                                 <!-- Framework Tips for Critical Sections -->
-                                                ${item.id === 'pain' ? `
+                                                ${
+                                                  item.id === "pain"
+                                                    ? `
                                                 <div class="mb-3 p-3 bg-blue-50 dark:bg-blue-900 dark:bg-opacity-30 border border-blue-200 dark:border-blue-700 rounded text-xs text-blue-800 dark:text-blue-200">
                                                   <strong>💡 Critical:</strong> Pain Discovery is worth 15 points. Ask "why" at least 3 times to dig deep. Use variations: "Help me understand..." "Tell me more..." "What's the story behind..."
-                                                </div>` : ''}
+                                                </div>`
+                                                    : ""
+                                                }
                                                 
-                                                ${item.id === 'motivation' ? `
+                                                ${
+                                                  item.id === "motivation"
+                                                    ? `
                                                 <div class="mb-3 p-3 bg-purple-50 dark:bg-purple-900 dark:bg-opacity-30 border border-purple-200 dark:border-purple-700 rounded text-xs text-purple-800 dark:text-purple-200">
                                                   <strong>🎯 Critical:</strong> Worth 12 points. Go beyond surface preferences - understand what they REALLY want in their ideal practice.
-                                                </div>` : ''}
+                                                </div>`
+                                                    : ""
+                                                }
                                                 
-                                                ${item.id === 'compensation' ? `
+                                                ${
+                                                  item.id === "compensation"
+                                                    ? `
                                                 <div class="mb-3 p-3 bg-green-50 dark:bg-green-900 dark:bg-green-opacity-30 border border-green-200 dark:border-green-700 rounded text-xs text-green-800 dark:text-green-200">
                                                   <strong>💰 Critical:</strong> Worth 10 points. Discover current baseline BEFORE discussing opportunities. Use open-ended questions.
-                                                </div>` : ''}
+                                                </div>`
+                                                    : ""
+                                                }
                                                 
                                                 <!-- Questions List -->
                                                 <div class="space-y-2 mb-3">
-                                                  ${questions.slice(0, 6).map(q => `
+                                                  ${questions
+                                                    .slice(0, 6)
+                                                    .map(
+                                                      (q) => `
                                                     <div class="flex items-start text-sm">
                                                       <span class="text-blue-500 dark:text-blue-400 mr-2 mt-0.5 flex-shrink-0">•</span>
                                                       <span class="text-gray-700 dark:text-gray-300 italic">"${q}"</span>
                                                     </div>
-                                                  `).join('')}
+                                                  `
+                                                    )
+                                                    .join("")}
                                                 </div>
                                                 
                                                 <!-- Pain Point Follow-Ups (only for pain section) -->
-                                                ${item.id === 'pain' && currentSpecialty.painPoints && currentSpecialty.painPoints.length > 0 ? `
+                                                ${
+                                                  item.id === "pain" &&
+                                                  currentSpecialty.painPoints &&
+                                                  currentSpecialty.painPoints
+                                                    .length > 0
+                                                    ? `
                                                 <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-                                                  <div class="text-xs font-bold text-gray-700 dark:text-gray-300 mb-2">📌 Common ${currentSpecialty.name} Pain Points - Listen For:</div>
-                                                  ${currentSpecialty.painPoints.slice(0, 3).map(category => {
-                                                    const followUp = getPainFollowUps(category.category);
-                                                    return `
+                                                  <div class="text-xs font-bold text-gray-700 dark:text-gray-300 mb-2">📌 Common ${
+                                                    currentSpecialty.name
+                                                  } Pain Points - Listen For:</div>
+                                                  ${currentSpecialty.painPoints
+                                                    .slice(0, 3)
+                                                    .map((category) => {
+                                                      const followUp =
+                                                        getPainFollowUps(
+                                                          category.category
+                                                        );
+                                                      return `
                                                     <div class="mb-3 p-2 bg-yellow-50 dark:bg-yellow-900 dark:bg-opacity-20 border border-yellow-200 dark:border-yellow-700 rounded">
-                                                      <div class="text-xs font-semibold text-yellow-900 dark:text-yellow-200 mb-1">${category.category}</div>
+                                                      <div class="text-xs font-semibold text-yellow-900 dark:text-yellow-200 mb-1">${
+                                                        category.category
+                                                      }</div>
                                                       <div class="text-xs text-yellow-800 dark:text-yellow-300 space-y-1 mb-2">
-                                                        ${category.points.slice(0, 2).map(point => `<div>• ${point}</div>`).join('')}
+                                                        ${category.points
+                                                          .slice(0, 2)
+                                                          .map(
+                                                            (point) =>
+                                                              `<div>• ${point}</div>`
+                                                          )
+                                                          .join("")}
                                                       </div>
                                                       <div class="text-xs font-semibold text-yellow-900 dark:text-yellow-200 mb-1">↳ Dig deeper:</div>
                                                       <div class="text-xs text-yellow-800 dark:text-yellow-300 space-y-1 pl-3">
-                                                        ${followUp.questions.map(q => `<div class="italic">→ "${q}"</div>`).join('')}
+                                                        ${followUp.questions
+                                                          .map(
+                                                            (q) =>
+                                                              `<div class="italic">→ "${q}"</div>`
+                                                          )
+                                                          .join("")}
                                                       </div>
                                                     </div>
                                                     `;
-                                                  }).join('')}
+                                                    })
+                                                    .join("")}
                                                 </div>
-                                                ` : ''}
+                                                `
+                                                    : ""
+                                                }
                                                 
                                                 <!-- Link to Pain Framework -->
-                                                ${item.hasFramework ? `
+                                                ${
+                                                  item.hasFramework
+                                                    ? `
                                                 <button 
                                                   onclick="event.stopPropagation(); state.activeScriptTab = 'pain'; render();"
                                                   class="mt-2 text-xs bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded transition"
                                                 >
                                                   🔍 See Full Pain Discovery Framework →
                                                 </button>
-                                                ` : ''}
+                                                `
+                                                    : ""
+                                                }
                                             </div>
-                                            ` : ''}
+                                            `
+                                                : ""
+                                            }
                                         </div>
                                         `;
-                                        }
-                                      )
+                                      })
                                       .join("")}
                                 </div>
 
@@ -1271,7 +1365,6 @@
                                         icon: "ðŸ”",
                                       },
                                       {
-                                      {
                                         id: "challenging",
                                         label: "Challenging",
                                         icon: "ðŸ’ª",
@@ -1280,11 +1373,6 @@
                                         id: "closing",
                                         label: "Closing & Presentation",
                                         icon: "ðŸŽ¯",
-                                      },
-                                      {
-                                        id: "closing",
-                                        label: "Closing",
-                                        icon: "ðŸ¤",
                                       },
                                     ]
                                       .map(
@@ -1769,7 +1857,6 @@
                     </div>
                 `;
         }
-
 
         return "";
       }
@@ -2817,7 +2904,9 @@
                                     <div class="p-3 space-y-2">
                                         <div class="text-xs text-gray-700 dark:text-gray-300 space-y-1">
                                             ${option.examples
-                                              .map((ex) => `<div>â€¢ ${ex}</div>`)
+                                              .map(
+                                                (ex) => `<div>â€¢ ${ex}</div>`
+                                              )
                                               .join("")}
                                         </div>
                                         <div class="bg-green-50 border border-green-200 rounded p-2 text-xs italic text-green-800">
