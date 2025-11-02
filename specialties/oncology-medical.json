@@ -1,0 +1,111 @@
+{
+  "name": "Oncology (Medical Oncology)",
+  "icon": "🎗️",
+  "compensation": {
+    "median": "$539,790",
+    "range": "$360,250 - $703,550",
+    "percentile25": "$360,250",
+    "percentile50": "$539,790",
+    "percentile75": "$703,550",
+    "workRVUs": "5,307 (median)",
+    "compensationPerRVU": "$95.80 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "Access, Infusion & Capacity",
+      "points": [
+        "Infusion chair shortages and nursing gaps constrain treatment starts",
+        "Delayed imaging and pathology turnaround slowing staging and restaging decisions",
+        "Backlogs for new consults and second opinions, impacting patient satisfaction",
+        "Limited clinical pharmacy and financial navigator support for complex regimens"
+      ]
+    },
+    {
+      "category": "Authorization & Financial Toxicity",
+      "points": [
+        "Time‑consuming prior auths for novel agents and supportive meds",
+        "Step‑therapy and formulary switches disrupting evidence‑based plans",
+        "High out‑of‑pocket costs leading to abandonment and care delays",
+        "Inadequate assistance programs coordination for patients"
+      ]
+    },
+    {
+      "category": "Care Coordination & Trials",
+      "points": [
+        "Fragmented coordination across surgery, rad onc, and subspecialty clinics",
+        "Limited access to clinical trials or slow startup timelines",
+        "Tumor board preparation and follow‑up adding non‑billable workload",
+        "EMR inbox/calls spillover after hours"
+      ]
+    },
+    {
+      "category": "Compensation & Burnout",
+      "points": [
+        "RVU plans not aligned with cognitive time for complex cases and counseling",
+        "Unclear credit for infusion oversight, tumor boards, and care management",
+        "Emotional strain of end‑of‑life care and frequent difficult conversations",
+        "Pressure to expand panel size without operational investment"
+      ]
+    }
+  ],
+  "motivations": [
+    "Integrated infusion center with adequate chairs and oncology‑trained nursing",
+    "Clinical pharmacist and financial navigator support for regimens and copays",
+    "Predictable templates with protected time for tumor board and care coordination",
+    "Transparent compensation recognizing infusion oversight and complex counseling",
+    "Access to clinical trials and translational programs",
+    "EHR optimization, scribe support, and standardized auth workflows",
+    "Opportunities for leadership (Medical Director, Disease‑site Lead)",
+    "Tele‑oncology options for survivorship and stable follow‑ups",
+    "Geography and school considerations for family"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current disease‑site mix and infusion involvement.",
+      "What’s motivating you to explore new opportunities right now?",
+      "What would make your next role a clear upgrade?"
+    ],
+    "painDiscovery": [
+      "Where do you see the biggest bottlenecks—infusion capacity, imaging, or authorizations?",
+      "How much time are you spending weekly on tumor boards and complex counseling?",
+      "What resources would meaningfully reduce after‑hours inbox work?"
+    ],
+    "clinical": [
+      "Preferred disease‑site focus and desired clinic/infusion balance?",
+      "Experience with clinical trials—accrual, PI roles, or startup processes?",
+      "Comfort with oral oncolytics monitoring and toxicity management workflows?",
+      "Desired support: oncology pharmacy, social work, nutrition, palliative care?"
+    ],
+    "motivation": [
+      "When you envision your ideal oncology practice, what stands out—resources, schedule, or leadership?",
+      "Rank your top three priorities: infusion capacity, compensation transparency, trials access, location, schedule."
+    ],
+    "compensation": [
+      "Walk me through your current plan—base, RVU, infusion oversight credit, and bonuses.",
+      "What compensation structure would fairly reflect your case complexity and coordination time?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "Infusion capacity limits timely treatment starts.",
+      "response": "How many chairs and what nursing ratios would meet your target patient flow?"
+    },
+    {
+      "challenge": "Authorizations and costs derail optimal regimens.",
+      "response": "Would dedicated auth teams and financial navigators change your weekly workload meaningfully?"
+    },
+    {
+      "challenge": "RVU plan doesn’t reflect cognitive work.",
+      "response": "What mix of base + RVU + care‑coordination credit would feel equitable for you?"
+    },
+    {
+      "challenge": "Trials access is limited.",
+      "response": "What trial portfolio (phase, disease sites) and startup timelines would you consider viable?"
+    }
+  ],
+  "challengingOpportunities": [
+    "If infusion access is the bottleneck, would added chairs and extended hours address your top concern?",
+    "If cognitive work isn’t recognized, would explicit credit for tumor board/coordination make a new plan attractive?",
+    "If trials drive your motivation, would a defined PI role with startup support align with your goals?"
+  ]
+}

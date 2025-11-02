@@ -1,0 +1,96 @@
+{
+  "name": "Surgery - General",
+  "icon": "🩺",
+  "compensation": {
+    "median": "$502,947",
+    "range": "$420,533 - $622,981",
+    "percentile25": "$420,533",
+    "percentile50": "$502,947",
+    "percentile75": "$622,981",
+    "workRVUs": "6,918 (median)",
+    "compensationPerRVU": "$73.98 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "OR & Throughput",
+      "points": [
+        "Blocked OR access and slow turnovers limiting elective volume",
+        "Backlogs for endoscopy, imaging, and pre‑op clearances delaying care",
+        "Post‑op bed bottlenecks affecting scheduling and throughput",
+        "Inconsistent anesthesia availability for complex cases"
+      ]
+    },
+    {
+      "category": "Call & Workload",
+      "points": [
+        "High ED consult and emergent case volume with uneven call distribution",
+        "Post‑call expectations affecting safety and recovery",
+        "Limited APP/PA coverage for rounding and clinic follow‑up",
+        "Documentation burden and prior auths for imaging/procedures"
+      ]
+    },
+    {
+      "category": "Compensation & Alignment",
+      "points": [
+        "RVU targets not calibrated to emergent vs. elective case mix",
+        "Unclear credit for endoscopy, clinic procedures, and quality roles",
+        "Opaque call pay and leadership stipends",
+        "Pressure to increase volume without corresponding operational support"
+      ]
+    }
+  ],
+  "motivations": [
+    "Predictable block time and efficient turnovers",
+    "Equitable call with guaranteed post‑call relief",
+    "Robust APP support for rounds, clinic, and discharge planning",
+    "Transparent compensation including endoscopy/procedure credit and leadership pay",
+    "Modern imaging, endoscopy suites, and peri‑op pathways",
+    "Opportunities for leadership (Trauma/Acute Care, Service Line)",
+    "Geography and lifestyle improvements for family"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current operative mix (elective vs. emergent) and weekly schedule.",
+      "What’s motivating you to explore new opportunities?",
+      "What would make the next role a clear upgrade for you?"
+    ],
+    "painDiscovery": [
+      "Where are your biggest bottlenecks—OR access, staffing, or bed availability?",
+      "How does call cadence impact your clinic and operative time?",
+      "What supports (APPs, discharge planners) would most improve your week?"
+    ],
+    "clinical": [
+      "Preferred case types and desired block time per week?",
+      "Comfort with endoscopy volumes and advanced laparoscopic cases?",
+      "Interest in trauma/acute care versus elective focus?",
+      "Leadership ambitions and quality program involvement?"
+    ],
+    "motivation": [
+      "When you picture your ideal general surgery practice, what stands out—OR time, staffing, or compensation?",
+      "Rank your top priorities: call balance, block time, compensation transparency, location, leadership."
+    ],
+    "compensation": [
+      "Walk me through your current plan—base, RVU, call pay, leadership stipends.",
+      "What structure would fairly reflect emergent care demands and endoscopy work?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "Not enough block time to grow my practice.",
+      "response": "How many blocks and what turnover goals would meet your targets?"
+    },
+    {
+      "challenge": "Call is too frequent and draining.",
+      "response": "What cadence and post‑call recovery would make it sustainable?"
+    },
+    {
+      "challenge": "Compensation doesn’t match workload and acuity.",
+      "response": "What mix of base, RVU, and call/leadership pay would feel right?"
+    }
+  ],
+  "challengingOpportunities": [
+    "If OR access is the bottleneck, would guaranteed blocks plus throughput initiatives solve the core issue?",
+    "If call is the main pain, would equitable scheduling and guaranteed post‑call time address it?",
+    "If transparency is key, would explicit recognition for endoscopy and leadership roles meet your expectations?"
+  ]
+}

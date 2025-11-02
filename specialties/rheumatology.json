@@ -1,6 +1,6 @@
 {
   "name": "Rheumatology",
-  "icon": "🔬",
+  "icon": "🦴",
   "compensation": {
     "median": "$296,975",
     "range": "$252,037 - $353,343",
@@ -14,17 +14,17 @@
     {
       "category": "Access, Backlog & Panel Size",
       "points": [
-        "Long new\u2011patient waitlists and limited follow\u2011up slots for complex autoimmune disease",
+        "Long new‑patient waitlists and limited follow‑up slots for complex autoimmune disease",
         "Panel sizes exceeding sustainable levels for disease monitoring and refills",
-        "High no\u2011show rates and referral triage challenges impacting continuity",
+        "High no‑show rates and referral triage challenges impacting continuity",
         "Pressure to shorten visits despite complex medication management"
       ]
     },
     {
       "category": "Medication Management & Prior Authorization",
       "points": [
-        "Time\u2011consuming prior authorizations for biologics and JAK inhibitors",
-        "Step\u2011therapy and formulary switches disrupting stable treatment plans",
+        "Time‑consuming prior authorizations for biologics and JAK inhibitors",
+        "Step‑therapy and formulary switches disrupting stable treatment plans",
         "Frequent lab monitoring for DMARD toxicity adds administrative load",
         "Limited pharmacy support for benefits investigations and patient education"
       ]
@@ -35,7 +35,7 @@
         "Limited infusion chair availability and staffing constrain growth",
         "Fragmented workflows between clinic and infusion center",
         "Inconsistent ultrasound access for diagnostic/procedural work",
-        "Space/equipment constraints for in\u2011office procedures (US\u2011guided injections)"
+        "Space/equipment constraints for in‑office procedures (US‑guided injections)"
       ]
     },
     {
@@ -51,63 +51,63 @@
       "category": "EHR & Care Coordination",
       "points": [
         "Heavy documentation burden for disease activity indices and prior auth packets",
-        "Care coordination with primary care, ortho, derm, nephro adds non\u2011billable time",
+        "Care coordination with primary care, ortho, derm, nephro adds non‑billable time",
         "Multiple portals/EHRs across hospital and clinic reduce efficiency",
-        "Inbox volume (results, refills, messages) spills into after\u2011hours work"
+        "Inbox volume (results, refills, messages) spills into after‑hours work"
       ]
     }
   ],
   "motivations": [
-    "Predictable clinic templates with adequate new vs. follow\u2011up balance",
+    "Predictable clinic templates with adequate new vs. follow‑up balance",
     "Dedicated prior authorization/pharmacy teams for biologics and DMARDs",
     "Integrated infusion center with reliable chair time and nursing support",
-    "Point\u2011of\u2011care MSK ultrasound and procedure support",
+    "Point‑of‑care MSK ultrasound and procedure support",
     "Transparent compensation recognizing cognitive work and procedures",
     "Scribes/EHR optimization and protected admin time",
     "Leadership opportunities (Infusion Director, Quality, Fellowship teaching)",
-    "4\u2011day clinic weeks, telehealth follow\u2011ups, and flexible scheduling",
+    "4‑day clinic weeks, telehealth follow‑ups, and flexible scheduling",
     "Robust ancillary services (PT/OT, pharmacy, imaging) to streamline care",
     "Geographic relocation and lifestyle improvements for family"
   ],
   "keyQuestions": {
     "opening": [
-      "Tell me about your current practice\u2014clinic volume, disease mix, and any infusion involvement.",
-      "What\u2019s motivating you to explore new opportunities right now?",
+      "Tell me about your current practice—clinic volume, disease mix, and any infusion involvement.",
+      "What’s motivating you to explore new opportunities right now?",
       "What would you like to change in your next role to make your work more sustainable?"
     ],
     "painDiscovery": [
-      "You mentioned [pain point]\u2014how does that show up during a typical clinic week?",
-      "Where do prior auths and step\u2011therapy cause the most disruption?",
+      "You mentioned [pain point]—how does that show up during a typical clinic week?",
+      "Where do prior auths and step‑therapy cause the most disruption?",
       "How are infusion scheduling and nursing support affecting patient access?",
       "What part of documentation or inbox work takes the most time after hours?",
       "If you could fix one operational process tomorrow, what would it be and why?"
     ],
     "clinical": [
       "Describe your disease mix (RA, SLE, PsA, axial SpA, gout, vasculitis) and ideal balance.",
-      "Typical daily volume and ideal template for new vs. follow\u2011ups?",
-      "Comfort with MSK ultrasound and US\u2011guided injections\u2014what equipment/support do you need?",
-      "How do you manage infusion oversight\u2014on\u2011site center, hospital, or external partner?",
+      "Typical daily volume and ideal template for new vs. follow‑ups?",
+      "Comfort with MSK ultrasound and US‑guided injections—what equipment/support do you need?",
+      "How do you manage infusion oversight—on‑site center, hospital, or external partner?",
       "What lab/imaging access and turnaround times do you need for DMARD safety monitoring?",
       "How do you coordinate care with derm/renal/ortho and manage complex flares?",
       "Interest in leadership (infusion, quality, fellowship) or research participation?",
-      "Preferred use of telehealth for stable follow\u2011ups or medication counseling?"
+      "Preferred use of telehealth for stable follow‑ups or medication counseling?"
     ],
     "motivation": [
-      "When you picture your ideal rheumatology practice, what stands out\u2014schedule, support, or compensation?",
+      "When you picture your ideal rheumatology practice, what stands out—schedule, support, or compensation?",
       "What combination of clinic volume and PA/pharmacy support would feel sustainable?",
-      "Which trade\u2011offs are acceptable (e.g., slightly higher volume for stronger infusion infrastructure)?",
-      "What would make a move clearly worthwhile for you and your family over the next 12\u201324 months?"
+      "Which trade‑offs are acceptable (e.g., slightly higher volume for stronger infusion infrastructure)?",
+      "What would make a move clearly worthwhile for you and your family over the next 12–24 months?"
     ],
     "compensation": [
-      "Walk me through your current compensation\u2014base, wRVU, procedure/infusion credit, and bonuses.",
+      "Walk me through your current compensation—base, wRVU, procedure/infusion credit, and bonuses.",
       "What compensation structure best reflects your cognitive workload and coordination time?",
       "Which stipends (infusion directorship, quality, teaching) would make the plan feel fair?"
     ]
   },
   "commonChallenges": [
     {
-      "challenge": "My panel size and new\u2011patient backlog are overwhelming.",
-      "response": "What panel size and new\u2011patient slots per week would keep access and continuity healthy for you?"
+      "challenge": "My panel size and new‑patient backlog are overwhelming.",
+      "response": "What panel size and new‑patient slots per week would keep access and continuity healthy for you?"
     },
     {
       "challenge": "Prior authorizations for biologics are consuming too much time.",
@@ -118,16 +118,16 @@
       "response": "How many infusion chairs and nursing FTEs would you need, and what hours would optimize flow?"
     },
     {
-      "challenge": "My compensation doesn\u2019t reflect the complexity of my work.",
+      "challenge": "My compensation doesn’t reflect the complexity of my work.",
       "response": "What mix of base, RVU credit, and procedure/infusion recognition would feel equitable?"
     },
     {
       "challenge": "Documentation and inbox volume are burning me out.",
-      "response": "Would scribes, templates, or protected admin time meaningfully reduce after\u2011hours work for you?"
+      "response": "Would scribes, templates, or protected admin time meaningfully reduce after‑hours work for you?"
     }
   ],
   "challengingOpportunities": [
-    "You mentioned backlog\u2014if we guarantee protected new\u2011patient slots and add PA/pharmacy support, would that meet your access goals?",
+    "You mentioned backlog—if we guarantee protected new‑patient slots and add PA/pharmacy support, would that meet your access goals?",
     "If infusion capacity is the pain point, would added chairs, nursing, and extended hours address the core issue?",
     "If compensation fairness is key, would explicit recognition for procedures, infusion oversight, and quality roles align the plan with your effort?",
     "If documentation is the drain, would scribes, smart templates, and protected admin time restore balance for you?"

@@ -1,0 +1,97 @@
+{
+  "name": "Dermatology",
+  "icon": "🌞",
+  "compensation": {
+    "median": "$530,700",
+    "range": "$431,094 - $674,053",
+    "percentile25": "$431,094",
+    "percentile50": "$530,700",
+    "percentile75": "$674,053",
+    "workRVUs": "8,585 (median)",
+    "compensationPerRVU": "$61.78 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "Access & Clinic Flow",
+      "points": [
+        "Long waitlists for new patients and procedures",
+        "High daily volumes with brief visits limiting counseling time",
+        "Bottlenecks for dermpath results and prior auths for biologics",
+        "Inconsistent photography/imaging workflows impacting documentation"
+      ]
+    },
+    {
+      "category": "Procedures & Ancillaries",
+      "points": [
+        "Limited rooming and procedure space for biopsies and excisions",
+        "Unclear compensation for cosmetics vs. medical derm time",
+        "Supply and instrument constraints causing schedule gaps",
+        "Fragmented pathways for phototherapy, patch testing, and biologic starts"
+      ]
+    },
+    {
+      "category": "Compensation & Autonomy",
+      "points": [
+        "RVU targets not reflecting mix of medical vs. procedural work",
+        "Opaque credit for pathology review and results management",
+        "Pressure to increase volume without scribe/MA support",
+        "Protocol rigidity limiting clinical autonomy and patient experience"
+      ]
+    }
+  ],
+  "motivations": [
+    "Predictable templates with adequate procedure blocks",
+    "Scribe and MA support to reduce charting and improve throughput",
+    "Dermpath integration with timely results and communication",
+    "Transparent compensation for medical, procedural, and cosmetic work",
+    "Modern rooms, photography, and supply chain support",
+    "Options for leadership (Clinic Lead, Quality, Residency teaching)",
+    "Tele‑derm for triage and follow‑ups, 4‑day weeks or flexible schedules",
+    "Geographic and lifestyle improvements for family"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current mix—medical derm, procedures, and any cosmetics.",
+      "What’s motivating you to explore new opportunities right now?",
+      "What changes would make your next role a clear upgrade?"
+    ],
+    "painDiscovery": [
+      "Where do you see the biggest bottlenecks—rooming, results, or authorizations?",
+      "What would scribe or additional MA support unlock for your clinic flow?",
+      "How are procedure blocks and supplies affecting your schedule?"
+    ],
+    "clinical": [
+      "Desired balance of general derm, surgery, and any cosmetic offerings?",
+      "Comfort with phototherapy, patch testing, and biologic management?",
+      "Typical daily volume and ideal template?",
+      "Interest in leadership or residency teaching?"
+    ],
+    "motivation": [
+      "When you picture your ideal dermatology practice, what stands out—schedule, staff support, or compensation?",
+      "Rank your top three priorities: autonomy, compensation transparency, clinic flow, location, leadership."
+    ],
+    "compensation": [
+      "Walk me through your current plan—base, RVU, procedure/cosmetic credit, bonuses.",
+      "What structure would fairly recognize pathology review and complex medication management?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "My schedule is packed and new patients wait months.",
+      "response": "What daily volume and protected procedure blocks would feel sustainable for you?"
+    },
+    {
+      "challenge": "Compensation doesn’t reflect my procedural and pathology workload.",
+      "response": "Which elements—procedure, cosmetic, path review—should be explicitly credited?"
+    },
+    {
+      "challenge": "Documentation is spilling into evenings.",
+      "response": "Would scribe support and photo workflows meaningfully reduce after‑hours work?"
+    }
+  ],
+  "challengingOpportunities": [
+    "If access is the main issue, would added procedure blocks and scribe support meet your goals?",
+    "If compensation transparency is key, would explicit credit for procedures/cosmetics/path review make this attractive?",
+    "If workflow friction is the pain, would integrated dermpath and supply support address it?"
+  ]
+}

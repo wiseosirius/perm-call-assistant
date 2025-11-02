@@ -1,0 +1,105 @@
+{
+  "name": "Orthopedic Surgery - General",
+  "icon": "🦿",
+  "compensation": {
+    "median": "$717,073",
+    "range": "$581,704 - $935,248",
+    "percentile25": "$581,704",
+    "percentile50": "$717,073",
+    "percentile75": "$935,248",
+    "workRVUs": "9,519 (median)",
+    "compensationPerRVU": "$78.55 (median)"
+  },
+  "painPoints": [
+    {
+      "category": "OR Access & Throughput",
+      "points": [
+        "Limited block time and slow turnovers restricting surgical volume",
+        "Delayed imaging and pre‑op clearances pushing cases",
+        "Competing subspecialty demand for prime time OR slots",
+        "Post‑op bed availability impacting case scheduling"
+      ]
+    },
+    {
+      "category": "Staffing & Call",
+      "points": [
+        "Insufficient scrub and ortho‑trained RN coverage reducing efficiency",
+        "Trauma/ED call intensity with uneven distribution among partners",
+        "APP hiring/retention challenges affecting clinic and floor coverage",
+        "Inconsistent anesthesia coverage for high‑acuity cases"
+      ]
+    },
+    {
+      "category": "Compensation & Alignment",
+      "points": [
+        "RVU targets not calibrated to case mix and implant intensity",
+        "Opaque implant cost incentives and gainsharing rules",
+        "Unclear productivity credit for APP‑assisted work and co‑surgeon models",
+        "Stipend uncertainty for leadership and trauma call"
+      ]
+    },
+    {
+      "category": "Clinic Throughput & Imaging",
+      "points": [
+        "Backlog for MRI/CT and PT delaying conservative management pathways",
+        "High clinic volumes with limited time for shared decision‑making",
+        "Fragmented DME, injection, and procedure workflows in clinic",
+        "Documentation burden and prior auths (injections, advanced imaging)"
+      ]
+    }
+  ],
+  "motivations": [
+    "Predictable OR block with efficient turnovers and reliable anesthesia",
+    "Ortho‑trained staff, APP support, and streamlined clinic workflows",
+    "Transparent compensation including implant/value alignment and call pay",
+    "Modern imaging access and expedited pre‑op processes",
+    "Opportunities for leadership (Trauma Director, Ortho Service Line)",
+    "Geographic and school‑system considerations for family",
+    "Balanced clinic/surgery schedule and protected admin time"
+  ],
+  "keyQuestions": {
+    "opening": [
+      "Tell me about your current case mix (trauma, sports, joints, hand, foot/ankle).",
+      "What’s motivating you to explore new opportunities now?",
+      "What needs to change for your next role to feel like a clear step forward?"
+    ],
+    "painDiscovery": [
+      "Where do you encounter the biggest bottlenecks—OR access, imaging, or staffing?",
+      "How does call distribution and post‑call relief affect your lifestyle?",
+      "What clinic supports (APPs, DME, imaging) would increase your efficiency?"
+    ],
+    "clinical": [
+      "Preferred procedural mix and ideal OR/clinic balance?",
+      "Comfort with complex trauma vs. elective practice?",
+      "Experience with APP‑supported models and co‑surgeon arrangements?",
+      "Desired implant/vendor relationships and value‑based incentives?"
+    ],
+    "motivation": [
+      "When you picture your ideal ortho practice, what stands out—OR time, team, or compensation?",
+      "Rank your top three priorities: block time, staffing, compensation transparency, location, leadership."
+    ],
+    "compensation": [
+      "Walk me through your current plan—base, RVU, call pay, leadership stipends.",
+      "What structure would fairly recognize implant intensity and APP contributions?"
+    ]
+  },
+  "commonChallenges": [
+    {
+      "challenge": "OR time is too scarce to meet demand.",
+      "response": "How many block days and what turnover targets would meet your volume goals?"
+    },
+    {
+      "challenge": "Call burden is unsustainable.",
+      "response": "What cadence and post‑call relief would make call manageable for you?"
+    },
+    {
+      "challenge": "Compensation doesn’t reflect case complexity.",
+      "response": "What mix of base, RVU, and leadership/call pay would feel equitable?"
+    }
+  ],
+  "challengingOpportunities": [
+    "If OR access is the bottleneck, would added blocks and turnover initiatives solve the core issue?",
+    "If call is the pain point, would equitable distribution and protected recovery meet your needs?",
+    "If transparency matters, would explicit credit for APP/co‑surgeon work and implant value align incentives?"
+  ]
+}
