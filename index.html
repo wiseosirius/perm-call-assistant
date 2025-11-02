@@ -1403,7 +1403,7 @@
                                         <div class="text-xs space-y-1">
                                             ${currentSpecialty.motivations
                                               .slice(0, 3)
-                                              .map((m) => `<div>â€¢ ${m}</div>`)
+                                              .map((m) => `<div>• ${m}</div>`)
                                               .join("")}
                                         </div>
                                     </div>
@@ -1616,11 +1616,11 @@
                         <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
                             <div class="font-bold text-green-900 mb-2">✅ When to Challenge</div>
                             <div class="text-sm text-green-800 space-y-1">
-                                <div>â€¢ Physician has very narrow geographic parameters</div>
-                                <div>â€¢ Compensation expectations 20%+ above market</div>
-                                <div>â€¢ Requirements that eliminate 90%+ of opportunities</div>
-                                <div>â€¢ Surface-level preferences (not needs)</div>
-                                <div>â€¢ "Must-haves" that conflict with stated priorities</div>
+                                <div>• Physician has very narrow geographic parameters</div>
+                                <div>• Compensation expectations 20%+ above market</div>
+                                <div>• Requirements that eliminate 90%+ of opportunities</div>
+                                <div>• Surface-level preferences (not needs)</div>
+                                <div>• "Must-haves" that conflict with stated priorities</div>
                             </div>
                         </div>
 
@@ -2024,7 +2024,7 @@
                                               .map(
                                                 (q) => `
                                                 <li class="flex items-start">
-                                                    <span class="mr-2 mt-1">â€¢</span>
+                                                    <span class="mr-2 mt-1">•</span>
                                                     <span class="italic">"${q}"</span>
                                                 </li>
                                             `
@@ -2332,21 +2332,21 @@
                             <div>
                                 <div class="text-lg font-bold mb-2">50% Open-Ended Ratio:</div>
                                 <div class="text-sm opacity-90 space-y-1">
-                                    <div>â†’ Surface-level information</div>
-                                    <div>â†’ Feels like interrogation</div>
-                                    <div>â†’ Physician holds back</div>
-                                    <div>â†’ Weak positioning</div>
-                                    <div>â†’ Low placement rate</div>
+                                    <div>→ Surface-level information</div>
+                                    <div>→ Feels like interrogation</div>
+                                    <div>→ Physician holds back</div>
+                                    <div>→ Weak positioning</div>
+                                    <div>→ Low placement rate</div>
                                 </div>
                             </div>
                             <div>
                                 <div class="text-lg font-bold mb-2">80% Open-Ended Ratio:</div>
                                 <div class="text-sm opacity-90 space-y-1">
-                                    <div>â†’ Deep insights uncovered</div>
-                                    <div>â†’ Feels consultative</div>
-                                    <div>â†’ Physician opens up</div>
-                                    <div>â†’ Strong positioning</div>
-                                    <div>â†’ High placement rate</div>
+                                    <div>→ Deep insights uncovered</div>
+                                    <div>→ Feels consultative</div>
+                                    <div>→ Physician opens up</div>
+                                    <div>→ Strong positioning</div>
+                                    <div>→ High placement rate</div>
                                 </div>
                             </div>
                         </div>
@@ -3086,6 +3086,11 @@
                                     id: "questions",
                                     label: "Question Quality",
                                     icon: "❓",
+                                  },
+                                  {
+                                    id: "challenging",
+                                    label: "Professional Challenging",
+                                    icon: "💪",
                                   },
                                   {
                                     id: "compensation",
