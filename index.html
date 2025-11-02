@@ -129,11 +129,22 @@
 
       // Define which specialty files to load
       const SPECIALTY_FILES = [
+        "anesthesiology",
+        "cardiology-noninvasive",
+        "cardiology-interventional",
+        "crna",
+        "diagnostic-radiology",
+        "emergency-medicine",
+        "ent-otolaryngology",
         "family-medicine",
-        "hematology-oncology",
-        "obgyn-general",
         "gastroenterology",
+        "hematology-oncology",
+        "internal-medicine",
         "neurology",
+        "obgyn-general",
+        "pediatrics",
+        "psychiatry-general",
+        "rheumatology",
         "urology",
       ];
 
@@ -285,7 +296,7 @@
           points: 15,
           category: "critical",
           order: 1,
-          hasFramework: true
+          hasFramework: true,
         },
         {
           id: "motivation",
@@ -293,7 +304,7 @@
           icon: "🎯",
           points: 12,
           category: "critical",
-          order: 2
+          order: 2,
         },
         {
           id: "search",
@@ -301,7 +312,7 @@
           icon: "🔎",
           points: 8,
           category: "important",
-          order: 3
+          order: 3,
         },
         {
           id: "current",
@@ -309,7 +320,7 @@
           icon: "🏥",
           points: 8,
           category: "important",
-          order: 4
+          order: 4,
         },
         {
           id: "experience",
@@ -317,7 +328,7 @@
           icon: "🥼",
           points: 8,
           category: "important",
-          order: 5
+          order: 5,
         },
         {
           id: "compensation",
@@ -325,7 +336,7 @@
           icon: "💰",
           points: 10,
           category: "critical",
-          order: 6
+          order: 6,
         },
         {
           id: "location",
@@ -333,7 +344,7 @@
           icon: "📍",
           points: 8,
           category: "important",
-          order: 7
+          order: 7,
         },
         {
           id: "family",
@@ -341,7 +352,7 @@
           icon: "👨‍👩‍👧‍👦",
           points: 7,
           category: "important",
-          order: 8
+          order: 8,
         },
         {
           id: "availability",
@@ -349,7 +360,7 @@
           icon: "📅",
           points: 4,
           category: "standard",
-          order: 9
+          order: 9,
         },
         {
           id: "credentials",
@@ -357,50 +368,50 @@
           icon: "✅",
           points: 6,
           category: "standard",
-          order: 10
-        }
+          order: 10,
+        },
       ];
 
       // ============= GENERIC QUESTION SETS =============
-      
+
       const genericQuestions = {
         current: [
           "What's the story behind your decision to explore new opportunities right now?",
           "Talk to me about your current practice - what does a typical week look like?",
           "How would you characterize your current patient volume and case complexity?",
-          "How long have you been in this position and what changes have you seen over time?"
+          "How long have you been in this position and what changes have you seen over time?",
         ],
         search: [
           "Where are you in your search process right now?",
           "What other opportunities are you actively exploring?",
           "Talk to me about your timeline - when are you hoping to make a transition?",
           "How committed are you to making a change - what would it take for you to stay put?",
-          "Walk me through your decision-making process - who else is involved?"
+          "Walk me through your decision-making process - who else is involved?",
         ],
         location: [
           "What geographic areas are you considering and what's driving those preferences?",
           "Help me understand what matters most about location - schools, lifestyle, family proximity?",
           "How flexible might you be on location if other factors were exceptional?",
-          "What do you know about [target regions] and what appeals to you about them?"
+          "What do you know about [target regions] and what appeals to you about them?",
         ],
         family: [
           "Tell me about your family situation and how it factors into this decision",
           "What's most important to your family in a potential move?",
           "How does your spouse's career situation affect your geographic flexibility?",
-          "Talk to me about your children if applicable - ages, school stages, activities"
+          "Talk to me about your children if applicable - ages, school stages, activities",
         ],
         availability: [
           "What does your contract situation look like - notice requirements, restrictive covenants?",
           "When would you ideally like to start a new position and what flexibility do you have?",
           "Walk me through your timeline from offer acceptance to start date",
-          "What upcoming commitments might affect your availability?"
+          "What upcoming commitments might affect your availability?",
         ],
         credentials: [
           "What's your board certification status and timeline if applicable?",
           "Tell me about your licensing - current states, any restrictions?",
           "How does your credentialing typically go - any issues to be aware of?",
-          "Walk me through your DEA status and malpractice history"
-        ]
+          "Walk me through your DEA status and malpractice history",
+        ],
       };
 
       // Generic follow-up questions for pain point categories
@@ -408,33 +419,33 @@
         "Administrative Burden": [
           "Walk me through a typical day - what percentage is clinical versus administrative?",
           "How has the administrative burden changed over time in your practice?",
-          "What specific EMR or documentation issues are consuming your time?"
+          "What specific EMR or documentation issues are consuming your time?",
         ],
         "Work-Life Balance": [
           "Help me understand your current schedule and how it's affecting you",
           "What would better work-life balance look like for you specifically?",
-          "How is this impacting your family and personal life?"
+          "How is this impacting your family and personal life?",
         ],
         "Call Burden": [
           "Tell me about your call schedule - how often are you covering?",
           "How is the call schedule structured and how has it been affecting you?",
-          "What support systems exist for after-hours coverage?"
+          "What support systems exist for after-hours coverage?",
         ],
-        "Compensation": [
+        Compensation: [
           "Help me understand what you're seeing in the market that's different from your current package",
           "When you think about competitive compensation, what are you comparing it to?",
-          "How does the total package - not just base - compare to your expectations?"
+          "How does the total package - not just base - compare to your expectations?",
         ],
-        "Partnership": [
+        Partnership: [
           "Walk me through your current partnership track and what concerns you about it",
           "What are you looking for in a partnership structure?",
-          "How important is true ownership versus income opportunity?"
+          "How important is true ownership versus income opportunity?",
         ],
-        "Default": [
+        Default: [
           "Help me understand what's behind that concern...",
           "How has this been affecting you day-to-day?",
-          "When did you first start noticing this was a problem?"
-        ]
+          "When did you first start noticing this was a problem?",
+        ],
       };
 
       // ============= HELPER FUNCTIONS =============
@@ -502,7 +513,11 @@
 
       function getScoreLevel(score) {
         if (score >= 90)
-          return { level: "Excellent", class: "score-excellent", emoji: "ðŸŒŸ" };
+          return {
+            level: "Excellent",
+            class: "score-excellent",
+            emoji: "ðŸŒŸ",
+          };
         if (score >= 75)
           return { level: "Good", class: "score-good", emoji: "ðŸ‘" };
         if (score >= 60)
@@ -571,6 +586,11 @@
 
       function toggleChecklistItem(id) {
         state.checklistProgress[id] = !state.checklistProgress[id];
+
+        // Auto-collapse when checking
+        if (state.checklistProgress[id]) {
+          state.expandedSections[id] = false;
+        }
 
         // Check if qualification is complete (all critical and important items checked)
         const criticalComplete = qualificationChecklist
@@ -765,64 +785,60 @@
             `;
       }
 
-      
       // ============= EXPANDABLE CHECKLIST FUNCTIONS =============
-      
+
       function toggleSection(sectionId, event) {
-        // Prevent checkbox toggle when clicking the section
-        if (event && event.target.type === 'checkbox') return;
-        
+        if (event && event.target.type === "checkbox") return;
         state.expandedSections[sectionId] = !state.expandedSections[sectionId];
         render();
       }
-      
+
       function getQuestionsForSection(sectionId, specialty) {
-        // Return appropriate questions for each section
-        switch(sectionId) {
-          case 'pain':
+        switch (sectionId) {
+          case "pain":
             return specialty.keyQuestions.painDiscovery || [];
-          case 'motivation':
+          case "motivation":
             return specialty.keyQuestions.motivation || [];
-          case 'experience':
+          case "experience":
             return specialty.keyQuestions.clinical || [];
-          case 'compensation':
+          case "compensation":
             return specialty.keyQuestions.compensation || [];
-          case 'current':
+          case "current":
             return genericQuestions.current || [];
-          case 'search':
+          case "search":
             return genericQuestions.search || [];
-          case 'location':
+          case "location":
             return genericQuestions.location || [];
-          case 'family':
+          case "family":
             return genericQuestions.family || [];
-          case 'availability':
+          case "availability":
             return genericQuestions.availability || [];
-          case 'credentials':
+          case "credentials":
             return genericQuestions.credentials || [];
           default:
             return [];
         }
       }
-      
+
       function getPainPointFollowUps(specialty) {
-        // Get pain point categories and follow-ups for the specialty
         if (!specialty.painPoints || specialty.painPoints.length === 0) {
           return [];
         }
-        
-        return specialty.painPoints.map(category => {
+
+        return specialty.painPoints.map((category) => {
           const categoryName = category.category;
           const specificPoints = category.points || [];
-          const followUps = painFollowUps[categoryName] || painFollowUps["Default"];
-          
+          const followUps =
+            painFollowUps[categoryName] || painFollowUps["Default"];
+
           return {
             category: categoryName,
             points: specificPoints,
-            followUps: followUps
+            followUps: followUps,
           };
         });
       }
-      
+
       function renderLiveCall() {
         const currentSpecialty = specialtyData[state.activeSpecialty];
         const score = calculateCallScore();
@@ -1069,14 +1085,24 @@
                                 </h3>
                                 <div class="space-y-2 max-h-[600px] overflow-y-auto" data-scroll-id="qualification-checklist">
                                     ${qualificationChecklist
-                                      .map(
-                                        (item) => {
-                                          const isExpanded = state.expandedSections[item.id];
-                                          const isChecked = state.checklistProgress[item.id];
-                                          const questions = getQuestionsForSection(item.id, currentSpecialty);
-                                          const painFollowUps = item.id === 'pain' ? getPainPointFollowUps(currentSpecialty) : [];
-                                          
-                                          return `
+                                      .map((item) => {
+                                        const isExpanded =
+                                          state.expandedSections[item.id];
+                                        const isChecked =
+                                          state.checklistProgress[item.id];
+                                        const questions =
+                                          getQuestionsForSection(
+                                            item.id,
+                                            currentSpecialty
+                                          );
+                                        const painFollowUps =
+                                          item.id === "pain"
+                                            ? getPainPointFollowUps(
+                                                currentSpecialty
+                                              )
+                                            : [];
+
+                                        return `
                                         <div class="rounded-lg border-2 transition ${
                                           isChecked
                                             ? "bg-green-50 dark:bg-green-900 dark:bg-opacity-30 border-green-500 dark:border-green-400"
@@ -1088,93 +1114,169 @@
                                         }">
                                             <!-- Section Header (Clickable) -->
                                             <div 
-                                                onclick="toggleSection('${item.id}', event)"
+                                                onclick="toggleSection('${
+                                                  item.id
+                                                }', event)"
                                                 class="p-3 cursor-pointer hover:bg-opacity-50 transition"
                                             >
                                                 <div class="flex items-center justify-between">
                                                     <div class="flex items-center space-x-3 flex-1">
                                                         <!-- Checkbox -->
                                                         <div 
-                                                            onclick="event.stopPropagation(); toggleChecklistItem('${item.id}')"
+                                                            onclick="event.stopPropagation(); toggleChecklistItem('${
+                                                              item.id
+                                                            }')"
                                                             class="w-5 h-5 rounded border-2 flex items-center justify-center cursor-pointer ${
                                                               isChecked
                                                                 ? "bg-green-500 border-green-500"
                                                                 : "border-gray-300 dark:border-gray-600 hover:border-blue-400"
                                                             }"
                                                         >
-                                                            ${isChecked ? '<span class="text-white text-xs">✓</span>' : ''}
+                                                            ${
+                                                              isChecked
+                                                                ? '<span class="text-white text-xs">✓</span>'
+                                                                : ""
+                                                            }
                                                         </div>
                                                         
                                                         <!-- Icon & Text -->
                                                         <div class="flex items-center space-x-2">
-                                                            <span class="text-lg">${item.icon || ''}</span>
+                                                            <span class="text-lg">${
+                                                              item.icon || ""
+                                                            }</span>
                                                             <span class="text-sm font-medium text-gray-900 dark:text-gray-100">
-                                                                ${item.order}. ${item.text}
+                                                                ${
+                                                                  item.order
+                                                                }. ${item.text}
                                                             </span>
                                                         </div>
                                                     </div>
                                                     
                                                     <div class="flex items-center space-x-2">
-                                                        ${item.category === "critical" ? `
+                                                        ${
+                                                          item.category ===
+                                                          "critical"
+                                                            ? `
                                                             <span class="text-xs bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded">Critical</span>
-                                                        ` : ''}
-                                                        <span class="text-xs text-gray-500 dark:text-gray-400">${item.points}pts</span>
-                                                        <span class="text-gray-400 dark:text-gray-500 text-sm transform transition-transform ${isExpanded ? 'rotate-180' : ''}">▼</span>
+                                                        `
+                                                            : ""
+                                                        }
+                                                        <span class="text-xs text-gray-500 dark:text-gray-400">${
+                                                          item.points
+                                                        }pts</span>
+                                                        <span class="text-gray-400 dark:text-gray-500 text-sm transform transition-transform ${
+                                                          isExpanded
+                                                            ? "rotate-180"
+                                                            : ""
+                                                        }">▼</span>
                                                     </div>
                                                 </div>
                                             </div>
                                             
                                             <!-- Expandable Questions Section -->
-                                            ${isExpanded ? `
+                                            ${
+                                              isExpanded
+                                                ? `
                                                 <div class="px-3 pb-3 border-t border-gray-200 dark:border-gray-600 pt-3 space-y-2">
-                                                    ${questions.length > 0 ? `
+                                                    ${
+                                                      questions.length > 0
+                                                        ? `
                                                         <div class="space-y-2">
                                                             <div class="text-xs font-bold text-blue-900 dark:text-blue-300 mb-2">Key Questions:</div>
-                                                            ${questions.slice(0, 4).map(q => `
+                                                            ${questions
+                                                              .slice(0, 4)
+                                                              .map(
+                                                                (q) => `
                                                                 <div class="text-xs italic text-gray-700 dark:text-gray-300 pl-3 border-l-2 border-blue-300 dark:border-blue-600">
                                                                     "${q}"
                                                                 </div>
-                                                            `).join('')}
+                                                            `
+                                                              )
+                                                              .join("")}
                                                         </div>
-                                                    ` : ''}
+                                                    `
+                                                        : ""
+                                                    }
                                                     
-                                                    ${item.id === 'pain' && item.hasFramework ? `
+                                                    ${
+                                                      item.id === "pain" &&
+                                                      item.hasFramework
+                                                        ? `
                                                         <button 
                                                             onclick="event.stopPropagation(); state.activeScriptTab = 'pain'; render();"
                                                             class="w-full mt-2 bg-purple-500 hover:bg-purple-600 text-white text-xs px-3 py-2 rounded-lg font-bold transition"
                                                         >
                                                             🔍 See Full Pain Framework
                                                         </button>
-                                                    ` : ''}
+                                                    `
+                                                        : ""
+                                                    }
                                                     
-                                                    ${item.id === 'pain' && painFollowUps.length > 0 ? `
+                                                    ${
+                                                      item.id === "pain" &&
+                                                      painFollowUps.length > 0
+                                                        ? `
                                                         <div class="mt-3 pt-3 border-t border-purple-200 dark:border-purple-700">
                                                             <div class="text-xs font-bold text-purple-900 dark:text-purple-300 mb-2">
                                                                 💡 When they mention pain points - dig deeper:
                                                             </div>
-                                                            ${painFollowUps.slice(0, 3).map(category => `
+                                                            ${painFollowUps
+                                                              .slice(0, 3)
+                                                              .map(
+                                                                (category) => `
                                                                 <div class="bg-purple-50 dark:bg-purple-900 dark:bg-opacity-30 rounded p-2 mb-2">
                                                                     <div class="text-xs font-semibold text-purple-900 dark:text-purple-200 mb-1">
-                                                                        ${category.category}
+                                                                        ${
+                                                                          category.category
+                                                                        }
                                                                     </div>
-                                                                    ${category.points && category.points.length > 0 ? `
+                                                                    ${
+                                                                      category.points &&
+                                                                      category
+                                                                        .points
+                                                                        .length >
+                                                                        0
+                                                                        ? `
                                                                         <div class="text-xs text-purple-700 dark:text-purple-300 mb-1">
-                                                                            ${category.points.slice(0, 2).map(p => `• ${p}`).join('<br>')}
+                                                                            ${category.points
+                                                                              .slice(
+                                                                                0,
+                                                                                2
+                                                                              )
+                                                                              .map(
+                                                                                (
+                                                                                  p
+                                                                                ) =>
+                                                                                  `• ${p}`
+                                                                              )
+                                                                              .join(
+                                                                                "<br>"
+                                                                              )}
                                                                         </div>
-                                                                    ` : ''}
+                                                                    `
+                                                                        : ""
+                                                                    }
                                                                     <div class="text-xs italic text-purple-800 dark:text-purple-300 mt-1">
-                                                                        ${category.followUps[0]}
+                                                                        ${
+                                                                          category
+                                                                            .followUps[0]
+                                                                        }
                                                                     </div>
                                                                 </div>
-                                                            `).join('')}
+                                                            `
+                                                              )
+                                                              .join("")}
                                                         </div>
-                                                    ` : ''}
+                                                    `
+                                                        : ""
+                                                    }
                                                 </div>
-                                            ` : ''}
+                                            `
+                                                : ""
+                                            }
                                         </div>
                                         `;
-                                        }
-                                      )
+                                      })
                                       .join("")}
                                 </div>
                                 
@@ -1209,7 +1311,7 @@
                                 }
                             </div>
 
-                            <!-- Quick Notes -->
+<!-- Quick Notes -->
                             <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-4">
                                 <h3 class="font-bold mb-2 flex items-center">
                                     <span class="mr-2">ðŸ“</span>
@@ -1243,13 +1345,13 @@
                                         icon: "ðŸ”",
                                       },
                                       {
-                                        id: "challenging",
-                                        label: "Challenging",
-                                        icon: "ðŸ’ª",
+                                        id: "presentation",
+                                        label: "Presentation",
+                                        icon: "ðŸŽ¯",
                                       },
                                       {
                                         id: "closing",
-                                        label: "Closing & Presentation",
+                                        label: "Closing",
                                         icon: "ðŸ¤",
                                       },
                                     ]
@@ -1376,6 +1478,19 @@
                             </div>
                         </div>
 
+                        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-lg">
+                            <div class="font-bold text-indigo-900 mb-2 flex items-center">
+                                <span class="mr-2">🏢</span>
+                                THE PACIFIC COMPANIES SELL
+                            </div>
+                            <p class="text-sm italic text-indigo-800 mb-3">
+                                "Pacific Companies is a national physician recruiting firm and we've been a trusted leader in healthcare recruitment for over 20 years. We specialize in both permanent and locums opportunities. What sets us apart is that we're a retained firm - we personally travel to each hospital to meet with the CEO, Medical Director, and physicians, and we tour the community with a realtor. This allows us to share the most comprehensive details about each opportunity with you."
+                            </p>
+                            <div class="text-xs text-indigo-700 bg-indigo-100 p-2 rounded">
+                                <strong>When to use:</strong> Use early in the call after greeting or when they ask about Pacific Companies. This differentiator builds credibility and sets expectations for the depth of information you can provide.
+                            </div>
+                        </div>
+
                         <div class="bg-yellow-50 border border-yellow-500 p-4 rounded-lg">
                             <div class="font-bold text-yellow-900 mb-2">âš ï¸ What NOT to Say</div>
                             <div class="text-sm text-yellow-800 space-y-1">
@@ -1471,7 +1586,6 @@
                 `;
         }
 
-
         if (tab === "challenging") {
           return `
                     <div class="space-y-4">
@@ -1541,6 +1655,94 @@
                                 <div>âŒ "Nobody pays that" (dismissive)</div>
                                 <div>âŒ "You need to be more flexible" (demanding)</div>
                                 <div>âœ… Instead: Focus on needs, use hypotheticals, stay curious</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        }
+
+        if (tab === "presentation") {
+          return `
+                    <div class="space-y-4">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg">
+                            <div class="font-bold text-red-900 mb-2 flex items-center">
+                                <span class="mr-2">âš ï¸</span>
+                                CRITICAL: Check Qualification Status First
+                            </div>
+                            <div class="text-sm text-red-800">
+                                Before presenting ANY opportunity, ensure your qualification checklist shows all critical areas complete. Presenting too early = sequence violation = major score penalty.
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
+                            <div class="font-bold text-blue-900 mb-2">1ï¸âƒ£ PROFESSIONAL CLARIFICATION</div>
+                            <div class="text-sm italic text-blue-800 mb-2">
+                                "Let me share back what I'm hearing is most important to you: [summarize priorities, pain points, and must-haves]. What did I miss or get wrong?"
+                            </div>
+                            <div class="text-xs text-blue-700 bg-blue-100 p-2 rounded">
+                                <strong>Why this works:</strong> Confirms understanding before presenting, shows you listened, invites correction. This is your last chance to catch missing qualification.
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
+                            <div class="font-bold text-green-900 mb-2">2ï¸âƒ£ REFLECTIVE INTRODUCTION</div>
+                            <div class="text-sm italic text-green-800 mb-2">
+                                "Based on what you've shared about [specific pain/priority], I have an opportunity that might address that. Let me tell you why I think this could be a fit..."
+                            </div>
+                            <div class="text-xs text-green-700 bg-green-100 p-2 rounded">
+                                <strong>Why this works:</strong> Connects opportunity directly to their stated needs, not generic features. Shows strategic thinking, not transactional matching.
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-lg">
+                            <div class="font-bold text-purple-900 mb-2">3ï¸âƒ£ FEATURE-BENEFIT ALIGNMENT</div>
+                            <div class="text-sm text-purple-800 mb-3">
+                                <strong>Always connect features to their stated needs:</strong>
+                            </div>
+                            <div class="space-y-2 text-sm italic text-purple-800">
+                                <div class="bg-purple-100 p-2 rounded">
+                                    "You mentioned [pain point]. This practice addresses that by [specific feature]..."
+                                </div>
+                                <div class="bg-purple-100 p-2 rounded">
+                                    "Since you prioritized [motivation], you'll appreciate that [specific benefit]..."
+                                </div>
+                                <div class="bg-purple-100 p-2 rounded">
+                                    "Based on your family's need for [factor], the community offers [specific amenity]..."
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg">
+                            <div class="font-bold text-orange-900 mb-2">4ï¸âƒ£ HANDLING MISALIGNMENT</div>
+                            <div class="text-sm text-orange-800 mb-2">
+                                If compensation or another factor doesn't perfectly align:
+                            </div>
+                            <div class="text-sm italic text-orange-800 mb-2">
+                                "I want to be transparent with you. The compensation for this opportunity is [amount], which is [relationship to their expectation]. Before we dismiss it, help me understand what's most important to you - the total package, the base, the growth potential, the lifestyle factors, or something else?"
+                            </div>
+                            <div class="text-xs text-orange-700 bg-orange-100 p-2 rounded">
+                                <strong>Why this works:</strong> Honesty builds trust. Exploring flexibility on other factors can overcome compensation gaps. Misalignment â‰  automatic disqualification.
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-lg">
+                            <div class="font-bold text-indigo-900 mb-2">5ï¸âƒ£ COMMUNITY PRESENTATION</div>
+                            <div class="text-sm text-indigo-800 mb-2">
+                                <strong>Best Practice:</strong> Start broad (region) â†’ narrow to state â†’ specific community
+                            </div>
+                            <div class="text-sm italic text-indigo-800">
+                                "Based on your interest in [family need/lifestyle], let me share what makes this region special... [regional features]. The specific community offers [local features] that align with what you described wanting..."
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 border border-yellow-500 p-4 rounded-lg">
+                            <div class="font-bold text-yellow-900 mb-2">âš ï¸ Presentation Red Flags</div>
+                            <div class="text-sm text-yellow-800 space-y-1">
+                                <div>âŒ "This is perfect for you" (before understanding them)</div>
+                                <div>âŒ Generic feature dump without connection to needs</div>
+                                <div>âŒ No reflective statement before presenting</div>
+                                <div>âŒ Presenting multiple opportunities without prioritization</div>
+                                <div>âœ… One well-matched opportunity > three mediocre ones</div>
                             </div>
                         </div>
                     </div>
@@ -2691,7 +2893,9 @@
                                     <div class="p-3 space-y-2">
                                         <div class="text-xs text-gray-700 dark:text-gray-300 space-y-1">
                                             ${option.examples
-                                              .map((ex) => `<div>â€¢ ${ex}</div>`)
+                                              .map(
+                                                (ex) => `<div>â€¢ ${ex}</div>`
+                                              )
                                               .join("")}
                                         </div>
                                         <div class="bg-green-50 border border-green-200 rounded p-2 text-xs italic text-green-800">
@@ -2888,11 +3092,6 @@
                                     id: "questions",
                                     label: "Question Quality",
                                     icon: "â“",
-                                  },
-                                  {
-                                    id: "challenging",
-                                    label: "Professional Challenging",
-                                    icon: "ðŸ’ª",
                                   },
                                   {
                                     id: "compensation",
