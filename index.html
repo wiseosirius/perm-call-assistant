@@ -744,7 +744,7 @@
                               .map(
                                 (item) => `
                                 <div class="flex items-start space-x-2 text-sm p-2 bg-gray-50 dark:bg-gray-900 rounded">
-                                    <span class="text-green-500 text-lg">âœ“</span>
+                                    <span class="text-green-500 text-lg">✓</span>
                                     <span>${item}</span>
                                 </div>
                             `
@@ -763,7 +763,7 @@
                                     "Good morning Dr. [Name], this is [Your Name] with Pacific Companies. I'm calling because you expressed interest in exploring permanent opportunities..."
                                 </p>
                                 <div class="text-xs text-green-600">
-                                    â†’ Acknowledge their interest â†’ Ask about current situation
+                                    → Acknowledge their interest → Ask about current situation
                                 </div>
                             </div>
                             <div class="border-l-4 border-blue-500 bg-blue-50 p-4 rounded">
@@ -772,7 +772,7 @@
                                     "Good morning Dr. [Name], this is [Your Name] with Pacific Companies, a national physician recruitment firm. I'm reaching out because..."
                                 </p>
                                 <div class="text-xs text-blue-600">
-                                    â†’ Brief credibility â†’ Open-ended discovery question
+                                    → Brief credibility → Open-ended discovery question
                                 </div>
                             </div>
                         </div>
@@ -1045,7 +1045,7 @@
                                                 ${
                                                   state.painDepthLevel >=
                                                   item.level
-                                                    ? "âœ“"
+                                                    ? "✓"
                                                     : item.level
                                                 }
                                             </div>
@@ -1316,9 +1316,9 @@
                                 <textarea
                                     id="quickNotesTextarea"
                                     placeholder="Key points, red flags, unique qualifications..."
-                                    class="w-full border-2 rounded-lg p-3 text-sm h-32 focus:border-blue-500 focus:outline-none"
+                                    class="w-full border-2 rounded-lg p-3 text-sm h-32 focus:border-blue-800 focus:outline-none"
                                 ></textarea>
-                                <p class="text-xs text-gray-500 mt-2">
+                                <p class="text-xs text-gray-00 mt-2">
                                     💾 Transfer to Bullhorn immediately after call
                                 </p>
                             </div>
@@ -1564,7 +1564,7 @@
                                   .map(
                                     (q) =>
                                       `<div class="flex items-start">
-                                        <span class="mr-2 mt-1">â€¢</span>
+                                        <span class="mr-2 mt-1">•</span>
                                         <span class="italic">"${q}"</span>
                                     </div>`
                                   )
@@ -1762,19 +1762,19 @@
                             <div class="font-bold text-blue-900 mb-2">📋 NEXT STEPS CHECKLIST</div>
                             <div class="text-sm text-blue-800 space-y-2">
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span><strong>Your commitments:</strong> Email opportunity details, coordinate with client, research specific questions</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span><strong>Their commitments:</strong> Review materials, discuss with spouse/family, prepare questions</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span><strong>Specific timing:</strong> "Tuesday at 2pm" not "early next week"</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span><strong>Confirmation:</strong> "Does that work for you?" - get verbal agreement</span>
                                 </div>
                             </div>
@@ -1929,7 +1929,7 @@
                                               .map(
                                                 (point) => `
                                                 <li class="flex items-start">
-                                                    <span class="mr-2 mt-1">â€¢</span>
+                                                    <span class="mr-2 mt-1">•</span>
                                                     <span>${point}</span>
                                                 </li>
                                             `
@@ -1955,7 +1955,7 @@
                                       .map(
                                         (motivation) => `
                                         <div class="flex items-start text-sm text-blue-800">
-                                            <span class="text-blue-500 mr-2 mt-1">âœ“</span>
+                                            <span class="text-blue-500 mr-2 mt-1">✓</span>
                                             <span>${motivation}</span>
                                         </div>
                                     `
@@ -2667,11 +2667,11 @@
                         <div class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
                             <div class="font-bold text-blue-900 mb-2">💡 Using MGMA Data Effectively:</div>
                             <div class="text-sm text-blue-800 space-y-1">
-                                <div>â€¢ Always present as ranges, not specific numbers</div>
-                                <div>â€¢ Acknowledge variations by geography and setting</div>
-                                <div>â€¢ Rural/underserved areas typically 10-15% above median</div>
-                                <div>â€¢ Academic positions typically 10-20% below median</div>
-                                <div>â€¢ Partnership/ownership can add 20-30% to base</div>
+                                <div>• Always present as ranges, not specific numbers</div>
+                                <div>• Acknowledge variations by geography and setting</div>
+                                <div>• Rural/underserved areas typically 10-15% above median</div>
+                                <div>• Academic positions typically 10-20% below median</div>
+                                <div>• Partnership/ownership can add 20-30% to base</div>
                             </div>
                         </div>
                     </div>
@@ -2889,9 +2889,7 @@
                                     <div class="p-3 space-y-2">
                                         <div class="text-xs text-gray-700 dark:text-gray-300 space-y-1">
                                             ${option.examples
-                                              .map(
-                                                (ex) => `<div>â€¢ ${ex}</div>`
-                                              )
+                                              .map((ex) => `<div>• ${ex}</div>`)
                                               .join("")}
                                         </div>
                                         <div class="bg-green-50 border border-green-200 rounded p-2 text-xs italic text-green-800">
@@ -2945,37 +2943,37 @@
                         <div class="grid md:grid-cols-2 gap-4 text-sm">
                             <div class="space-y-2">
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span>Always quote total compensation, not just base salary</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span>Use MGMA data to demonstrate market knowledge</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span>Explore financial motivations beyond the number</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span>Present ranges before specific numbers</span>
                                 </div>
                             </div>
                             <div class="space-y-2">
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span>Misalignment isn't automatic disqualification</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span>Benefits and lifestyle can offset lower base</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span>Be transparent about what's realistic</span>
                                 </div>
                                 <div class="flex items-start">
-                                    <span class="mr-2">âœ“</span>
+                                    <span class="mr-2">✓</span>
                                     <span>Use creative structuring to bridge gaps</span>
                                 </div>
                             </div>
@@ -3029,7 +3027,7 @@
                                     <span class="mr-3">🎯</span>
                                     Pacific Companies
                                 </h1>
-                                <p class="text-xl opacity-95">Permanent Physician Recruiting â€¢ V3.4 Excellence Framework</p>
+                                <p class="text-xl opacity-95">Permanent Physician Recruiting • V3.4 Excellence Framework</p>
                             </div>
                             <div class="flex items-center space-x-6">
                                 <div class="text-right">
@@ -3130,10 +3128,10 @@
                     <div class="max-w-7xl mx-auto px-6">
                         <div class="text-center mb-4">
                             <p class="text-2xl font-bold mb-2">Excellence Through Discovery</p>
-                            <p class="text-lg opacity-90">80% Open-Ended Questions â€¢ Deep Pain Discovery â€¢ Sequence Compliance</p>
+                            <p class="text-lg opacity-90">80% Open-Ended Questions • Deep Pain Discovery • Sequence Compliance</p>
                         </div>
                         <div class="text-center text-sm opacity-75 border-t border-gray-700 pt-4">
-                            <p>All candidate data must be documented in Bullhorn â€¢ MGMA 2025 compensation data</p>
+                            <p>All candidate data must be documented in Bullhorn • MGMA 2025 compensation data</p>
                             <p class="mt-1">© Pacific Companies • V3.4 Framework</p>
                         </div>
                     </div>
