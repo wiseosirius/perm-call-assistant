@@ -1343,6 +1343,11 @@
                                         icon: "👋",
                                       },
                                       {
+                                        id: "reluctant",
+                                        label: "If Reluctant",
+                                        icon: "🚪",
+                                      },
+                                      {
                                         id: "pain",
                                         label: "Pain Discovery",
                                         icon: "🔍",
@@ -1658,6 +1663,206 @@
                                 <div>❌ "Nobody pays that" (dismissive)</div>
                                 <div>❌ "You need to be more flexible" (demanding)</div>
                                 <div>✅ Instead: Focus on needs, use hypotheticals, stay curious</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        }
+
+        if (tab === "reluctant") {
+          return `
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white p-4 rounded-lg">
+                            <div class="font-bold text-lg mb-2 flex items-center">
+                                <span class="mr-2">🚪</span>
+                                Opening Reluctant Physicians (Cold Calls)
+                            </div>
+                            <div class="text-sm opacity-95">
+                                The hardest part of cold calling is getting past initial resistance. These techniques help you earn the right to continue the conversation.
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-lg">
+                            <div class="font-bold text-blue-900 mb-2 flex items-center">
+                                <span class="mr-2">⚡</span>
+                                Quick Credibility Establishment
+                            </div>
+                            <div class="text-sm text-blue-800 mb-2">
+                                <strong>Goal:</strong> Demonstrate you're NOT a typical recruiter in the first 15 seconds.
+                            </div>
+                            <div class="space-y-3">
+                                <div class="bg-blue-100 p-3 rounded">
+                                    <div class="text-xs font-bold text-blue-900 mb-1">SPECIALTY-SPECIFIC OPENER:</div>
+                                    <div class="text-sm italic text-blue-800">
+                                        "Good morning Dr. [Name], I'm [Your Name] with Pacific Companies. I specialize in ${currentSpecialty.name} recruitment and I'm calling because we're seeing a lot of ${currentSpecialty.name} physicians who are dealing with [common pain point from specialty]. I wanted to reach out before someone else does. Do you have 3 minutes?"
+                                    </div>
+                                </div>
+                                <div class="bg-blue-100 p-3 rounded">
+                                    <div class="text-xs font-bold text-blue-900 mb-1">VALUE-FIRST APPROACH:</div>
+                                    <div class="text-sm italic text-blue-800">
+                                        "Dr. [Name], I work with ${currentSpecialty.name} physicians exclusively and I'm seeing some trends in the market that might interest you - whether you're actively looking or not. Would you be open to a brief conversation?"
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg">
+                            <div class="font-bold text-red-900 mb-3 flex items-center">
+                                <span class="mr-2">🛡️</span>
+                                Common Early Objections → Open-Ended Responses
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="bg-white dark:bg-gray-700 border border-red-200 dark:border-red-700 rounded p-3">
+                                    <div class="text-xs font-bold text-red-900 dark:text-red-100 mb-1">❌ "I'm not looking right now"</div>
+                                    <div class="text-sm italic text-red-800 dark:text-red-200 mb-2">
+                                        "I appreciate that - most of the best physicians I work with aren't actively looking either. Help me understand what would need to change in your current situation to make you consider something new?"
+                                    </div>
+                                    <div class="text-xs text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-900 dark:bg-opacity-30 p-2 rounded">
+                                        <strong>Why this works:</strong> Acknowledges their position while uncovering potential pain points. Opens door without pressure.
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-gray-700 border border-red-200 dark:border-red-700 rounded p-3">
+                                    <div class="text-xs font-bold text-red-900 dark:text-red-100 mb-1">❌ "Just send me an email"</div>
+                                    <div class="text-sm italic text-red-800 dark:text-red-200 mb-2">
+                                        "I can definitely do that. Before I send something generic that wastes your time, help me understand what would actually be of interest to you - what would make you open that email instead of deleting it?"
+                                    </div>
+                                    <div class="text-xs text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-900 dark:bg-opacity-30 p-2 rounded">
+                                        <strong>Why this works:</strong> Shows respect for their time. Makes them think about what they actually want. Often leads to conversation.
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-gray-700 border border-red-200 dark:border-red-700 rounded p-3">
+                                    <div class="text-xs font-bold text-red-900 dark:text-red-100 mb-1">❌ "I'm busy right now"</div>
+                                    <div class="text-sm italic text-red-800 dark:text-red-200 mb-2">
+                                        "I completely understand. When would be a better time to connect for just 5 minutes? I promise this won't be a sales pitch - I just want to learn about what you're looking for so I can be helpful if the right opportunity comes along."
+                                    </div>
+                                    <div class="text-xs text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-900 dark:bg-opacity-30 p-2 rounded">
+                                        <strong>Why this works:</strong> Respects their time boundary. Sets clear expectation (5 minutes). Removes sales pressure.
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-gray-700 border border-red-200 dark:border-red-700 rounded p-3">
+                                    <div class="text-xs font-bold text-red-900 dark:text-red-100 mb-1">❌ "I work with another recruiter"</div>
+                                    <div class="text-sm italic text-red-800 dark:text-red-200 mb-2">
+                                        "That's great - having a good recruiter is valuable. Tell me about what you're looking for and how well they're delivering on that. Are you getting exactly what you need from them?"
+                                    </div>
+                                    <div class="text-xs text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-900 dark:bg-opacity-30 p-2 rounded">
+                                        <strong>Why this works:</strong> Doesn't compete with existing relationship. Often reveals gaps in service. Opens door to becoming backup or primary.
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-gray-700 border border-red-200 dark:border-red-700 rounded p-3">
+                                    <div class="text-xs font-bold text-red-900 dark:text-red-100 mb-1">❌ "I'm happy where I am"</div>
+                                    <div class="text-sm italic text-red-800 dark:text-red-200 mb-2">
+                                        "That's wonderful to hear - genuinely happy physicians are rare these days. Describe what's working so well about your current position. I'd love to understand what makes it successful for you."
+                                    </div>
+                                    <div class="text-xs text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-900 dark:bg-opacity-30 p-2 rounded">
+                                        <strong>Why this works:</strong> Genuine curiosity shows interest in THEM, not just the sale. Often reveals it's not as perfect as they claim. Builds relationship for future.
+                                    </div>
+                                </div>
+
+                                <div class="bg-white dark:bg-gray-700 border border-red-200 dark:border-red-700 rounded p-3">
+                                    <div class="text-xs font-bold text-red-900 dark:text-red-100 mb-1">❌ "How did you get my number?"</div>
+                                    <div class="text-sm italic text-red-800 dark:text-red-200 mb-2">
+                                        "That's a fair question. I found your contact information through [source: medical directories, referral, etc.]. I specifically reached out because of your experience in ${currentSpecialty.name}. Since I have you on the phone, are you open to a quick conversation about your career goals?"
+                                    </div>
+                                    <div class="text-xs text-red-700 dark:text-red-300 bg-red-100 dark:bg-red-900 dark:bg-opacity-30 p-2 rounded">
+                                        <strong>Why this works:</strong> Direct, honest answer. Reframes to their value. Pivots quickly to opportunity.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
+                            <div class="font-bold text-green-900 mb-2 flex items-center">
+                                <span class="mr-2">🎯</span>
+                                Permission-Based Language Framework
+                            </div>
+                            <div class="text-sm text-green-800 mb-3">
+                                <strong>Core Principle:</strong> Earn permission at each step. Never push forward without agreement.
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-green-100 p-3 rounded">
+                                    <div class="font-semibold text-green-900">Initial Permission:</div>
+                                    <div class="italic text-green-800">"Would you be open to a 3-minute conversation about..."</div>
+                                </div>
+                                <div class="bg-green-100 p-3 rounded">
+                                    <div class="font-semibold text-green-900">Continuing Permission:</div>
+                                    <div class="italic text-green-800">"Is it okay if I ask you a few questions about your current situation?"</div>
+                                </div>
+                                <div class="bg-green-100 p-3 rounded">
+                                    <div class="font-semibold text-green-900">Transition Permission:</div>
+                                    <div class="italic text-green-800">"Based on what you're sharing, would it be helpful if I told you about..."</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-lg">
+                            <div class="font-bold text-purple-900 mb-2 flex items-center">
+                                <span class="mr-2">💡</span>
+                                Value Demonstration Questions
+                            </div>
+                            <div class="text-sm text-purple-800 mb-2">
+                                Ask questions that demonstrate you understand their world and can provide value:
+                            </div>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-purple-100 p-3 rounded italic text-purple-800">
+                                    "Tell me about your current call schedule and how that impacts your life outside of work..."
+                                </div>
+                                <div class="bg-purple-100 p-3 rounded italic text-purple-800">
+                                    "Help me understand what drew you to ${currentSpecialty.name} and whether your current practice allows you to do what you love..."
+                                </div>
+                                <div class="bg-purple-100 p-3 rounded italic text-purple-800">
+                                    "Describe what your ideal practice would look like if you could design it from scratch..."
+                                </div>
+                                <div class="bg-purple-100 p-3 rounded italic text-purple-800">
+                                    "What are the biggest frustrations you're dealing with in your current position?"
+                                </div>
+                            </div>
+                            <div class="text-xs text-purple-700 bg-purple-200 p-2 rounded mt-2">
+                                <strong>Result:</strong> These questions make them think. Even if they're "happy," you've planted seeds. They start viewing you as a consultant, not a salesperson.
+                            </div>
+                        </div>
+
+                        <div class="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg">
+                            <div class="font-bold text-orange-900 mb-2 flex items-center">
+                                <span class="mr-2">⚡</span>
+                                The "Pattern Interrupt" Technique
+                            </div>
+                            <div class="text-sm text-orange-800 mb-2">
+                                When you sense they're about to hang up, use unexpected honesty:
+                            </div>
+                            <div class="bg-orange-100 p-3 rounded mb-2">
+                                <div class="text-sm italic text-orange-800">
+                                    "Dr. [Name], I can tell you're about to politely get off this call. Before you do, can I ask you one honest question? What would I have needed to say in this call to make it worth your time?"
+                                </div>
+                            </div>
+                            <div class="text-xs text-orange-700 bg-orange-200 p-2 rounded">
+                                <strong>Why this works:</strong> Breaks the script they expect. Shows self-awareness and respect. Often leads to real conversation. Even if they hang up, you get valuable feedback.
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow-50 border border-yellow-500 p-4 rounded-lg">
+                            <div class="font-bold text-yellow-900 mb-2">⚠️ Red Flags to Avoid</div>
+                            <div class="text-sm text-yellow-800 space-y-1">
+                                <div>❌ "I'll just take a minute of your time" (dishonest - takes longer)</div>
+                                <div>❌ "Can I ask you a quick question?" (manipulative setup)</div>
+                                <div>❌ Being defensive when they're skeptical</div>
+                                <div>❌ Pitching opportunities before understanding them</div>
+                                <div>❌ Ignoring clear "no" signals and pushing harder</div>
+                                <div>✅ Respect boundaries, demonstrate value, earn permission</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-lg">
+                            <div class="font-bold text-indigo-900 mb-2">🎯 Success Metrics for Reluctant Calls</div>
+                            <div class="text-sm text-indigo-800 space-y-2">
+                                <div><strong>Great outcome:</strong> They agree to full qualification conversation now or scheduled</div>
+                                <div><strong>Good outcome:</strong> They give you permission to send targeted information and follow up</div>
+                                <div><strong>Acceptable outcome:</strong> They're not interested now, but you've planted seeds and built positive rapport for future</div>
+                                <div><strong>Poor outcome:</strong> You pushed too hard and burned the relationship permanently</div>
                             </div>
                         </div>
                     </div>
