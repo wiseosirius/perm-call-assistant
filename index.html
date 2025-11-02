@@ -2679,7 +2679,7 @@
                     <!-- Discovery Scripts -->
                     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
                         <h3 class="font-bold text-xl mb-4 flex items-center">
-                            <span class="mr-2">🔍/span>
+                            <span class="mr-2">🔍</span>
                             Compensation Discovery Scripts
                         </h3>
                         <div class="space-y-4">
@@ -3145,7 +3145,13 @@
 
         // Restore scroll positions after render
         restoreScrollPositions();
-      }
+
+        // Reattach event listeners that need to work after dynamic content loads
+        const logoutBtn = document.getElementById("logoutBtn");
+        if (logoutBtn && typeof logout === "function") {
+          logoutBtn.addEventListener("click", logout);
+        }
+      } // <-- This closes the render() function
 
       // Initialize the application
       async function initializeApp() {
