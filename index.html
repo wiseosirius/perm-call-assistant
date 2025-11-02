@@ -689,6 +689,9 @@
                                     class="w-full border-2 rounded-lg p-3 font-medium bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600"
                                 >
                                     ${Object.entries(specialtyData)
+                                      .sort((a, b) =>
+                                        a[1].name.localeCompare(b[1].name)
+                                      )
                                       .map(
                                         ([key, spec]) =>
                                           `<option value="${key}" ${
@@ -1863,6 +1866,9 @@
                             class="w-full md:w-96 p-3 border-2 rounded-lg font-medium bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600"
                         >
                             ${Object.entries(specialtyData)
+                              .sort((a, b) =>
+                                a[1].name.localeCompare(b[1].name)
+                              )
                               .map(
                                 ([key, spec]) =>
                                   `<option value="${key}" ${
@@ -2653,6 +2659,9 @@
                                 </thead>
                                 <tbody class="divide-y">
                                     ${Object.entries(specialtyData)
+                                      .sort((a, b) =>
+                                        a[1].name.localeCompare(b[1].name)
+                                      )
                                       .map(
                                         ([key, spec]) => `
                                         <tr class="hover:bg-gray-50 dark:bg-gray-900">
